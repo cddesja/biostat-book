@@ -1,0 +1,17 @@
+tab:blood1
+prerequisites
+introduction-to-biostatistics
+cycle-of-research
+step-1-population-to-sample
+step-2-sample-to-statistic
+step-3-statistic-to-parameter
+step-4-parameter-to-population
+scales-of-measurement
+categorical-scales
+numerical-scales
+literature
+methods
+applications
+example-one
+example-two
+final-words

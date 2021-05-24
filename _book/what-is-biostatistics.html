@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 What is Biostatistics? | Biostatistics (DRAFT)</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 What is Biostatistics? | Biostatistics (DRAFT)" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 What is Biostatistics? | Biostatistics (DRAFT)" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Christopher Desjardins, Laura Le, and Ann Brearley" />
+
+
+<meta name="date" content="2021-05-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="literature.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="what-is-biostatistics.html"><a href="what-is-biostatistics.html"><i class="fa fa-check"></i><b>2</b> What is Biostatistics?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="what-is-biostatistics.html"><a href="what-is-biostatistics.html#cycle-of-research"><i class="fa fa-check"></i><b>2.1</b> Cycle of Research</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="what-is-biostatistics.html"><a href="what-is-biostatistics.html#step-1-population-to-sample"><i class="fa fa-check"></i><b>2.1.1</b> Step 1: Population to Sample</a></li>
+<li class="chapter" data-level="2.1.2" data-path="what-is-biostatistics.html"><a href="what-is-biostatistics.html#step-2-sample-to-statistic"><i class="fa fa-check"></i><b>2.1.2</b> Step 2: Sample to Statistic</a></li>
+<li class="chapter" data-level="2.1.3" data-path="what-is-biostatistics.html"><a href="what-is-biostatistics.html#step-3-statistic-to-parameter"><i class="fa fa-check"></i><b>2.1.3</b> Step 3: Statistic to Parameter</a></li>
+<li class="chapter" data-level="2.1.4" data-path="what-is-biostatistics.html"><a href="what-is-biostatistics.html#step-4-parameter-to-population"><i class="fa fa-check"></i><b>2.1.4</b> Step 4: Parameter to Population</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="what-is-biostatistics.html"><a href="what-is-biostatistics.html#scales-of-measurement"><i class="fa fa-check"></i><b>2.2</b> Scales of Measurement</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="what-is-biostatistics.html"><a href="what-is-biostatistics.html#categorical-scales"><i class="fa fa-check"></i><b>2.2.1</b> Categorical Scales</a></li>
+<li class="chapter" data-level="2.2.2" data-path="what-is-biostatistics.html"><a href="what-is-biostatistics.html#numerical-scales"><i class="fa fa-check"></i><b>2.2.2</b> Numerical Scales</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Biostatistics (DRAFT)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="what-is-biostatistics" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> What is Biostatistics?</h1>
+<p>What is <em>Biostatistics</em>? How does it fit within the larger field of research? What will you learn from this course? These are the questions that will be addressed in this lecture.</p>
+<p>Let’s begin with the question “What is statistics?”</p>
+<p>There are many definitions, but they all have similar themes.</p>
+<p>For many people (maybe even you), statistics is seen as a branch of mathematics. However, John Tukey, a famous statistician in the mid-1900’s, stated that “statistics is a science, not a branch of mathematics, but uses mathematical models as essential tools.” Just as engineering, chemistry, and economics use math as a tool but are seen as separate fields from math, so should statistics be distinguished from mathematics.</p>
+<p>Alan Agresti and Christine Franklin have described statistics as “the art and science of learning from data” (this is also the title of their introductory statistics textbook). The goal of statistics is to translate data into understanding of the real world. At the heart of it all is the word data.</p>
+<p>Examples of areas in which statistics is used include business, climate change research, manufacturing quality control, government policy, education, finance, and even sports (have you seen the movie Moneyball?).</p>
+<div id="cycle-of-research" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Cycle of Research</h2>
+<p>Medical or public health research, like all scientific research, begins with a <em>research question</em> about a population of interest. Biostatistical methods are used to help answer this research question. Let’s describe this process using the Cycle of Research diagram shown here.</p>
+<p><img src="biostat-book_files/figure-html/fig.cor-1.png" width="768" /></p>
+<div id="step-1-population-to-sample" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Step 1: Population to Sample</h3>
+<p>The scientific <em>Cycle of Research</em> begins with a <em>population</em>. A population is the complete set of individuals who share some common characteristics. The population is the group of people we are interested in learning about. The population of interest in a given study may be U.S. adult males, or it may be Finnish preschoolers, or it may be HIV-positive adults in South Africa. Perhaps we are interested, for example, in knowing how tall ten-year-old American boys are. The population in this case would be all ten-year-old boys in the U.S.</p>
+<p>When we want to answer a specific question about a particular population, typically we obtain a sample. A <em>sample</em> is a subset of the population of interest. The sample is the group of people we actually study. This is the group of people from whom data are collected. In our example, we might randomly sample 1,000 ten-year-old boys from the U.S. population to serve as our study’s sample.</p>
+<p>You may wonder, if the goal is to make some conclusions about the population, why not just collect data on the entire population? Samples are often studied instead of entire populations for several reasons.</p>
+<p>One reason is cost. Often it would be too expensive and/or too time-consuming to collect data from an entire population of interest. For example, perhaps we are interested in the blood pressures of residents of Massachusetts. It would be much too expensive to obtain blood pressure measurements from every resident of the state, so we obtain a sample of residents instead. Take a careful look at this figure. Note that the samples have different numbers of people in them, and different mean (or average) diastolic blood pressure values. Also note that none of the mean values for the samples are the same as the mean blood pressure for the population. We will explore these concepts later.</p>
+<p><INSERT FIGURE></p>
+<p>Another reason for using a sample instead of the population is feasibility. Studying the entire population may simply not be possible. For example, it is not possible to determine the effect of a new treatment on an entire population of patients if the treatment is not yet available to the entire population.</p>
+<p>A third reason is accuracy. Measurements from a study’s sample may be more accurate than measurements from a population. More time and effort can be devoted to carrying out the measurements for the smaller number of people in the sample than is feasible for an entire population. We also can’t measure everyone in the population at the same time in the same way. Measurements may change over time (as we have all seen with our weight). If we have to measure a lot of participants, we may need multiple people or instruments to do it, which can also decrease accuracy.</p>
+<p>Finally, it may be unethical to study the entire population. If you’re administering a treatment that might be harmful or withholding a treatment that might be beneficial.</p>
+<p><em>Step 1 in the Cycle of Research</em> is to design a study in order to obtain a suitable sample from the population or populations of interest. There are a number of ways doing this. These will be discussed in more detail later in this book.</p>
+</div>
+<div id="step-2-sample-to-statistic" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Step 2: Sample to Statistic</h3>
+<p>Once we have a sample, <em>Step 2 in the Cycle of Research</em> is to use the sample data to calculate statistics. A <em>statistic</em> is any number calculated from the sample data. The sample mean is a statistic. The sample variance is another statistic. In our example, we might measure the height of each boy in our study’s sample of 1,000 ten-year-old American boys and then calculate the average (or mean) height. That average height is a statistic.</p>
+</div>
+<div id="step-3-statistic-to-parameter" class="section level3" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Step 3: Statistic to Parameter</h3>
+<p>Step 3 in the Cycle of Research is to use sample statistics to estimate population parameters. A <em>parameter</em> is a variable which describes some aspect of the population, but whose true value is unknown. The population mean is a parameter. The population variance is another parameter. In our example, the population parameter of interest is the average height of ALL ten-year-old boys in the U.S. The true value of this parameter is unknown because it is not possible to measure the heights of all ten-year-old American boys at once.</p>
+<p>Sample statistics can be used as estimates of the unknown population parameters. The sample mean is a good estimate of the population mean. The sample variance is a good estimate of the population variance. In our example, the mean height of the 1,000 ten-year-old boys in our study’s sample is an estimate of the true mean height of ALL ten-year-old boys in the United States.</p>
+</div>
+<div id="step-4-parameter-to-population" class="section level3" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> Step 4: Parameter to Population</h3>
+<p>Step 4 in the Cycle of Research is to use the population parameter estimates we have obtained to <em>infer</em> something about the population we are interested in. <em>Statistical inference</em> is the process of drawing conclusions about a population on the basis of observations from a sample. In our example, we might want to know if ten-year-old American boys are taller now than they were fifty years ago. We could use the estimated true mean height of all ten-year-old American boys we obtained from our sample average in Step 3 and compare it to the value from fifty years ago. If the values were different, we could ask whether that difference is large enough to be <em>statistically significant</em>.</p>
+<p>Each time a researcher poses a scientific question and the investigation is deemed worthwhile and feasible, the scientific Cycle of Research begins again.</p>
+<p>The goal of this course is to develop your ability to do four things:</p>
+<ol style="list-style-type: decimal">
+<li>To understand the principles behind basic statistical analyses;</li>
+<li>To choose appropriate statistical analyses for a given scientific context;</li>
+<li>To carry out statistical analyses using R or SAS and understand the resulting output; and</li>
+<li>To read and interpret statistical results in the literature of your field of interest.</li>
+</ol>
+<p>The topics for the course will run from descriptive analyses to inferential analyses, such as confidence intervals, hypothesis tests, and linear regression.</p>
+</div>
+</div>
+<div id="scales-of-measurement" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Scales of Measurement</h2>
+<p>There are two broad types of measurement scales: <em>categorical</em> and <em>numerical</em>.</p>
+<p>Categorical scales are <em>qualitative</em>. Examples of variables measured on a categorical scale include sex, blood type, race, or disease status. The data at an individual level consist of what category that individual falls into (for example: male or female). The data at the study level are the number of study participants in each category (for example: how many men and how many women were included in the study).</p>
+<p>Numerical scales are <em>quantitative</em>. Examples of variables measured on a numerical scale include weight, height, survival time, or blood pressure. Variables measured on a numerical scale will often have measurement units associated with them. For example, a person’s age might be measured in years, or in months, or, for newborns, in weeks or even days. On a numerical scale, the differences between numbers have meaning. The difference between 32 years and 33 years of age has the same meaning as the difference between 85 years and 86 years of age. All variables measured on numerical scales are therefore “interval variables.”</p>
+<div id="categorical-scales" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Categorical Scales</h3>
+<p>Categorical measurement scales can be further divided into <em>nominal</em> scales and <em>ordinal</em> scales.</p>
+<p>Nominal scales have two or more categories with no natural ordering. For example, religious affiliation could be described on nominal scale using the categories of Catholic, Protestant, Jewish, Muslim, Hindu, Buddhist, Other. The order of listing the categories is irrelevant. Examples of variables measured on a nominal scale include sex, race, blood type, or marital status.</p>
+<p>A <em>binary scale</em> is a special case of a nominal scale, in which there are only two categories, such as “Male”/”Female” or “Child”/”Adult”. The responses to any question with a “Yes”/”No” answer are measured on a binary scale. Common binary scale measurements in medicine and public health include disease status (“Has the disease,” “Does not have the disease”) and diagnostic test result (“positive,” “negative”). (CHRIS - I don’t know if I buy that binary scales are a special case of a nominal scale. Your examples are ordinal).</p>
+<p><em>Ordinal scales</em> have two or more categories that do have a natural ordering. Examples of variables measured on an ordinal scale include Apgar score, tumor stage, Likert-type scale survey questions, or social class. On an ordinal scale, numerical assignments are relative and do not represent any interval relationship between categories. For example, Apgar scores for newborn infants range from 0 to 10, and higher scores indicate better functioning, but the difference between scores of 8 and 9 may not have the same implications as the difference between scores of 2 and 3.</p>
+<p>A given variable can be measured using a number of different scales. The measurement scale that is used determines what type of variable it is. For example, smoking status could be measured on a binary scale, as “Smoker”/”Non-smoker”. It could be measured on a nominal scale, as “Ex-smoker,” “Current smoker,” “Never smoked.” It could even be measured on an ordinal scale, such as “Never smoked,” “Quit smoking &gt;10 years ago,” “Quit smoking 1-10 years ago,” “Quit smoking within the last year,” “Current smoker.” Smoking status could even be measured on a numeric scale by measuring the number of years a person smoked, or the number of years since they quit smoking.</p>
+<p>The type of variable, in turn, determines which <em>summary</em>, <em>plotting</em>, and <em>analysis</em> methods are appropriate.</p>
+<p>Categorical data is typically summarized in tables using the numbers (or counts or frequencies) and proportions (or percentages) of study participants in each category.</p>
+<p>Appropriate plots for categorical data include <em>bar graphs</em> and <em>pie charts</em>, which help the reader to visualize the number or proportion of study participants in each category.</p>
+<p>Summary statistics and plots are described in more detail later.</p>
+<p>We will explore a number of statistical analysis methods that are appropriate for categorical data in this book. These include the use of confidence intervals for estimating a single proportion, methods for comparing proportions in two groups, including confidence intervals for relative risks or odds ratios, and methods for comparing proportions in two or more groups, including Chi-square test, binomial exact test, or Fisher’s exact test.</p>
+</div>
+<div id="numerical-scales" class="section level3" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Numerical Scales</h3>
+<p>Numerical measurement scales can also be further divided, into <em>continuous scales</em> and <em>discrete scales</em>.</p>
+<p>Continuous scales describe characteristics that can take on any real number value, such as 98.7 or 52.63 or 0.014. Examples of variables that are measured using continuous scales include blood pressure, temperature, age, weight, or height.</p>
+<p>Discrete scales describe characteristics that can have only integer values. Examples of variables that are measured using discrete scales include the number of children in a family, the number of births in a year, or the number of accidents in a month.</p>
+<p>Continuous measurement scales can be further divided into <em>interval scales</em> and <em>ratio scales</em>.</p>
+<p>On an interval scale, the intervals or differences between values have the same meaning throughout the scale (as is true for any numeric scale), but the zero of the scale doesn’t mean “none” of the quantity of interest. For example, temperature is commonly measured on an interval scale (degrees C or degrees F). The difference between 32F and 33F has the same meaning as the difference between 97F and 98F; however, 0˚F does not mean “no temperature.” As a result, it would make no sense to compute or interpret <em>ratios</em> of temperatures. If the high temperature today in Phoenix, Arizona, is 80F and the high in Nome, Alaska, is 40F, it does not mean that Phoenix is twice as hot as Nome.</p>
+<p>On a ratio scale, both the differences between values and the ratios of values make sense. For example, weight is measured on a ratio scale. The difference between 10 kg and 11 kg has the same meaning as the difference between 35 kg and 36 kg. Furthermore, 0 kg means “no weight” so it makes sense to compute weight ratios. Something that weighs 50 kg is twice as heavy as something that weighs 25 kg.</p>
+<p>Continuous data is typically summarized in tables using means and standard deviations, or medians and ranges or inter-quartile ranges. If the variable is a ratio variable, reporting the coefficient of variation (CV) is also appropriate.</p>
+<p>Appropriate plots for continuous data include dot plots, box plots, histograms, and scatterplots (for comparing two continuous variables).</p>
+<p>Summary statistics and plots are described in more detail later.</p>
+<p>In this book, we will explore a number of statistical analysis methods that are appropriate for continuous data. We will cover the use of confidence intervals to estimate a mean, confidence intervals or t-tests to compare two means, and analysis of variance (ANOVA) to compare three or more means. We will cover using correlation and simple linear regression to explore relationships between two continuous variables. We will also learn how multiple linear regression is used to model the relationship between a continuous outcome and multiple possible predictors (including treatment or exposure), and to adjust for potential confounding factors.</p>
+<p>One important note: there are relationships between numerical and categorical scales that can sometimes make it tricky to determine what kind of measurement scale is being used.</p>
+<p>A variable measured on a numerical scale can be converted to a variable measured on a categorical scale. This may be called “categorizing” the variable. For example, age can be measured on a continuous numerical scale, in years. It can also be categorized by dividing the continuum of years into age group, such as “0-5 years,” “6-10 years,” “11-19 years,” “20-39 years,” “40-59 years,” “60-79 years,” and “80+ years.” Age group, in this case, is an ordinal categorical variable. Age could also be categorized by dividing the continuum into two groups, such as “child” and “adult.” In this case, age group is a binary nominal categorical variable.</p>
+<p>A variable measured on a categorical scale can be coded numerically. For example, the ordinal variable social class could be coded numerically as 0=Lower class, 1=Working class, 2=Lower middle class, 3=Upper middle class, 4=Upper class. It is important to remember that coding categorical data using numbers does not make the data numeric. The codes simply represent the names of the categories.</p>
+<p>The nominal variable religious affiliation could be coded numerically as 1=Catholic, 2=Protestant, 3=Jewish, 4=Muslim, 5=Hindu, 6=Buddhist, 7=Other. Remember that coding religious affiliation numerically does not make it into an ordinal variable; there is no inherent ordering to the religious affiliation categories.</p>
+<p>Let’s look at a real example. The <em>Blood1</em> dataset in the Stat2Data package contains measurements of three variables related to blood pressure, taken on 500 adults.</p>
+<p>The variable <em>SystolicBP</em> is the systolic blood pressure measured for each person, in millimeters of mercury (mm Hg).
+The variable <em>Smoke</em> is the smoking status recorded for each person, labeled a “1” if the individual was a smoker or a “0” if the individual was not a smoker.</p>
+<p>The variable <em>Overwt</em> is the weight group recorded for each person, labeled a “0” if the individual was in the normal weight range, “1” if the individual was overweight, and 2 if the individual was obese.</p>
+<table border="1">
+<tr>
+<th>
+</th>
+<th>
+SystolicBP
+</th>
+<th>
+Smoke
+</th>
+<th>
+Overwt
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td align="right">
+133
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+2
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td align="right">
+115
+</td>
+<td align="right">
+1
+</td>
+<td align="right">
+0
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td align="right">
+140
+</td>
+<td align="right">
+1
+</td>
+<td align="right">
+1
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td align="right">
+132
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+2
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td align="right">
+133
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+1
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td align="right">
+138
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+1
+</td>
+</tr>
+</table>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="literature.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["biostat-book.pdf", "biostat-book.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
