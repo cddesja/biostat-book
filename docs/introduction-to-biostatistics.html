@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Introduction to Biostatistics | Biostatistics (DRAFT)</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Introduction to Biostatistics | Biostatistics (DRAFT)" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Introduction to Biostatistics | Biostatistics (DRAFT)" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Christopher Desjardins, Laura Le, and Ann Brearley" />
+
+
+<meta name="date" content="2021-05-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="literature.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction to Biostatstics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="introduction-to-biostatistics.html"><a href="introduction-to-biostatistics.html"><i class="fa fa-check"></i><b>2</b> Introduction to Biostatistics</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-biostatistics.html"><a href="introduction-to-biostatistics.html#cycle-of-research"><i class="fa fa-check"></i><b>2.1</b> Cycle of Research</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="introduction-to-biostatistics.html"><a href="introduction-to-biostatistics.html#step-1-population-to-sample"><i class="fa fa-check"></i><b>2.1.1</b> Step 1: Population to Sample</a></li>
+<li class="chapter" data-level="2.1.2" data-path="introduction-to-biostatistics.html"><a href="introduction-to-biostatistics.html#step-2-sample-to-statistic"><i class="fa fa-check"></i><b>2.1.2</b> Step 2: Sample to Statistic</a></li>
+<li class="chapter" data-level="2.1.3" data-path="introduction-to-biostatistics.html"><a href="introduction-to-biostatistics.html#step-3-statistic-to-parameter"><i class="fa fa-check"></i><b>2.1.3</b> Step 3: Statistic to Parameter</a></li>
+<li class="chapter" data-level="2.1.4" data-path="introduction-to-biostatistics.html"><a href="introduction-to-biostatistics.html#step-4-parameter-to-population"><i class="fa fa-check"></i><b>2.1.4</b> Step 4: Parameter to Population</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-biostatistics.html"><a href="introduction-to-biostatistics.html#scales-of-measurement"><i class="fa fa-check"></i><b>2.2</b> Scales of Measurement</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="introduction-to-biostatistics.html"><a href="introduction-to-biostatistics.html#categorical-scales"><i class="fa fa-check"></i><b>2.2.1</b> Categorical Scales</a></li>
+<li class="chapter" data-level="2.2.2" data-path="introduction-to-biostatistics.html"><a href="introduction-to-biostatistics.html#numerical-scales"><i class="fa fa-check"></i><b>2.2.2</b> Numerical Scales</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-biostatistics.html"><a href="introduction-to-biostatistics.html#summarizing-data"><i class="fa fa-check"></i><b>2.3</b> Summarizing Data</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="introduction-to-biostatistics.html"><a href="introduction-to-biostatistics.html#categorical-data"><i class="fa fa-check"></i><b>2.3.1</b> Categorical Data</a></li>
+<li class="chapter" data-level="2.3.2" data-path="introduction-to-biostatistics.html"><a href="introduction-to-biostatistics.html#numerical-data"><i class="fa fa-check"></i><b>2.3.2</b> Numerical Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Biostatistics (DRAFT)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction-to-biostatistics" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Introduction to Biostatistics</h1>
+<p>What is <em>Biostatistics</em>? How does it fit within the larger field of research? What will you learn from this course? These are the questions that will be addressed in this lecture.</p>
+<p>Let’s begin with the question “What is statistics?”</p>
+<p>There are many definitions, but they all have similar themes.</p>
+<p>For many people (maybe even you), statistics is seen as a branch of mathematics. However, John Tukey, a famous statistician in the mid-1900’s, stated that “statistics is a science, not a branch of mathematics, but uses mathematical models as essential tools.” Just as engineering, chemistry, and economics use math as a tool but are seen as separate fields from math, so should statistics be distinguished from mathematics.</p>
+<p>Alan Agresti and Christine Franklin have described statistics as “the art and science of learning from data” (this is also the title of their introductory statistics textbook). The goal of statistics is to translate data into understanding of the real world. At the heart of it all is the word data.</p>
+<p>Examples of areas in which statistics is used include business, climate change research, manufacturing quality control, government policy, education, finance, and even sports (have you seen the movie Moneyball?).</p>
+<div id="cycle-of-research" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Cycle of Research</h2>
+<p>Medical or public health research, like all scientific research, begins with a <em>research question</em> about a population of interest. Biostatistical methods are used to help answer this research question. Let’s describe this process using the Cycle of Research diagram shown here.</p>
+<p><img src="biostat-book_files/figure-html/fig.cor-1.png" width="768" /></p>
+<div id="step-1-population-to-sample" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Step 1: Population to Sample</h3>
+<p>The scientific <em>Cycle of Research</em> begins with a <em>population</em>. A population is the complete set of individuals who share some common characteristics. The population is the group of people we are interested in learning about. The population of interest in a given study may be U.S. adult males, or it may be Finnish preschoolers, or it may be HIV-positive adults in South Africa. Perhaps we are interested, for example, in knowing how tall ten-year-old American boys are. The population in this case would be all ten-year-old boys in the U.S.</p>
+<p>When we want to answer a specific question about a particular population, typically we obtain a sample. A <em>sample</em> is a subset of the population of interest. The sample is the group of people we actually study. This is the group of people from whom data are collected. In our example, we might randomly sample 1,000 ten-year-old boys from the U.S. population to serve as our study’s sample.</p>
+<p>You may wonder, if the goal is to make some conclusions about the population, why not just collect data on the entire population? Samples are often studied instead of entire populations for several reasons.</p>
+<p>One reason is cost. Often it would be too expensive and/or too time-consuming to collect data from an entire population of interest. For example, perhaps we are interested in the blood pressures of residents of Massachusetts. It would be much too expensive to obtain blood pressure measurements from every resident of the state, so we obtain a sample of residents instead. Take a careful look at this figure. Note that the samples have different numbers of people in them, and different mean (or average) diastolic blood pressure values. Also note that none of the mean values for the samples are the same as the mean blood pressure for the population. We will explore these concepts later.</p>
+<p><INSERT FIGURE></p>
+<p>Another reason for using a sample instead of the population is feasibility. Studying the entire population may simply not be possible. For example, it is not possible to determine the effect of a new treatment on an entire population of patients if the treatment is not yet available to the entire population.</p>
+<p>A third reason is accuracy. Measurements from a study’s sample may be more accurate than measurements from a population. More time and effort can be devoted to carrying out the measurements for the smaller number of people in the sample than is feasible for an entire population. We also can’t measure everyone in the population at the same time in the same way. Measurements may change over time (as we have all seen with our weight). If we have to measure a lot of participants, we may need multiple people or instruments to do it, which can also decrease accuracy.</p>
+<p>Finally, it may be unethical to study the entire population. If you’re administering a treatment that might be harmful or withholding a treatment that might be beneficial.</p>
+<p><em>Step 1 in the Cycle of Research</em> is to design a study in order to obtain a suitable sample from the population or populations of interest. There are a number of ways doing this. These will be discussed in more detail later in this book.</p>
+</div>
+<div id="step-2-sample-to-statistic" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Step 2: Sample to Statistic</h3>
+<p>Once we have a sample, <em>Step 2 in the Cycle of Research</em> is to use the sample data to calculate statistics. A <em>statistic</em> is any number calculated from the sample data. The sample mean is a statistic. The sample variance is another statistic. In our example, we might measure the height of each boy in our study’s sample of 1,000 ten-year-old American boys and then calculate the average (or mean) height. That average height is a statistic.</p>
+</div>
+<div id="step-3-statistic-to-parameter" class="section level3" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Step 3: Statistic to Parameter</h3>
+<p>Step 3 in the Cycle of Research is to use sample statistics to estimate population parameters. A <em>parameter</em> is a variable which describes some aspect of the population, but whose true value is unknown. The population mean is a parameter. The population variance is another parameter. In our example, the population parameter of interest is the average height of ALL ten-year-old boys in the U.S. The true value of this parameter is unknown because it is not possible to measure the heights of all ten-year-old American boys at once.</p>
+<p>Sample statistics can be used as estimates of the unknown population parameters. The sample mean is a good estimate of the population mean. The sample variance is a good estimate of the population variance. In our example, the mean height of the 1,000 ten-year-old boys in our study’s sample is an estimate of the true mean height of ALL ten-year-old boys in the United States.</p>
+</div>
+<div id="step-4-parameter-to-population" class="section level3" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> Step 4: Parameter to Population</h3>
+<p>Step 4 in the Cycle of Research is to use the population parameter estimates we have obtained to <em>infer</em> something about the population we are interested in. <em>Statistical inference</em> is the process of drawing conclusions about a population on the basis of observations from a sample. In our example, we might want to know if ten-year-old American boys are taller now than they were fifty years ago. We could use the estimated true mean height of all ten-year-old American boys we obtained from our sample average in Step 3 and compare it to the value from fifty years ago. If the values were different, we could ask whether that difference is large enough to be <em>statistically significant</em>.</p>
+<p>Each time a researcher poses a scientific question and the investigation is deemed worthwhile and feasible, the scientific Cycle of Research begins again.</p>
+<p>The goal of this course is to develop your ability to do four things:</p>
+<ol style="list-style-type: decimal">
+<li>To understand the principles behind basic statistical analyses;</li>
+<li>To choose appropriate statistical analyses for a given scientific context;</li>
+<li>To carry out statistical analyses using R or SAS and understand the resulting output; and</li>
+<li>To read and interpret statistical results in the literature of your field of interest.</li>
+</ol>
+<p>The topics for the course will run from descriptive analyses to inferential analyses, such as confidence intervals, hypothesis tests, and linear regression.</p>
+</div>
+</div>
+<div id="scales-of-measurement" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Scales of Measurement</h2>
+<p>There are two broad types of measurement scales: <em>categorical</em> and <em>numerical</em>.</p>
+<p>Categorical scales are <em>qualitative</em>. Examples of variables measured on a categorical scale include sex, blood type, race, or disease status. The data at an individual level consist of what category that individual falls into (for example: male or female). The data at the study level are the number of study participants in each category (for example: how many men and how many women were included in the study).</p>
+<p>Numerical scales are <em>quantitative</em>. Examples of variables measured on a numerical scale include weight, height, survival time, or blood pressure. Variables measured on a numerical scale will often have measurement units associated with them. For example, a person’s age might be measured in years, or in months, or, for newborns, in weeks or even days. On a numerical scale, the differences between numbers have meaning. The difference between 32 years and 33 years of age has the same meaning as the difference between 85 years and 86 years of age. All variables measured on numerical scales are therefore “interval variables.”</p>
+<div id="categorical-scales" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Categorical Scales</h3>
+<p>Categorical measurement scales can be further divided into <em>nominal</em> scales and <em>ordinal</em> scales.</p>
+<p>Nominal scales have two or more categories with no natural ordering. For example, religious affiliation could be described on nominal scale using the categories of Catholic, Protestant, Jewish, Muslim, Hindu, Buddhist, Other. The order of listing the categories is irrelevant. Examples of variables measured on a nominal scale include sex, race, blood type, or marital status.</p>
+<p>A <em>binary scale</em> is a special case of a nominal scale, in which there are only two categories, such as “Male”/”Female” or “Child”/”Adult”. The responses to any question with a “Yes”/”No” answer are measured on a binary scale. Common binary scale measurements in medicine and public health include disease status (“Has the disease,” “Does not have the disease”) and diagnostic test result (“positive,” “negative”). (CHRIS - I don’t know if I buy that binary scales are a special case of a nominal scale. Your examples are ordinal).</p>
+<p><em>Ordinal scales</em> have two or more categories that do have a natural ordering. Examples of variables measured on an ordinal scale include Apgar score, tumor stage, Likert-type scale survey questions, or social class. On an ordinal scale, numerical assignments are relative and do not represent any interval relationship between categories. For example, Apgar scores for newborn infants range from 0 to 10, and higher scores indicate better functioning, but the difference between scores of 8 and 9 may not have the same implications as the difference between scores of 2 and 3.</p>
+<p>A given variable can be measured using a number of different scales. The measurement scale that is used determines what type of variable it is. For example, smoking status could be measured on a binary scale, as “Smoker”/”Non-smoker”. It could be measured on a nominal scale, as “Ex-smoker,” “Current smoker,” “Never smoked.” It could even be measured on an ordinal scale, such as “Never smoked,” “Quit smoking &gt;10 years ago,” “Quit smoking 1-10 years ago,” “Quit smoking within the last year,” “Current smoker.” Smoking status could even be measured on a numeric scale by measuring the number of years a person smoked, or the number of years since they quit smoking.</p>
+<p>The type of variable, in turn, determines which <em>summary</em>, <em>plotting</em>, and <em>analysis</em> methods are appropriate.</p>
+<p>Categorical data is typically summarized in tables using the numbers (or counts or frequencies) and proportions (or percentages) of study participants in each category.</p>
+<p>Appropriate plots for categorical data include <em>bar graphs</em> and <em>pie charts</em>, which help the reader to visualize the number or proportion of study participants in each category.</p>
+<p>Summary statistics and plots are described in more detail later.</p>
+<p>We will explore a number of statistical analysis methods that are appropriate for categorical data in this book. These include the use of confidence intervals for estimating a single proportion, methods for comparing proportions in two groups, including confidence intervals for relative risks or odds ratios, and methods for comparing proportions in two or more groups, including Chi-square test, binomial exact test, or Fisher’s exact test.</p>
+</div>
+<div id="numerical-scales" class="section level3" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Numerical Scales</h3>
+<p>Numerical measurement scales can also be further divided, into <em>continuous scales</em> and <em>discrete scales</em>.</p>
+<p>Continuous scales describe characteristics that can take on any real number value, such as 98.7 or 52.63 or 0.014. Examples of variables that are measured using continuous scales include blood pressure, temperature, age, weight, or height.</p>
+<p>Discrete scales describe characteristics that can have only integer values. Examples of variables that are measured using discrete scales include the number of children in a family, the number of births in a year, or the number of accidents in a month.</p>
+<p>Continuous measurement scales can be further divided into <em>interval scales</em> and <em>ratio scales</em>.</p>
+<p>On an interval scale, the intervals or differences between values have the same meaning throughout the scale (as is true for any numeric scale), but the zero of the scale doesn’t mean “none” of the quantity of interest. For example, temperature is commonly measured on an interval scale (degrees C or degrees F). The difference between 32F and 33F has the same meaning as the difference between 97F and 98F; however, 0˚F does not mean “no temperature.” As a result, it would make no sense to compute or interpret <em>ratios</em> of temperatures. If the high temperature today in Phoenix, Arizona, is 80F and the high in Nome, Alaska, is 40F, it does not mean that Phoenix is twice as hot as Nome.</p>
+<p>On a ratio scale, both the differences between values and the ratios of values make sense. For example, weight is measured on a ratio scale. The difference between 10 kg and 11 kg has the same meaning as the difference between 35 kg and 36 kg. Furthermore, 0 kg means “no weight” so it makes sense to compute weight ratios. Something that weighs 50 kg is twice as heavy as something that weighs 25 kg.</p>
+<p>Continuous data is typically summarized in tables using means and standard deviations, or medians and ranges or inter-quartile ranges. If the variable is a ratio variable, reporting the coefficient of variation (CV) is also appropriate.</p>
+<p>Appropriate plots for continuous data include dot plots, box plots, histograms, and scatterplots (for comparing two continuous variables).</p>
+<p>Summary statistics and plots are described in more detail later.</p>
+<p>In this book, we will explore a number of statistical analysis methods that are appropriate for continuous data. We will cover the use of confidence intervals to estimate a mean, confidence intervals or t-tests to compare two means, and analysis of variance (ANOVA) to compare three or more means. We will cover using correlation and simple linear regression to explore relationships between two continuous variables. We will also learn how multiple linear regression is used to model the relationship between a continuous outcome and multiple possible predictors (including treatment or exposure), and to adjust for potential confounding factors.</p>
+<p>One important note: there are relationships between numerical and categorical scales that can sometimes make it tricky to determine what kind of measurement scale is being used.</p>
+<p>A variable measured on a numerical scale can be converted to a variable measured on a categorical scale. This may be called “categorizing” the variable. For example, age can be measured on a continuous numerical scale, in years. It can also be categorized by dividing the continuum of years into age group, such as “0-5 years,” “6-10 years,” “11-19 years,” “20-39 years,” “40-59 years,” “60-79 years,” and “80+ years.” Age group, in this case, is an ordinal categorical variable. Age could also be categorized by dividing the continuum into two groups, such as “child” and “adult.” In this case, age group is a binary nominal categorical variable.</p>
+<p>A variable measured on a categorical scale can be coded numerically. For example, the ordinal variable social class could be coded numerically as 0=Lower class, 1=Working class, 2=Lower middle class, 3=Upper middle class, 4=Upper class. It is important to remember that coding categorical data using numbers does not make the data numeric. The codes simply represent the names of the categories.</p>
+<p>The nominal variable religious affiliation could be coded numerically as 1=Catholic, 2=Protestant, 3=Jewish, 4=Muslim, 5=Hindu, 6=Buddhist, 7=Other. Remember that coding religious affiliation numerically does not make it into an ordinal variable; there is no inherent ordering to the religious affiliation categories.</p>
+<p>Let’s look at a real example. The <em>Blood1</em> dataset in the Stat2Data package contains measurements of three variables related to blood pressure, taken on 500 adults.</p>
+<p>The variable <em>SystolicBP</em> is the systolic blood pressure measured for each person, in millimeters of mercury (mm Hg).
+The variable <em>Smoke</em> is the smoking status recorded for each person, labeled a “1” if the individual was a smoker or a “0” if the individual was not a smoker.</p>
+<p>The variable <em>Overwt</em> is the weight group recorded for each person, labeled a “0” if the individual was in the normal weight range, “1” if the individual was overweight, and 2 if the individual was obese.</p>
+<table border="1">
+<caption align="bottom">
+Table: <span id="tab:blood1">Table 2.1: </span>. First 10 participants in the Blood1 dataset
+</caption>
+<tr>
+<th>
+</th>
+<th>
+SystolicBP
+</th>
+<th>
+Smoke
+</th>
+<th>
+Overwt
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td align="right">
+133
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+2
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td align="right">
+115
+</td>
+<td align="right">
+1
+</td>
+<td align="right">
+0
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td align="right">
+140
+</td>
+<td align="right">
+1
+</td>
+<td align="right">
+1
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td align="right">
+132
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+2
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td align="right">
+133
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+1
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td align="right">
+138
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+1
+</td>
+</tr>
+<tr>
+<td align="right">
+7
+</td>
+<td align="right">
+133
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+2
+</td>
+</tr>
+<tr>
+<td align="right">
+8
+</td>
+<td align="right">
+67
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+</tr>
+<tr>
+<td align="right">
+9
+</td>
+<td align="right">
+138
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+</tr>
+<tr>
+<td align="right">
+10
+</td>
+<td align="right">
+130
+</td>
+<td align="right">
+1
+</td>
+<td align="right">
+0
+</td>
+</tr>
+</table>
+<p>The data for the first ten participants in the <em>Blood1</em> dataset are shown in Table <a href="introduction-to-biostatistics.html#tab:blood1">2.1</a>. Let’s examine these variables one by one.</p>
+<ol style="list-style-type: decimal">
+<li><p>The first variable listed is systolic blood pressure, <em>SystolicBP.</em> This variable is numeric because the values are numbers and have units of measurement. Blood pressure is typically reported to the nearest one millimeter of mercury, as here, but it is nevertheless a continuous variable, since you could have a blood pressure of 138.2 mmHg or 74.5 mmHg. Furthermore, blood pressure is measured on a ratio scale, since a blood pressure of zero mmHg means no pressure, and a blood pressure of 140 mmHg means there is twice as much pressure as a blood pressure of 70 mmHg. The <em>SystolicBP</em> variable in this dataset is therefore a numeric, continuous, ratio variable.</p></li>
+<li><p>The second variable listed is smoking status, <em>Smoke.</em> This variable is categorical, since it tells you which category the person falls into: smoker or non-smoker. The data happen to be coded here as “1” for smoker and “0” for non-smoker, but it is not numeric data. The data could just as well have been coded “Y” for smoker and “N” for nonsmoker, or even as the words “smoker” and “nonsmoker.” This variable is not ordinal. While you may feel that not smoking is better than smoking, there’s no inherent ordering to the two categories. Finally, this variable is binary, since it has only two categories, smoker and non-smoker. The <em>Smoke</em> variable in this dataset is therefore a categorical, binary variable.</p></li>
+<li><p>The third variable listed is weight status, <em>Overwt.</em> This variable is categorical, since it tells you which category the person falls into: normal weight, overweight, or obese. The data happen to be coded here using the numbers “0” for normal, “1” for overweight, and “2” for obese, but they could just as well have been coded “1,” “2” and “3,” or “10,” “50,” and “300,” or “A,” “B,” and “C,” or even as the words, “normal,” “overweight,” and “obese.” This variable is ordinal, since there is an inherent ordering to the categories that matches the numbers: overweight feels like it’s “in between” normal and obese, just as “1” is between “0” and “2.” Note that there is an order to the categories, but not a magnitude: there is no sense that obese (coded “2”) is twice as much weight as overweight (coded “1”); and there is no sense that normal (coded “0”) means “no weight.” This variable is not binary, though, since there are more than two categories. The <em>Overwt</em> variable in this dataset is therefore a categorical, ordinal variable.</p></li>
+</ol>
+<p>One further note about the <em>Overwt</em> variable. It is likely that this variable was derived from a body mass index (BMI) measurement by choosing cut-points: for example, perhaps normal was set as BMI values of 24.9 or below, overweight as BMI values of 25.0 to 29.9 and obese as BMI values of 30.0 or more. This is an example of “categorizing” an underlying numeric variable.</p>
+</div>
+</div>
+<div id="summarizing-data" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Summarizing Data</h2>
+<div id="categorical-data" class="section level3" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Categorical Data</h3>
+<p>Recall that categorical variables are variables that are qualitative, and can be either nominal or ordinal.</p>
+<p>In the Blood Pressure example, there were two variables in the dataset that were categorical: <em>Overwt</em> and <em>Smoke</em>. We summarize categorical data by:</p>
+<p>The <strong>number</strong> of observations in each category, which we find by simply tallying the number of observations in that category.
+The <strong>proportion</strong> of observations in each category, which we find my taking the number in each category and dividing by the total number of observations in the study. These proportions will be a value between 0 and 1.</p>
+<p>The <strong>percentage</strong> of observations in each category, which is the proportion multiplied by 100, followed by a percentage sign.</p>
+<p>While not required, it often helps to summarize the data in a table.</p>
+<p>Let’s go through an example to see how these summary measures work, using the smoking status variable from the Blood Pressure example.</p>
+<p>Of the 500 participants, 266 were smokers and 234 were nonsmokers. In this dataset, we see that there are more smokers than nonsmokers.</p>
+<p>It is appropriate to compare two numbers, or counts, when the denominator is the same or very similar. But, for example, if we were comparing the number of smokers between males and females and the total number of males and females was different (for example, 100 males vs. 50 females), it would not be appropriate to compare the counts of smokers between males and females.</p>
+<p>Rather, it is more appropriate to compare groups using proportions and percentages. In the Blood Pressure dataset, the proportion of smokers is 0.532, or 53.2% of the individuals are smokers, and the proportion of nonsmokers is 0.468, or 46.8% of the individuals are not smokers. (Note: Percentages are more common in reports and articles, and may be reported without the percentage sign next to the number. If this happens, authors will often denote somewhere in the table that the number represents a percent.)</p>
+<p>Pie charts are one way that we can graphically represent categorical data. Pie charts allow us to visualize the differences between proportions in the various categories. To create the pie chart, we need to know the proportion or percentage in each category.</p>
+<p>In the Blood Pressure example, we saw that there were about as many smokers as nonsmokers, with slightly more smokers. We can visually see that in the pie chart as well; it looks like the “smoker” piece of the pie has more than the “nonsmoker” piece. However, it’s not exactly clear how much more.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="introduction-to-biostatistics.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Insert pie chart</span></span></code></pre></div>
+<p>Because of this issue with pie charts (the difficulty in comparing slices and estimating percentages), statisticians tend to prefer other graphical methods for categorical data.(CHRIS - There’s perception studies about this)</p>
+<p>A better graphical summary for categorical data (and the one preferred by many statisticians) is the bar plot. The bar plot can be used with any summary measure: number, proportion, or percentage. Bar plots are often arranged so the categories are on the x- (horizontal) axis and the summary measure is on the y- (vertical) axis; however, the opposite arrangement can be used as well (i.e., categories on y-axis and summary measure on x-axis).</p>
+<p>As with the pie chart, we can see which categories contain more participants and which contain fewer: the taller bars occur for the categories with more participants (or a higher proportion) and the shorter bars indicate the categories with fewer participants. Unlike the pie chart, the y-axis tells us the number or proportion for each category. As a result, we get both the visual comparison and the actual value.</p>
+<p>As we did with the pie chart, we can visually see that there are more smokers than nonsmokers. However, we can also see the approximate numbers in each category: there are about 30 more smokers than nonsmokers.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="introduction-to-biostatistics.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="introduction-to-biostatistics.html#cb3-2" aria-hidden="true" tabindex="-1"></a>Blood1<span class="sc">$</span>smoke.f <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(Blood1<span class="sc">$</span>Smoke <span class="sc">==</span> <span class="dv">0</span>, <span class="st">&quot;Nonsmoker&quot;</span>, <span class="st">&quot;Smoker&quot;</span>)</span>
+<span id="cb3-3"><a href="introduction-to-biostatistics.html#cb3-3" aria-hidden="true" tabindex="-1"></a>Blood1 <span class="sc">|</span><span class="er">&gt;</span></span>
+<span id="cb3-4"><a href="introduction-to-biostatistics.html#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(smoke.f)) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="introduction-to-biostatistics.html#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="introduction-to-biostatistics.html#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="introduction-to-biostatistics.html#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Count&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="introduction-to-biostatistics.html#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb3-9"><a href="introduction-to-biostatistics.html#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-10"><a href="introduction-to-biostatistics.html#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb3-11"><a href="introduction-to-biostatistics.html#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">260</span>, <span class="dv">50</span>))</span></code></pre></div>
+<p><img src="biostat-book_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="numerical-data" class="section level3" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Numerical Data</h3>
+<p>There are many different ways to summarize numerical data. The most common summaries are measures of center (such as means or medians) and measures of spread (such as standard deviations or interquartile ranges). In addition, we typically want to note any extreme or unusual observations in the data.</p>
+<p>If we wanted to pick one number to represent a set of data, we’d probably want to pick the value that indicates the center or central tendency of the data values, or the one that is a “typical” or average value.</p>
+<p>However, we know that there will (most likely) be variability in our data. That is, not all of the values will equal each other. So, the measure of center should not be our only summary measure for numerical data. We are also interested in how spread out, or how varied, our data values are from one another. We do this by computing measures of spread.</p>
+<p>There are other summary measures that we may compute as well to understand our data, such as percentiles or the minimum or maximum.</p>
+<p>Finally, we want to note if there are any observations that are very different or unusual from all of the other observations in the sample.</p>
+<div id="measures-of-center" class="section level4" number="2.3.2.1">
+<h4><span class="header-section-number">2.3.2.1</span> Measures of Center</h4>
+<div id="mean" class="section level5" number="2.3.2.1.1">
+<h5><span class="header-section-number">2.3.2.1.1</span> Mean</h5>
+<p>Some measures of center use the values of the variable. The individual values in the sample are denoted as <span class="math inline">\(x\)</span> with a subscript <span class="math inline">\(i\)</span>, where <span class="math inline">\(i\)</span> runs from 1 to the number of observations in our data. For example, the first observation is <span class="math inline">\(x_1\)</span>, the second observation is <span class="math inline">\(x_2\)</span>, and so on. The mean (or average) value, noted as <span class="math inline">\(\bar{x}\)</span> (pronounced x-bar), is the result of adding up all the individual values, <span class="math inline">\(x_i\)</span>, and then dividing by the number of observations in our sample, denoted by <span class="math inline">\(n\)</span>.</p>
+<p><span class="math display">\[
+\bar{x} = \frac{\Sigma x_i}{n}
+\]</span>
+In our Blood Pressure example, when we add up the blood pressure measurements for all 500 adults and divide by 500, we get a mean value of 145 mm Hg.</p>
+<p>Note that the mean is calculated using all values in the dataset. If there is one observation or several observations that are much higher or lower than the rest of the data, it will raise or lower the mean more than it would if those observations were similar to the rest of the data.</p>
+</div>
+<div id="median" class="section level5" number="2.3.2.1.2">
+<h5><span class="header-section-number">2.3.2.1.2</span> Median</h5>
+<p>Sometimes, it makes more sense to summarize the data by the order as opposed to by the value. Why? Because sometimes there are data points that are so different from the rest that they overly influence the mean. For example, let’s say our data points were 1, 2, 3, 4, and 100. If we took the average of these 5 data points, we would get the value 22. But does 22 seem to be typical? Or the center value? It is a lot higher than four of the values and much much lower than the fifth. It doesn’t seem to represent any portion of the data very well.</p>
+<p>One of the features of numerical data is that you can put it in order from smallest to largest. Let’s take advantage of this additional feature of numerical data to create different summaries for the typical value and the spread of the data.</p>
+<p>When we order the observations from smallest to largest, there will be a middle value. The <strong>median</strong> is the value of the middle observation in the dataset. (If there are an even number of observations in the dataset, then the median is the average of the two middle values.) The median is also referred to as the <strong>50th percentile</strong> because 50% of the observations are below the median and 50% are above the median.</p>
+<p>For the Blood Pressure dataset, if we order the observations from smallest to largest, the middle observation would be between the 250<span class="math inline">\(^{th}\)</span> and 251<span class="math inline">\(^{st}\)</span> observations (because there are an even number, 500, of observations in this dataset). When we average these two values, we get a median of 140.5 mmHg, which is similar, but not the same, as what we calculated for the mean.</p>
+<p>Note that the median is calculated using only the middle value or values. If one observation in the data is much higher or lower than the rest of the data, it will be part of the order of the data, but the value itself is not used to find the median. Therefore, observations that are very different (either higher or lower) than most of the data do not affect the value of the median.</p>
+</div>
+<div id="other-measures-of-center" class="section level5" number="2.3.2.1.3">
+<h5><span class="header-section-number">2.3.2.1.3</span> Other Measures of Center</h5>
+<p>Other measures of center that are encountered in the medince and public health include the <strong>trimmed mean</strong> and the <strong>geometric mean</strong>.</p>
+<p>To calculate a trimmed mean, a specified percentage of the highest and lowest values for that variable are excluded before calculation of the mean. For example, the 10% trimmed mean would exclude the highest 10% and lowest 10% of the observations and then a mean would be calculated based on the included observations (the middle 80% of the data). This makes the trimmed mean less sensitive to those observations that are much higher or lower than the rest of the data.</p>
+<p>To calculate the geometric mean, the data are first log-transformed, then the mean is calculated on the log scale, and lastly, the mean is transformed back to the original scale. The geometric mean can be useful for summarizing highly skewed data.</p>
+</div>
+</div>
+<div id="measures-of-spread" class="section level4" number="2.3.2.2">
+<h4><span class="header-section-number">2.3.2.2</span> Measures of Spread</h4>
+<div id="variance-and-standard-deviation" class="section level5" number="2.3.2.2.1">
+<h5><span class="header-section-number">2.3.2.2.1</span> Variance and Standard Deviation</h5>
+<p>One common measure of the spread of numerical data is the variance (or the related measure, the standard deviation).</p>
+<p><span class="math display">\[\text{Variance}: s^2 = \frac{\Sigma(x_i - \bar{x})^2}{n - 1}\]</span></p>
+<p>The variance, denoted <span class="math inline">\(s^2\)</span>, is calculated in several steps. The first step is taking the actual value for each observation, denoted <span class="math inline">\(x_i\)</span>, as before, and subtracting the average value, <span class="math inline">\(\bar{x}\)</span>. This difference is called the <strong>deviation</strong>, <span class="math inline">\(x_i – \bar{x}\)</span>. Values that are far from the mean will give us large deviations, while values close to the mean will give us small deviations. Values that are below the mean will give us negative deviations, while values above the mean will give us positive deviations.</p>
+<p>However, we need to pull all these deviations into one number. Note that, because we are subtracting the average, some deviations will be negative and some will be positive. If we simply add up these values, the negative and positive deviations will cancel each other out, and the sum will be zero, which is not a useful measure of the spread of the data. Our goal is to quantify the difference from the mean, but we don’t really care if the value is below or above the mean. One way we could emphasize the difference is to <em>square the difference</em>. Then, the focus is on the size of the difference, as opposed to whether the value is above or below the average. (Note that we could also take the absolute value, but it is easier mathematically to work with the squares of the differences.)</p>
+<p>The second step, therefore, is to add up the squares of the deviations for all observations in the sample. This is sometimes called the <em>sum of squares</em>.</p>
+<p>The third and last step is to divide the sum of squares by the sample size n - 1, giving a single number called the variance. The variance is a modified average of the squared deviations. We use n - 1 instead of n because it gives a less <em>biased</em> estimate of the variance for all potential participants.</p>
+<p>The units for variance are the units of the variable squared. Because of this, it is hard to directly interpret the variance value. We typically take the square root of the variance so that the units of measurement match the original data. When we do this, we obtain the <strong>standard deviation</strong>. The standard deviation can be interpreted as the average deviation of the observations away from the mean.</p>
+<p><span class="math display">\[
+\text{Standard Deviation (SD)}: s = \sqrt{s^2}
+\]</span></p>
+<p>Note that, like the mean, we use all observations in the data to find the standard deviation. So if one observation is much higher or much lower than the rest of the data, it will influence the value of the variance and standard deviation.</p>
+<p>Let’s calculate the variance and standard deviation for the Blood Pressure example.</p>
+<p><span class="math display">\[s^2 = \frac{(133 - 145)^2 + (115 - 145)^2 + \dots + (180 - 145)^2 + (174 - 145)^2}{500 - 1} = 783.72 \text{ mm Hg}^2\]</span></p>
+<p>We find the deviations between the individual values and the sample mean of 145, square those deviations, add up all the squared deviations, and divide by n - 1, which is 499, and we get a variance of almost 784 mm Hg squared.</p>
+<p><span class="math display">\[
+s = \sqrt{783.72} = 27.99 \text{ mm Hg}
+\]</span></p>
+<p>Taking the square root, we find that the standard deviation is almost 28 mm Hg. That is, the average deviation away from the mean for the systolic BP variable is roughly 28 mm Hg.</p>
+</div>
+<div id="interquartile-range" class="section level5" number="2.3.2.2.2">
+<h5><span class="header-section-number">2.3.2.2.2</span> Interquartile Range</h5>
+<p>Another common measure of the spread of numerical data is the <strong>interquartile range</strong>, or <strong>IQR</strong>. This measure, like the median, is based on the order of the observations, not on their values.</p>
+<p>The interquartile range is calculated from the first and third quartiles of the data and is the range of the middle 50% of the data. The first quartile (or 25th percentile) is the median of the lower half of the data. The third quartile (or 75th percentile) is the median of the upper half of the data. To obtain the interquartile range, we subtract the first quartile from the third quartile.</p>
+<p>Note that like the median, we order the data from smallest to largest and focus only on the values for the middle half, from Q1 through Q3. So if one observation in the data is much higher or much lower than the rest of the data, it won’t affect the value of the interquartile range.</p>
+<p>Also note that the exact definition of the median, and thus of the quartiles, varies slightly from one software package to another. For small datasets, the median and IQR given to you by software may differ slightly from the values you obtain by hand, but they will be close. For large datasets, the differences will be negligible.</p>
+<p>What is the interquartile range for the Blood Pressure data?</p>
+<p>The first quartile (the 25th percentile) is the average of the 125th and 126th values, which is 130 mm Hg.
+The third quartile (75th percentile) is the average of the 375th and 376th values, which is 162.5 mm Hg.</p>
+<p>The interquartile range is the difference between 162.5 and 130, which is 32.5 mmHg. This represents the range of values for the middle 50% of the data.</p>
+<p>(Note that the IQR for this dataset happens to be a bit bigger than the standard deviation.)</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="literature.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["biostat-book.pdf", "biostat-book.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
