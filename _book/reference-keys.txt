@@ -9,6 +9,16 @@ step-4-parameter-to-population
 scales-of-measurement
 categorical-scales
 numerical-scales
+summarizing-data
+categorical-data
+numerical-data
+measures-of-center
+mean
+median
+other-measures-of-center
+measures-of-spread
+variance-and-standard-deviation
+interquartile-range
 literature
 methods
 applications

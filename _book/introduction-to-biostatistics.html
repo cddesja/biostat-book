@@ -134,7 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">Introduction to Biostatstics</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
@@ -151,6 +151,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.2.1" data-path="introduction-to-biostatistics.html"><a href="introduction-to-biostatistics.html#categorical-scales"><i class="fa fa-check"></i><b>2.2.1</b> Categorical Scales</a></li>
 <li class="chapter" data-level="2.2.2" data-path="introduction-to-biostatistics.html"><a href="introduction-to-biostatistics.html#numerical-scales"><i class="fa fa-check"></i><b>2.2.2</b> Numerical Scales</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-biostatistics.html"><a href="introduction-to-biostatistics.html#summarizing-data"><i class="fa fa-check"></i><b>2.3</b> Summarizing Data</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="introduction-to-biostatistics.html"><a href="introduction-to-biostatistics.html#categorical-data"><i class="fa fa-check"></i><b>2.3.1</b> Categorical Data</a></li>
+<li class="chapter" data-level="2.3.2" data-path="introduction-to-biostatistics.html"><a href="introduction-to-biostatistics.html#numerical-data"><i class="fa fa-check"></i><b>2.3.2</b> Numerical Data</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
@@ -427,12 +432,117 @@ Overwt
 </table>
 <p>The data for the first ten participants in the <em>Blood1</em> dataset are shown in Table <a href="introduction-to-biostatistics.html#tab:blood1">2.1</a>. Let’s examine these variables one by one.</p>
 <ol style="list-style-type: decimal">
-<li><p>The first variable listed is systolic blood pressure, SystolicBP. This variable is numeric because the values are numbers and have units of measurement. Blood pressure is typically reported to the nearest one millimeter of mercury, as here, but it is nevertheless a continuous variable, since you could have a blood pressure of 138.2 mmHg or 74.5 mmHg. Furthermore, blood pressure is measured on a ratio scale, since a blood pressure of zero mmHg means no pressure, and a blood pressure of 140 mmHg means there is twice as much pressure as a blood pressure of 70 mmHg. The SystolicBP variable in this dataset is therefore a numeric, continuous, ratio variable.</p></li>
-<li><p>The second variable listed is smoking status, Smoke. This variable is categorical, since it tells you which category the person falls into: smoker or non-smoker. The data happen to be coded here as “1” for smoker and “0” for non-smoker, but it is not numeric data. The data could just as well have been coded “Y” for smoker and “N” for nonsmoker, or even as the words “smoker” and “nonsmoker.” This variable is not ordinal. While you may feel that not smoking is better than smoking, there’s no inherent ordering to the two categories. Finally, this variable is binary, since it has only two categories, smoker and non-smoker. The Smoke variable in this dataset is therefore a categorical, binary variable.</p></li>
-<li><p>The third variable listed is weight status, Overwt. This variable is categorical, since it tells you which category the person falls into: normal weight, overweight, or obese. The data happen to be coded here using the numbers “0” for normal, “1” for overweight, and “2” for obese, but they could just as well have been coded “1,” “2” and “3,” or “10,” “50,” and “300,” or “A,” “B,” and “C,” or even as the words, “normal,” “overweight,” and “obese.” This variable is ordinal, since there is an inherent ordering to the categories that matches the numbers: overweight feels like it’s “in between” normal and obese, just as “1” is between “0” and “2.” Note that there is an order to the categories, but not a magnitude: there is no sense that obese (coded “2”) is twice as much weight as overweight (coded “1”); and there is no sense that normal (coded “0”) means “no weight.” This variable is not binary, though, since there are more than two categories. The Overwt variable in this dataset is therefore a categorical, ordinal variable.</p></li>
+<li><p>The first variable listed is systolic blood pressure, <em>SystolicBP.</em> This variable is numeric because the values are numbers and have units of measurement. Blood pressure is typically reported to the nearest one millimeter of mercury, as here, but it is nevertheless a continuous variable, since you could have a blood pressure of 138.2 mmHg or 74.5 mmHg. Furthermore, blood pressure is measured on a ratio scale, since a blood pressure of zero mmHg means no pressure, and a blood pressure of 140 mmHg means there is twice as much pressure as a blood pressure of 70 mmHg. The <em>SystolicBP</em> variable in this dataset is therefore a numeric, continuous, ratio variable.</p></li>
+<li><p>The second variable listed is smoking status, <em>Smoke.</em> This variable is categorical, since it tells you which category the person falls into: smoker or non-smoker. The data happen to be coded here as “1” for smoker and “0” for non-smoker, but it is not numeric data. The data could just as well have been coded “Y” for smoker and “N” for nonsmoker, or even as the words “smoker” and “nonsmoker.” This variable is not ordinal. While you may feel that not smoking is better than smoking, there’s no inherent ordering to the two categories. Finally, this variable is binary, since it has only two categories, smoker and non-smoker. The <em>Smoke</em> variable in this dataset is therefore a categorical, binary variable.</p></li>
+<li><p>The third variable listed is weight status, <em>Overwt.</em> This variable is categorical, since it tells you which category the person falls into: normal weight, overweight, or obese. The data happen to be coded here using the numbers “0” for normal, “1” for overweight, and “2” for obese, but they could just as well have been coded “1,” “2” and “3,” or “10,” “50,” and “300,” or “A,” “B,” and “C,” or even as the words, “normal,” “overweight,” and “obese.” This variable is ordinal, since there is an inherent ordering to the categories that matches the numbers: overweight feels like it’s “in between” normal and obese, just as “1” is between “0” and “2.” Note that there is an order to the categories, but not a magnitude: there is no sense that obese (coded “2”) is twice as much weight as overweight (coded “1”); and there is no sense that normal (coded “0”) means “no weight.” This variable is not binary, though, since there are more than two categories. The <em>Overwt</em> variable in this dataset is therefore a categorical, ordinal variable.</p></li>
 </ol>
-<p>One further note about the Overwt variable. It is likely that this variable was derived from a body mass index (BMI) measurement by choosing cut-points: for example, perhaps normal was set as BMI values of 24.9 or below, overweight as BMI values of 25.0 to 29.9 and obese as BMI values of 30.0 or more. This is an example of “categorizing” an underlying numeric variable.</p>
+<p>One further note about the <em>Overwt</em> variable. It is likely that this variable was derived from a body mass index (BMI) measurement by choosing cut-points: for example, perhaps normal was set as BMI values of 24.9 or below, overweight as BMI values of 25.0 to 29.9 and obese as BMI values of 30.0 or more. This is an example of “categorizing” an underlying numeric variable.</p>
+</div>
+</div>
+<div id="summarizing-data" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Summarizing Data</h2>
+<div id="categorical-data" class="section level3" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Categorical Data</h3>
+<p>Recall that categorical variables are variables that are qualitative, and can be either nominal or ordinal.</p>
+<p>In the Blood Pressure example, there were two variables in the dataset that were categorical: <em>Overwt</em> and <em>Smoke</em>. We summarize categorical data by:</p>
+<p>The <strong>number</strong> of observations in each category, which we find by simply tallying the number of observations in that category.
+The <strong>proportion</strong> of observations in each category, which we find my taking the number in each category and dividing by the total number of observations in the study. These proportions will be a value between 0 and 1.</p>
+<p>The <strong>percentage</strong> of observations in each category, which is the proportion multiplied by 100, followed by a percentage sign.</p>
+<p>While not required, it often helps to summarize the data in a table.</p>
+<p>Let’s go through an example to see how these summary measures work, using the smoking status variable from the Blood Pressure example.</p>
+<p>Of the 500 participants, 266 were smokers and 234 were nonsmokers. In this dataset, we see that there are more smokers than nonsmokers.</p>
+<p>It is appropriate to compare two numbers, or counts, when the denominator is the same or very similar. But, for example, if we were comparing the number of smokers between males and females and the total number of males and females was different (for example, 100 males vs. 50 females), it would not be appropriate to compare the counts of smokers between males and females.</p>
+<p>Rather, it is more appropriate to compare groups using proportions and percentages. In the Blood Pressure dataset, the proportion of smokers is 0.532, or 53.2% of the individuals are smokers, and the proportion of nonsmokers is 0.468, or 46.8% of the individuals are not smokers. (Note: Percentages are more common in reports and articles, and may be reported without the percentage sign next to the number. If this happens, authors will often denote somewhere in the table that the number represents a percent.)</p>
+<p>Pie charts are one way that we can graphically represent categorical data. Pie charts allow us to visualize the differences between proportions in the various categories. To create the pie chart, we need to know the proportion or percentage in each category.</p>
+<p>In the Blood Pressure example, we saw that there were about as many smokers as nonsmokers, with slightly more smokers. We can visually see that in the pie chart as well; it looks like the “smoker” piece of the pie has more than the “nonsmoker” piece. However, it’s not exactly clear how much more.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="introduction-to-biostatistics.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Insert pie chart</span></span></code></pre></div>
+<p>Because of this issue with pie charts (the difficulty in comparing slices and estimating percentages), statisticians tend to prefer other graphical methods for categorical data.(CHRIS - There’s perception studies about this)</p>
+<p>A better graphical summary for categorical data (and the one preferred by many statisticians) is the bar plot. The bar plot can be used with any summary measure: number, proportion, or percentage. Bar plots are often arranged so the categories are on the x- (horizontal) axis and the summary measure is on the y- (vertical) axis; however, the opposite arrangement can be used as well (i.e., categories on y-axis and summary measure on x-axis).</p>
+<p>As with the pie chart, we can see which categories contain more participants and which contain fewer: the taller bars occur for the categories with more participants (or a higher proportion) and the shorter bars indicate the categories with fewer participants. Unlike the pie chart, the y-axis tells us the number or proportion for each category. As a result, we get both the visual comparison and the actual value.</p>
+<p>As we did with the pie chart, we can visually see that there are more smokers than nonsmokers. However, we can also see the approximate numbers in each category: there are about 30 more smokers than nonsmokers.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="introduction-to-biostatistics.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="introduction-to-biostatistics.html#cb3-2" aria-hidden="true" tabindex="-1"></a>Blood1<span class="sc">$</span>smoke.f <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(Blood1<span class="sc">$</span>Smoke <span class="sc">==</span> <span class="dv">0</span>, <span class="st">&quot;Nonsmoker&quot;</span>, <span class="st">&quot;Smoker&quot;</span>)</span>
+<span id="cb3-3"><a href="introduction-to-biostatistics.html#cb3-3" aria-hidden="true" tabindex="-1"></a>Blood1 <span class="sc">|</span><span class="er">&gt;</span></span>
+<span id="cb3-4"><a href="introduction-to-biostatistics.html#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(smoke.f)) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="introduction-to-biostatistics.html#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="introduction-to-biostatistics.html#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="introduction-to-biostatistics.html#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Count&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="introduction-to-biostatistics.html#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb3-9"><a href="introduction-to-biostatistics.html#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-10"><a href="introduction-to-biostatistics.html#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb3-11"><a href="introduction-to-biostatistics.html#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">260</span>, <span class="dv">50</span>))</span></code></pre></div>
+<p><img src="biostat-book_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="numerical-data" class="section level3" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Numerical Data</h3>
+<p>There are many different ways to summarize numerical data. The most common summaries are measures of center (such as means or medians) and measures of spread (such as standard deviations or interquartile ranges). In addition, we typically want to note any extreme or unusual observations in the data.</p>
+<p>If we wanted to pick one number to represent a set of data, we’d probably want to pick the value that indicates the center or central tendency of the data values, or the one that is a “typical” or average value.</p>
+<p>However, we know that there will (most likely) be variability in our data. That is, not all of the values will equal each other. So, the measure of center should not be our only summary measure for numerical data. We are also interested in how spread out, or how varied, our data values are from one another. We do this by computing measures of spread.</p>
+<p>There are other summary measures that we may compute as well to understand our data, such as percentiles or the minimum or maximum.</p>
+<p>Finally, we want to note if there are any observations that are very different or unusual from all of the other observations in the sample.</p>
+<div id="measures-of-center" class="section level4" number="2.3.2.1">
+<h4><span class="header-section-number">2.3.2.1</span> Measures of Center</h4>
+<div id="mean" class="section level5" number="2.3.2.1.1">
+<h5><span class="header-section-number">2.3.2.1.1</span> Mean</h5>
+<p>Some measures of center use the values of the variable. The individual values in the sample are denoted as <span class="math inline">\(x\)</span> with a subscript <span class="math inline">\(i\)</span>, where <span class="math inline">\(i\)</span> runs from 1 to the number of observations in our data. For example, the first observation is <span class="math inline">\(x_1\)</span>, the second observation is <span class="math inline">\(x_2\)</span>, and so on. The mean (or average) value, noted as <span class="math inline">\(\bar{x}\)</span> (pronounced x-bar), is the result of adding up all the individual values, <span class="math inline">\(x_i\)</span>, and then dividing by the number of observations in our sample, denoted by <span class="math inline">\(n\)</span>.</p>
+<p><span class="math display">\[
+\bar{x} = \frac{\Sigma x_i}{n}
+\]</span>
+In our Blood Pressure example, when we add up the blood pressure measurements for all 500 adults and divide by 500, we get a mean value of 145 mm Hg.</p>
+<p>Note that the mean is calculated using all values in the dataset. If there is one observation or several observations that are much higher or lower than the rest of the data, it will raise or lower the mean more than it would if those observations were similar to the rest of the data.</p>
+</div>
+<div id="median" class="section level5" number="2.3.2.1.2">
+<h5><span class="header-section-number">2.3.2.1.2</span> Median</h5>
+<p>Sometimes, it makes more sense to summarize the data by the order as opposed to by the value. Why? Because sometimes there are data points that are so different from the rest that they overly influence the mean. For example, let’s say our data points were 1, 2, 3, 4, and 100. If we took the average of these 5 data points, we would get the value 22. But does 22 seem to be typical? Or the center value? It is a lot higher than four of the values and much much lower than the fifth. It doesn’t seem to represent any portion of the data very well.</p>
+<p>One of the features of numerical data is that you can put it in order from smallest to largest. Let’s take advantage of this additional feature of numerical data to create different summaries for the typical value and the spread of the data.</p>
+<p>When we order the observations from smallest to largest, there will be a middle value. The <strong>median</strong> is the value of the middle observation in the dataset. (If there are an even number of observations in the dataset, then the median is the average of the two middle values.) The median is also referred to as the <strong>50th percentile</strong> because 50% of the observations are below the median and 50% are above the median.</p>
+<p>For the Blood Pressure dataset, if we order the observations from smallest to largest, the middle observation would be between the 250<span class="math inline">\(^{th}\)</span> and 251<span class="math inline">\(^{st}\)</span> observations (because there are an even number, 500, of observations in this dataset). When we average these two values, we get a median of 140.5 mmHg, which is similar, but not the same, as what we calculated for the mean.</p>
+<p>Note that the median is calculated using only the middle value or values. If one observation in the data is much higher or lower than the rest of the data, it will be part of the order of the data, but the value itself is not used to find the median. Therefore, observations that are very different (either higher or lower) than most of the data do not affect the value of the median.</p>
+</div>
+<div id="other-measures-of-center" class="section level5" number="2.3.2.1.3">
+<h5><span class="header-section-number">2.3.2.1.3</span> Other Measures of Center</h5>
+<p>Other measures of center that are encountered in the medince and public health include the <strong>trimmed mean</strong> and the <strong>geometric mean</strong>.</p>
+<p>To calculate a trimmed mean, a specified percentage of the highest and lowest values for that variable are excluded before calculation of the mean. For example, the 10% trimmed mean would exclude the highest 10% and lowest 10% of the observations and then a mean would be calculated based on the included observations (the middle 80% of the data). This makes the trimmed mean less sensitive to those observations that are much higher or lower than the rest of the data.</p>
+<p>To calculate the geometric mean, the data are first log-transformed, then the mean is calculated on the log scale, and lastly, the mean is transformed back to the original scale. The geometric mean can be useful for summarizing highly skewed data.</p>
+</div>
+</div>
+<div id="measures-of-spread" class="section level4" number="2.3.2.2">
+<h4><span class="header-section-number">2.3.2.2</span> Measures of Spread</h4>
+<div id="variance-and-standard-deviation" class="section level5" number="2.3.2.2.1">
+<h5><span class="header-section-number">2.3.2.2.1</span> Variance and Standard Deviation</h5>
+<p>One common measure of the spread of numerical data is the variance (or the related measure, the standard deviation).</p>
+<p><span class="math display">\[\text{Variance}: s^2 = \frac{\Sigma(x_i - \bar{x})^2}{n - 1}\]</span></p>
+<p>The variance, denoted <span class="math inline">\(s^2\)</span>, is calculated in several steps. The first step is taking the actual value for each observation, denoted <span class="math inline">\(x_i\)</span>, as before, and subtracting the average value, <span class="math inline">\(\bar{x}\)</span>. This difference is called the <strong>deviation</strong>, <span class="math inline">\(x_i – \bar{x}\)</span>. Values that are far from the mean will give us large deviations, while values close to the mean will give us small deviations. Values that are below the mean will give us negative deviations, while values above the mean will give us positive deviations.</p>
+<p>However, we need to pull all these deviations into one number. Note that, because we are subtracting the average, some deviations will be negative and some will be positive. If we simply add up these values, the negative and positive deviations will cancel each other out, and the sum will be zero, which is not a useful measure of the spread of the data. Our goal is to quantify the difference from the mean, but we don’t really care if the value is below or above the mean. One way we could emphasize the difference is to <em>square the difference</em>. Then, the focus is on the size of the difference, as opposed to whether the value is above or below the average. (Note that we could also take the absolute value, but it is easier mathematically to work with the squares of the differences.)</p>
+<p>The second step, therefore, is to add up the squares of the deviations for all observations in the sample. This is sometimes called the <em>sum of squares</em>.</p>
+<p>The third and last step is to divide the sum of squares by the sample size n - 1, giving a single number called the variance. The variance is a modified average of the squared deviations. We use n - 1 instead of n because it gives a less <em>biased</em> estimate of the variance for all potential participants.</p>
+<p>The units for variance are the units of the variable squared. Because of this, it is hard to directly interpret the variance value. We typically take the square root of the variance so that the units of measurement match the original data. When we do this, we obtain the <strong>standard deviation</strong>. The standard deviation can be interpreted as the average deviation of the observations away from the mean.</p>
+<p><span class="math display">\[
+\text{Standard Deviation (SD)}: s = \sqrt{s^2}
+\]</span></p>
+<p>Note that, like the mean, we use all observations in the data to find the standard deviation. So if one observation is much higher or much lower than the rest of the data, it will influence the value of the variance and standard deviation.</p>
+<p>Let’s calculate the variance and standard deviation for the Blood Pressure example.</p>
+<p><span class="math display">\[s^2 = \frac{(133 - 145)^2 + (115 - 145)^2 + \dots + (180 - 145)^2 + (174 - 145)^2}{500 - 1} = 783.72 \text{ mm Hg}^2\]</span></p>
+<p>We find the deviations between the individual values and the sample mean of 145, square those deviations, add up all the squared deviations, and divide by n - 1, which is 499, and we get a variance of almost 784 mm Hg squared.</p>
+<p><span class="math display">\[
+s = \sqrt{783.72} = 27.99 \text{ mm Hg}
+\]</span></p>
+<p>Taking the square root, we find that the standard deviation is almost 28 mm Hg. That is, the average deviation away from the mean for the systolic BP variable is roughly 28 mm Hg.</p>
+</div>
+<div id="interquartile-range" class="section level5" number="2.3.2.2.2">
+<h5><span class="header-section-number">2.3.2.2.2</span> Interquartile Range</h5>
+<p>Another common measure of the spread of numerical data is the <strong>interquartile range</strong>, or <strong>IQR</strong>. This measure, like the median, is based on the order of the observations, not on their values.</p>
+<p>The interquartile range is calculated from the first and third quartiles of the data and is the range of the middle 50% of the data. The first quartile (or 25th percentile) is the median of the lower half of the data. The third quartile (or 75th percentile) is the median of the upper half of the data. To obtain the interquartile range, we subtract the first quartile from the third quartile.</p>
+<p>Note that like the median, we order the data from smallest to largest and focus only on the values for the middle half, from Q1 through Q3. So if one observation in the data is much higher or much lower than the rest of the data, it won’t affect the value of the interquartile range.</p>
+<p>Also note that the exact definition of the median, and thus of the quartiles, varies slightly from one software package to another. For small datasets, the median and IQR given to you by software may differ slightly from the values you obtain by hand, but they will be close. For large datasets, the differences will be negligible.</p>
+<p>What is the interquartile range for the Blood Pressure data?</p>
+<p>The first quartile (the 25th percentile) is the average of the 125th and 126th values, which is 130 mm Hg.
+The third quartile (75th percentile) is the average of the 375th and 376th values, which is 162.5 mm Hg.</p>
+<p>The interquartile range is the difference between 162.5 and 130, which is 32.5 mmHg. This represents the range of values for the middle 50% of the data.</p>
+<p>(Note that the IQR for this dataset happens to be a bit bigger than the standard deviation.)</p>
 
+</div>
+</div>
 </div>
 </div>
 </div>
