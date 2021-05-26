@@ -1,112 +1,4 @@
-# Introduction to Biostatistics
-
-What is *Biostatistics*? How does it fit within the larger field of research? What will you learn from this course? These are the questions that will be addressed in this lecture. 
-
-Let’s begin with the question “What is statistics?”.
-
-There are many definitions, but they all have similar themes. 
-
-For many people (maybe even you), statistics is seen as a branch of mathematics. However, John Tukey, a famous statistician in the mid-1900’s, stated that “statistics is a science, not a branch of mathematics, but uses mathematical models as essential tools.” Just as engineering, chemistry, and economics use math as a tool but are seen as separate fields from math, so should statistics be distinguished from mathematics.
-
-Alan Agresti and Christine Franklin have described statistics as “the art and science of learning from data” (this is also the title of their introductory statistics textbook). The goal of statistics is to translate data into understanding of the real world. At the heart of it all is the word data. 
-
-Examples of areas in which statistics is used include business, climate change research, manufacturing quality control, government policy, education, finance, and even sports (have you seen the movie Moneyball?).
-
-## Cycle of Research
-Medical or public health research, like all scientific research, begins with a *research question* about a population of interest. Biostatistical methods are used to help answer this research question. Let’s describe this process using the Cycle of Research diagram shown here.
-
-```{r fig.cor, fig.height = 8, fig.width = 8, echo = FALSE}
-library(grid)
-grid.newpage()
-vp <- viewport(width=0.8,height=0.8)
-pushViewport(vp)
-
-## x-axis
-grid.rect(x = 1,
-          y = 1,
-          width=unit(1, "inches"), height=unit(1, "inches"))
-grid.rect(x = 0,
-          y = 1,
-          width=unit(1, "inches"), height=unit(1, "inches"))
-grid.rect(x = 1,
-          y = 0,
-          width=unit(1, "inches"), height=unit(1, "inches"))
-grid.rect(x = 0,
-          y = 0,
-          width=unit(1, "inches"), height=unit(1, "inches"))
-
-grid.text("Population", x = 0, y = 1)
-grid.text("Sample", x = 1, y = 1)
-grid.text("Statistic", x = 1, y = 0)
-grid.text("Parameter", x = 0, y = 0)
-
-grid.lines(x = c(0.1, .9),
-           y = c(1, 1),
-           gp = gpar(fill = "gray80", col = "gray80"),
-           arrow = arrow(angle = 20, length = unit(0.1, "inches"), type = "closed"))
-grid.text("Study Design", x = 0.5, y = 1.0, gp = gpar(cex = 1.2))
-
-grid.lines(x = c(1, 1),
-           y = c(0.9, 0.1),
-           gp = gpar(fill = "gray80", col = "gray80"),
-           arrow = arrow(angle = 20, length = unit(0.1, "inches"), type = "closed"))
-grid.text("Sampling", x = 1, y = 0.5, gp = gpar(cex = 1.2))
-
-grid.lines(x = c(0.9, .1),
-           y = c(0, 0),
-           gp = gpar(fill = "gray80", col = "gray80"),
-           arrow = arrow(angle = 20, length = unit(0.1, "inches"), type = "closed"))
-grid.text("Estimation", x = .5, y = 0, gp = gpar(cex = 1.2))
-
-grid.lines(x = c(0, 0),
-           y = c(0.1, 0.9),
-           gp = gpar(fill = "gray80", col = "gray80"),
-           arrow = arrow(angle = 20, length = unit(0.1, "inches"), type = "closed"))
-grid.text("Inference", x = 0, y = 0.5, gp = gpar(cex = 1.2))
-````
-
-### Step 1: Population to Sample
-
-The scientific *Cycle of Research* begins with a *population*. A population is the complete set of individuals who share some common characteristics. The population is the group of people we are interested in learning about. The population of interest in a given study may be U.S. adult males, or it may be Finnish preschoolers, or it may be HIV-positive adults in South Africa. Perhaps we are interested, for example, in knowing how tall ten-year-old American boys are. The population in this case would be all ten-year-old boys in the U.S.
-
-When we want to answer a specific question about a particular population, typically we obtain a sample. A *sample* is a subset of the population of interest. The sample is the group of people we actually study. This is the group of people from whom data are collected. In our example, we might randomly sample 1,000 ten-year-old boys from the U.S. population to serve as our study’s sample.
-
-You may wonder, if the goal is to make some conclusions about the population, why not just collect data on the entire population? Samples are often studied instead of entire populations for several reasons. 
-
-One reason is cost. Often it would be too expensive and/or too time-consuming to collect data from an entire population of interest. For example, perhaps we are interested in the blood pressures of residents of Massachusetts. It would be much too expensive to obtain blood pressure measurements from every resident of the state, so we obtain a sample of residents instead. Take a careful look at this figure. Note that the samples have different numbers of people in them, and different mean (or average) diastolic blood pressure values. Also note that none of the mean values for the samples are the same as the mean blood pressure for the population.  We will explore these concepts later.
-
-<INSERT FIGURE>
-
-Another reason for using a sample instead of the population is feasibility. Studying the entire population may simply not be possible. For example, it is not possible to determine the effect of a new treatment on an entire population of patients if the treatment is not yet available to the entire population. 
-
-A third reason is accuracy. Measurements from a study’s sample may be more accurate than measurements from a population. More time and effort can be devoted to carrying out the measurements for the smaller number of people in the sample than is feasible for an entire population. We also can’t measure everyone in the population at the same time in the same way. Measurements may change over time (as we have all seen with our weight). If we have to measure a lot of participants, we may need multiple people or instruments to do it, which can also decrease accuracy.
-
-Finally, it may be unethical to study the entire population. If you're administering a treatment that might be harmful or withholding a treatment that might be beneficial.
-
-
-*Step 1 in the Cycle of Research* is to design a study in order to obtain a suitable sample from the population or populations of interest. There are a number of ways doing this. These will be discussed in more detail later in this book.
-
-### Step 2: Sample to Statistic
-Once we have a sample, *Step 2 in the Cycle of Research* is to use the sample data to calculate statistics. A *statistic* is any number calculated from the sample data. The sample mean is a statistic. The sample variance is another statistic. In our example, we might measure the height of each boy in our study’s sample of 1,000 ten-year-old American boys and then calculate the average (or mean) height. That average height is a statistic.
-
-### Step 3: Statistic to Parameter
-Step 3 in the Cycle of Research is to use sample statistics to estimate population parameters. A *parameter* is a variable which describes some aspect of the population, but whose true value is unknown. The population mean is a parameter. The population variance is another parameter. In our example, the population parameter of interest is the average height of ALL ten-year-old boys in the U.S. The true value of this parameter is unknown because it is not possible to measure the heights of all ten-year-old American boys at once.
-
-Sample statistics can be used as estimates of the unknown population parameters. The sample mean is a good estimate of the population mean. The sample variance is a good estimate of the population variance. In our example, the mean height of the 1,000 ten-year-old boys in our study’s sample is an estimate of the true mean height of ALL ten-year-old boys in the United States. 
-
-###  Step 4: Parameter to Population
-Step 4 in the Cycle of Research is to use the population parameter estimates we have obtained to *infer* something about the population we are interested in. *Statistical inference* is the process of drawing conclusions about a population on the basis of observations from a sample. In our example, we might want to know if ten-year-old American boys are taller now than they were fifty years ago. We could use the estimated true mean height of all ten-year-old American boys we obtained from our sample average in Step 3 and compare it to the value from fifty years ago. If the values were different, we could ask whether that difference is large enough to be *statistically significant*. 
-
-Each time a researcher poses a scientific question and the investigation is deemed worthwhile and feasible, the scientific Cycle of Research begins again.
-  
-The goal of this course is to develop your ability to do four things:
-
-1. To understand the principles behind basic statistical analyses;
-2. To choose appropriate statistical analyses for a given scientific context;
-3. To carry out statistical analyses using R or SAS and understand the resulting output; and
-4. To read and interpret statistical results in the literature of your field of interest.
-
-The topics for the course will run from descriptive analyses to inferential analyses, such as confidence intervals, hypothesis tests, and linear regression.
+# Variable Types
 
 ## Scales of Measurement
 
@@ -178,7 +70,7 @@ The variable *Overwt* is the weight group recorded for each person, labeled a �
 library(Stat2Data)
 library(xtable)
 data(Blood1)
-print(xtable(head(Blood1, n = 10), caption = "Table: (\\#tab:blood1). First 10 participants in the Blood1 dataset"), type = "html")
+print(xtable(head(Blood1, n = 10), caption = "(\\#tab:blood1) First 10 participants in the Blood1 dataset"), type = "html")
 ```
 
 The data for the first ten participants in the *Blood1* dataset are shown in Table \@ref(tab:blood1). Let’s examine these variables one by one.
@@ -338,6 +230,125 @@ The third quartile (75th percentile) is the average of the 375th and 376th value
 The interquartile range is the difference between 162.5 and 130, which is 32.5 mmHg. This represents the range of values for the middle 50% of the data.
 
 (Note that the IQR for this dataset happens to be a bit bigger than the standard deviation.)
- 
 
+Another useful measure of spread is the **range**. The range is simply the distance between the **minimum** (the smallest value) and the **maximum** (the largest value) in the dataset. 
+
+The minimum, 1st quartile, median, 3rd quartile, and maximum comprise the **five-number summary**, which is often used as a group to summarize data. It gives a sense of the typical value of the data as well as how the values vary (both the middle 50% of the data as well as the whole data range). 
+ 
+Let’s find the range of systolic blood pressure readings from the Blood Pressure example. 
+
+* Smallest 5: `r head(sort(Blood1$SystolicBP), n = 5)`
+* Largest 5: `r tail(sort(Blood1$SystolicBP), n = 5)`
+* Minimum: 67 mm Hg
+* Maximum: 224 mm Hg
+
+
+We see that 67 mm Hg is the smallest value in the dataset, so it is the minimum. 
+The largest value is 224 mm Hg, the maximum.
+
+$$
+\text{Range: } 224 - 67 = 157 \text{ mm Hg}
+$$
+The range is 157 mm Hg.
+
+Putting this all together, for the Blood Pressure dataset, the five-number summary for the systolic blood pressure would be:
+
+	minimum: 67 mm Hg
+	Q1: 130 mm Hg
+	median: 140.5 mm Hg
+	Q3: 162.5 mm Hg
+	maximum 224 mm Hg
+
+##### Other Measures of Spread
+Other measures of spread include the **mean absolute error** and the **coefficient of variation**.
+
+The mean absolute error (or MAE) is when you use the absolute difference between each observed value and the mean, instead of the squared difference, as used for the variance. You would then add up all the absolute differences and divide by the number of observations in the sample.  
+
+The coefficient of variation (or CV) is the sample standard deviation divided by the sample mean, and is usually expressed as a percentage. For example, if the standard deviation is 5 and the mean is 50, then the coefficient of variation is 0.10 or 10%. The sample standard deviation is about 10% as large as the sample mean. The coefficient of variation helps us compare variability for different measurements that have different ranges of values.
+
+#### Other Summary Measures
+Other summaries which use the order of the data include finding the observation that has a certain percentage of data below it. This is called a **percentile**. For example, the 10th percentile is the value in the dataset for which 10% of the sample values are below it (and thus the other 90% of the sample values are above it).
+
+Note that the first quartile, median, and third quartile are all percentiles.
+
+#### Outliers and Robustness
+One last important step in describing a set of data is to note observations that are unusually different from the rest of the data. A data value may be much higher than most of the data, or much lower. When a data point doesn’t “fit” with the rest of the data, we call it a potential outlier.
+
+As we have mentioned already, extreme or unusual values can overly influence those summary measures based on value, like the mean and the standard deviation, but have less of an effect on those summary measures based on order, like median and IQR. Summary measures that are not as affected by outliers are called **robust statistics**.
+
+#### Histograms
+Let’s move on to graphical summaries of numerical data. One way to visualize numerical data is with a **histogram**. The histogram divides the data into groups (or bins) based on their values and graphs the number or frequency in each bin. The observations are often divided into equal size groups (such as 60-79, 80-99, etc.), but this isn’t required. (CHRIS - A histogram, for visualizing purposes only, turns a numerical variable into a categorical one). 
+
+For histograms, the data values are plotted on the x-axis and the number of participants for that data value or range are plotted on the y axis. 
+
+Histograms (for numerical data) may appear similar to bar plots (for categorical data). There are, however, two big distinctions between histograms and bar plots: 
+There is an inherent order to the values on the x axis of a histogram – we create partitions based on the values in their numeric order, and
+There is no space between the bars on a histogram. In the bar plot, there is a bit of a space between each bar to indicate that they are just different categories and there is not necessarily an order to those categories. In histograms, the numeric order of the values is maintained.
+
+The advantage to this type of graph is that you can quickly get a sense of any patterns in the data. If the data look evenly distributed around the middle, we refer to the data as **symmetric**. If we see that the peak or bulk of the participants are to the left, and the number of participants per group slowly decreases to the right, we say the data are **right skewed**. If we see that the bulk of the participants are to the right and there’s a slow decrease in the number per group to the left, we say the data are **left skewed**.
+
+The disadvantage is that this type of graph doesn’t give you any summary measures of the data, and doesn’t identify any potential outliers.
+
+```{r, bloodhist}
+Blood1 |>
+  ggplot() +
+  geom_histogram(aes(SystolicBP), fill = "blue", col = "black", alpha = .5) +
+  xlab("Systolic Blood Pressure (mm Hg)") +
+  ylab("Frequency") +
+  theme_bw() +
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank())
+```
+
+Let’s examine the histogram for the Blood Pressure example, shown in Figure \@ref(bloodhist). The systolic blood pressure observations are centered in the vicinity of 130 mm Hg, and range from about 60 to 240 mm Hg. Over 1/3 of the people appear to have values between 120 and 140 mm Hg (the tallest peak). There are only a few people with systolic blood pressure below 100 mm Hg or above 200 mm Hg. We would say this data has a slight right skew, because the tail of the distribution is to the right of the bulk of the data.
+
+
+
+#### Boxplot 
+
+Another way to visualize numerical data is with a **boxplot**. Boxplots have also been called box-and-whisker plots (see the box and whiskers in the image shown). 
+
+To create a boxplot, you use the five-number summary: 
+
+* The smallest observation that is not considered an outlier (if no potential outliers, the minimum) marks the end of the bottom “whisker” as shown above.
+* The first quartile is the bottom edge of the “box”.
+* The median is the line near the middle of the “box”.
+* The third quartile is the top edge of the “box”.
+* The largest observation that is not considered an outlier (if no potential outliers, the maximum) marks the end of the top “whisker”. 
+* If there are potential outliers, they are usually plotted as a dot beyond the “whiskers”. 
+
+For boxplots, we find potential outliers using the 1.5*IQR rule.
+
+The 1.5*IQR rule states that potential outliers are any observations which are either:
+* greater than 3rd quartile + 1.5*IQR, or 
+* less than 1st quartile – 1.5*IQR.
+
+```{r, spboxplot}
+Blood1 |>
+  ggplot() +
+  geom_boxplot(aes(SystolicBP), fill = "blue", col = "black", alpha = .5) +
+  scale_y_continuous(limits = c(-1, 1), breaks = NULL) +
+  xlab("Systolic Blood Pressure (mm Hg)") +
+  ylab("") +
+  theme_bw() +
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank()) +
+  geom_text(aes(x = 140.5, y = 0.4, label = "Median"), hjust = "left") +
+  geom_text(aes(x = 130.0, y = 0.4, label = "1st Quartile", hjust = "left")) +
+  geom_text(aes(x = 162.2, y = 0.4, label = "3rd Quartile", hjust = "left")) +
+  geom_text(aes(x = 81.7, y = 0.4, label = "Smallest non-potential outlier", hjust = "left")) +
+  geom_text(aes(x = 210.5, y = 0.4, label = "Largest non-potential outlier", hjust = "left")) +
+  coord_flip()
+```
+  
+For the Blood Pressure example, we can see from the boxplot (Figure \@ref(spboxplot)) that the median is about 140 and the IQR ranges from 130 to about 160. We can also see that there’s a possible right skew, since the median is not in the middle of the box and is closer to the Q1 line. In addition, we can find the potential outliers using the 1.5*IQR rule. Potential outliers would be those values that are:
+
+  less than 130 – 1.5*32.2 = 81.7 , or 
+  greater than 162.5 + 1.5*32.2 = 210.5.
+
+The smallest value in the dataset that is NOT a potential outlier is 81 mmHg and the largest value that is NOT a potential outlier is 211, so we draw a whisker to those values, and draw a horizontal line at those values. The remaining observations (below 81.25 or above 211.25) are plotted as dots below and above the ends of the whiskers.
+
+The advantages of a boxplot are that we can see any potential outliers and get a good sense of center and spread based on order. Side-by-side boxplots are also very useful for quickly comparing two or more datasets.
+
+The disadvantage of a boxplot is that we lose some information about the shape of the data. (CHRIS - We could introduce violin plots, sina plots, or overlay points). 
 
