@@ -1,2 +1,235 @@
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+```
+
 # Sampling
-As we described in the Cycle of Research, **statistical inference** is the process of drawing conclusions about a population on the basis of observations from a sample. Put another way, statistical inference is the process of generalizing study results from the study sample to the population of interest. Drawing correct inferences about the population depends on knowing how representative the sample is of that population. A sample is representative of the population if every person or unit in the population of interest has the same chance of being included in the sample. If the chance of being included in the sample differs from person to person, then we are vulnerable to selection bias, which will affect our ability to make accurate inferences about the population.
+As we described in the Cycle of Research, **statistical inference** is the process of drawing conclusions about a population on the basis of observations from a sample. Put another way, statistical inference is the process of **generalizing** study results from the study **sample** to the **population of interest**. Drawing correct inferences about the population depends on knowing how representative the sample is of that population. A sample is representative of the population if every person or unit in the population of interest has the same chance of being included in the sample. If the chance of being included in the sample differs from person to person, then we are vulnerable to **selection bias**, which will affect our ability to make accurate inferences about the population.
+
+## What is selection bias? 
+
+In general, “bias” refers to systematic error or inaccuracy in a result. The result deviates systematically from the truth. There are a number of kinds of bias that can be introduced into a research study, usually unintentionally, at any stage from design through to publication.
+
+Selection bias is formally defined as “A systematic tendency to favor the inclusion in a sample of selected subjects with particular characteristics while excluding those with other characteristics” (Pocket Dictionary of Statistics). Selection bias means that some members of a population were more likely to be included in the study than others. For example, if potential study participants were contacted by randomly selecting names from SnapChat, then people who do not have a SnapChat account will be systematically excluded. The resulting study sample is not representative of the population the researchers intended to study. Since the study sample is not representative of the population, the study results cannot be generalized to the population. 
+
+
+## Random Sampling
+**Random sampling** methods are used in research studies to minimize this type of bias. Random sampling is a sampling technique for which the probability of each individual being selected into the sample is known. Another term used for this kind of sampling is probability sampling. Three random sampling methods are commonly used in medical or public health studies: **simple random sampling**, **stratified random sampling**, and **cluster random sampling**.
+
+### Simple Random Sampling
+A simple random sample (or SRS) is a random sample where each member has the __same__ chance of being selected, and members are selected __independently__ from each other. In other words, knowing whether other individuals were selected into the sample tells you nothing about whether or not you will be selected into the sample. When simple random sampling is carried out, each potential sample of n individuals from the population is equally likely to be selected.
+
+For example, in a simple random sample from the population of Minnesota residents, all residents are equally likely to be chosen, regardless of who they are or where they live. In addition, the probability of a given resident being chosen does not increase (or decrease) if their neighbor is chosen. 
+
+There are two important things to note about simple random samples:
+
+First, taking a simple random sample from a given population doesn't guarantee that your particular sample will "look like" your population, for the same reason that tossing a fair coin 10 times doesn't always produce exactly 5 heads and 5 tails.
+
+Second, for practical reasons, it is rarely possible to obtain a "true" simple random sample from a population. Instead, it is an ideal that studies try to achieve to the closest degree possible, in order to obtain a sample that is representative of the entire population.
+
+Obtaining a simple random sample (SRS) requires first that all possible members of the population of interest are identified and listed. Once that is accomplished, a random sample of size n can be chosen using a number of possible methods. 
+
+An identification (ID) for each member of the population can written on slips of paper and placed in a hat, and someone can randomly select n slips of paper. This ultra-low-tech method works for small populations, such as children in a school classroom.
+
+A table of random numbers can be used to select n items from the population list. This method is useful when you do not have access to a computer.
+
+A computer program (for example, random.org) can be used to randomly select n items from the population list. For example, we could have a numbered list of all 51,000 students at the University of Minnesota (our population of interest). We could use a random number generator to give us 1,000 random numbers, between 1 and 51,000. Then we would select the 1,000 students whose numbers on the list correspond to the randomly chosen numbers. These 1,000 students would form our sample.
+
+In the health sciences, situations where you can obtain a sample via simple random sampling are quite RARE due to feasibility issues, or sometimes even to desirability issues. Study designs often dictate the nature of sampling. 
+
+### Stratified Random Sampling
+In stratified random sampling, the population is divided into subgroups, or “strata”, with similar characteristics, and a simple random sample is selected from each stratum. Common stratification variables include gender, age group, or clinic. 
+
+Typically, the motivation for doing stratified sampling is to ensure that you have "enough" of a particular subgroup to carry out your analyses of interest. For example, if you were interested in looking at differences in breast cancer tumor characteristics between men and women, you'd do stratified sampling to ensure that you had enough men in the sample to make the sex comparison with reasonable precision.
+
+Stratified random sampling requires that information about the stratification variable or variables is available for all potential participants.
+
+### Cluster Random Samping
+
+In cluster sampling, “interventions” are delivered to groups rather than individuals. The population is divided into clusters and a sample of clusters (random or not) are selected. Cluster sampling is often done in a hierarchical or multistage fashion, with the selected clusters further divided into sub-clusters from which another sample (random or not) is selected. Cluster sampling is often used in epidemiologic studies.
+
+For example, if a study is interested in the effect of spraying insecticide to prevent malaria, the sampling is done on houses rather than individuals. Everyone in the house (the cluster) experiences the intervention at the same time, but the outcome of interest is measured at the individual level. Because of this, cluster sampling is an example of non-independent sampling. 
+
+Clusters are often defined geographically. For example, you might divide a city into neighborhoods, and the neighborhoods into blocks, and the blocks into houses. You would randomly choose a specified number of neighborhoods, and then randomly choose a specified number of blocks within those neighborhoods, and then randomly choose a specified number of houses on each block. The random selections could be simple random samples, or they could be systematic random samples (for example: select every 6th house in the block). 
+
+Cluster sampling does not require that all members of a population be identified and listed. 
+
+### Non-Random Sampling
+In non-random sampling, or non-probability sampling, the probability that a given participant is selected is unknown and may be influenced by selection bias.
+
+In __convenience sampling__, participants who are readily available are enrolled until the desired sample size is reached. That is, researchers just “conveniently” grab participants who are available. Volunteer sampling is a sampling method that relies on participants who choose to respond (for example, online surveys) and are a type of convenience sample.
+
+__Quota sampling__ is a non-random version of stratified random sampling. Quota sampling occurs when the sample that is obtained has the same proportions of individuals as the entire population with respect to pre-specified known characteristics or traits. That is, the population is divided into categories with a required quota for each category. Participants are enrolled into the study from each category until the quota for that category is reached.  
+
+In __systematic random sampling__, every kth item is chosen. For example, if you were sampling customers in a store, you might approach every 10th person who walked by, or every 20th person. Systematic random sampling should not be used if there are cyclical patterns in the data. For example, selecting hospital admissions data from every seventh day or every 12th month may not be representative of the overall population of admissions and could introduce bias.
+
+The problem with non-random samples is that they may be __biased.__ Not all members of the population of interest have the same probability of being included in the study, so the study sample is not representative of the population. The participants who are “readily available” may differ in some ways from the population as a whole. For example, if a study of sleep apnea were done by sampling people who had recently been to a clinic for any reason, then people who had not been sick recently, or people who had no access to medical care, or people who were in hospitals, prisons, or nursing homes, or military personnel on active duty, would not be included in the study.
+
+However, in many studies, we actually use one of these approaches to obtain our sample but then view it (and do inference) as if it were an SRS. Often, this non-random sampling is "close enough" to random sampling that we are OK with it. For example, when recruiting for a clinical trial of a new HIV medication, we don't make a numbered list of all individuals with HIV and then contact them randomly; instead, we approach people attending HIV clinics and ask them to participate. If we want to infer something about the population, we then have to make the argument that this approach approximates random sampling because, for example, the patients attending the clinic during the recruitment period (and who agree to participate) are representative of and have approximately the same characteristics (such as gender, age, socioeconomic status, etc.) as the overall population of HIV-infected individuals.
+
+Note that if data were collected on every member of the population of interest, then statistical inference would not be necessary. You do not need to infer from a sample to a population if you already have complete data on the population. Descriptive statistics completely represent the population when you have population data; inferential statistics are unnecessary.
+
+## Discrete Distributions
+### Random Variables
+A **random variable** is an abstract concept that represents the values that could arise from a random process, before they are observed. A random process could be something like tossing a coin or rolling a die, or it could be randomly sampling participants from a population of interest for a survey or a clinical study. We typically use capital letters to represent random variables.
+
+For example, the variable smoker, which describes a participant’s smoking status in the Blood Pressure dataset, can be seen as a random variable symbolized by a capital letter $Y$. The smoker random variable can take on only two possible values: 0 if the participant is a nonsmoker, and 1 if the participant is a smoker.
+
+Lowercase letters are used to represent the actual observed values. Every person in the Blood Pressure dataset has a measured value for the random variable smoker. The first person in the dataset is a nonsmoker, so their value is 0. We use a lower case letter, $y$ in this case, with a subscript of 1 to indicate that this is the first person in the dataset, followed by the value for that person of 0 since they are a nonsmoker (that is, $y_1 = 0$). Similarly, person 15 in the Blood Pressure dataset is a smoker, so their value is 1. We note this with a lower case y, then the subscript 15, and set that equal to 1 (that is, $y_15 = 1$).
+
+#### Discrete Random Variables
+A discrete random variable is a variable that can take on only a finite (or limited) number of possible values. There are two types of discrete random variables: discrete numerical variables, which have a finite set of whole number values, and categorical variables, which have a finite number of possible categories.  
+
+The smoker variable in the Blood Pressure dataset, a categorical variable, is a discrete random variable because it can take on only two possible values: smoker (1) or nonsmoker (0).
+ 
+The outcome of a die roll, a discrete numerical variable, is a discrete random variable because we can roll only one of six possible numbers: 1, 2, 3, 4, 5, or 6.  
+
+### Distributions
+A distribution describes how often different values for a random variable arise from a random process. There are three types of distributions that are discussed in this book.
+
+A __sample distribution__ describes how often each possible value of a variable has occurred in a specific sample. When we graph the sample data for a variable using a barplot or a histogram, we are visualizing the sample distribution.
+
+A __population distribution__ describes how often each possible value of a variable occurs in the population of interest. 
+
+A __sampling distribution__ describes how often each possible value of a sample statistic (such as the sample mean) could occur in all possible samples. Sampling distributions will be discused later.
+
+#### Categorical Distributions
+Let’s start with distributions for categorical variables. 
+
+Categorical variables can be summarized graphically using barplots, or in tables using the number and/or proportion in each category. Either kind of summary is a sample distribution, but for clarity we will focus on graphical summaries.
+
+```{r}
+library(gridExtra)
+cdc <- data.frame(prop = c(.425, .736 - .425, 1 - .736),
+                  levels = c("Obese", "Overweight", "Normal"))
+cdc$levels <- factor(cdc$levels, levels = c("Normal", "Overweight", "Obese"))
+
+Blood1$overlab <- ifelse(Blood1$Overwt == 0, "Normal",
+                         ifelse(Blood1$Overwt == 1, "Overweight", "Obese"))
+Blood1$overlab <- factor(Blood1$overlab, levels = c("Normal", "Overweight", "Obese"))
+g0 <- Blood1 |>
+  ggplot(aes(overlab)) +
+  geom_bar(aes(y=..prop.., group = 1), fill = "blue", col = "blue", alpha = .5) +
+  ylab("Proportion") +
+  ggtitle("Sample Distribution",subtitle = "Weight Distribution N = 500") + 
+  xlab("") +
+  theme_bw() +
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.minor = element_blank())
+
+g1 <- cdc |>
+  ggplot() +
+  geom_bar(aes(levels, prop), stat = "identity", fill = "blue", col = "blue", alpha = .5)+ 
+  ggtitle("Population Distribution",subtitle = "US Adult Weight Distribution") + 
+  theme_bw() +
+  xlab("") +
+  ylab("Proportion") +
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.minor = element_blank())
+grid.arrange(g0, g1, nrow = 1)
+```
+
+
+The barplot on the left above is a sample distribution for the *Overwt* variable in the Blood Pressure dataset. Recall that the Blood Pressure dataset contains data on a sample of N = 500 adults from the U.S. population. The plot is a sample distribution because it describes how often different values of the *Overwt* variable occur in this sample. For each possible category of the variable (normal, overweight, or obese), the plot shows the proportion of participants in the sample who fall into that category. This plot could also have been produced as the number of participants in the sample who fell into each category. 
+
+The barplot on the right above is a population distribution for weight in the U.S. adult population as determined by the Centers for Disease Control and Prevention (CDC). It is plotted using the same weight categories as in the Blood Pressure dataset. This plot is a population distribution because it describes how often different values of the weight variable occur in the population. For each possible category of the variable (normal, overweight, or obese), the plot shows the proportion of the U.S. adult population that falls into that category. Population distributions always use proportions or probabilities on the y-axis.
+
+Note that the overall structure is the same. We have the categories on the x-axis and a measure of quantity on the y-axis.  
+
+We can see that the proportions in each weight category in the sample data (on the left) are similar to but not exactly the same as the true proportions in the population (on the right). We will learn later how to use data from a sample (as shown on the left) to make inferences about the population (as shown on the right). For now, let’s focus on what information the population distribution gives us. 
+
+
+A population distribution gives us several different kinds of information.
+
+First, it gives information about overall trends. For example, looking at the population distribution for weight in U.S. adults (above), we see that the normal weight category has the lowest proportion, and the obese weight category has the highest proportion.
+
+Second, it gives information about the proportion of the population in a particular category. In our example, we see that the proportion of U.S. adults who are classified as obese is .425, the proportion classified as overweight is 0.311, and the proportion classified as normal weight is 0.264.
+
+Finally, it gives information about the proportion of the population in several categories. In our example, if we would like to know the proportion of the U.S. adult population that are not obese, we could add up the proportion that are normal weight and the proportion that are overweight (0.264 + 0.311 = 0.575) and find that 57.5% of U.S. adults are not obese.  
+
+Proportions obtained from population distributions can also be interpreted as probabilities. Since the proportion of U.S. adults who are obese is 0.425, then if we select a person at random from the U.S. adult population, there is a 42.5% chance (or a probability) that the selected person will be obese.  
+
+##### Bernoulli Distribution
+
+```{r}
+ggplot(data.frame(levels = c("Obese", "Not Obese"),
+                  prop = c(0.425, 0.575))) +
+  geom_bar(aes(levels, prop), stat = "identity", fill = "blue", col = "blue", alpha = .5)+ 
+  ggtitle("US Adult Obesity Distribution") + 
+  theme_bw() +
+  xlab("") +
+  ylab("Proportion") +
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.minor = element_blank())
+
+```
+
+For example, suppose we were interested in a random binary variable $X$, which describes whether a random U.S. adult is obese or not. $X$ takes on the value 1 if the person is obese, and 0 if they are not. The population distribution of the random variable $X$ could be described using a Bernoulli distribution with p = 0.425. A plot of this distribution (above) shows us that the probability of the event, being obese, is 0.425, and the probability of not having the event, not being obese, is 0.575.  
+
+Theoretical distributions are described using mathematical notation by giving the name of the distribution and the parameters that describe it. The notation is to list the random variable and then a tilde ($\sim$) symbol, which indicates that the variable has a given distribution. (The tilde can be read as “is distributed as”.) The tilde is followed by the name of the theoretical distribution followed by parentheses that include the parameter or parameters that define the distribution. 
+
+The general notation for a Bernoulli distribution, then, would be $X \sim \text{ Bernoulli(p)}$, read as “X is distributed Bernoulli with probability p”, where p is the probability of the event of interest. 
+
+In our example, we would write $X \sim \text{ Bernoulli(0.425)}$. The binary obesity variable $X$ is distributed Bernoulli with probability 0.425.
+
+##### Discrete Numerical Variables
+Now, let’s turn to distributions for discrete numerical variables. 
+
+Discrete numerical variables can be summarized graphically using histograms, or in tables using the number and/or proportion in each category. Either kind of summary is a sample distribution, but for clarity we will focus on graphical summaries.
+
+```{r}
+set.seed(1235)
+ud <- sample(1:6, size = 330, replace = TRUE)
+ud <- as.data.frame(ud)
+
+g0 <- ud |>
+  ggplot(aes(ud)) +
+  geom_bar(aes(y=..prop.., group = 1), fill = "blue", col = "blue", alpha = .5) +
+  ylab("Proportion") +
+  ggtitle("Sample Distribution",subtitle = "Distribution of 330 Random Die Rolls") + 
+  xlab("") +
+  scale_x_continuous(breaks = 1:6, labels = 1:6) +
+  theme_bw() +
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.minor = element_blank()); g0
+up <- data.frame(x = 1:6)
+g1 <- up |>
+  ggplot(aes(x)) +
+  geom_bar(aes(y=..prop.., group = 1), fill = "blue", col = "blue", alpha = .5) +
+  ggtitle("Population Distribution",subtitle = "Distribution of Infinite Die rolls") + 
+  scale_x_continuous(breaks = 1:6, labels = 1:6) +
+  theme_bw() +
+  xlab("") +
+  ylab("Proportion") +
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.minor = element_blank())
+grid.arrange(g0, g1, nrow = 1)
+```
+
+The histogram on the left is a sample distribution for the results of rolling a standard six-sided die 330 times. The plot is a sample distribution because it describes how often different values (1 through 6) of the die roll occurred in this sample. In this particular sample of 330 rolls, the die came up as “1” 57 times, as “2” 488 times, and so on.
+
+The histogram on the right is a population distribution for rolling a fair standard six-sided die. This plot is a population distribution because it describes how often different values of a die roll occur in the population. For each possible value of the die roll (1 through 6), the plot shows the probability of obtaining that value. If the die is fair, the probability of any given die roll value is the same: 1 in 6, which gives 0.167 or 16.7%.
+
+Note that the overall structure is the same: We have the possible values on the x-axis and a measure of quantity on the y-axis.  
+
+We can see that the proportions for each die roll value in the sample data (on the left) are similar to but not exactly the same as the true probabilities in the population (on the right). We will learn later how to use data from a sample (as shown on the left) to make inferences about the population (as shown on the right). For now, let’s focus on what information the population distribution gives us. 
+
+A population distribution gives us several different kinds of information.
+
+First, it gives information about __overall trends__. For example, looking at the population distribution for all possible rolls for a fair die (above), each die roll has an equal probability of happening. This is because we are assuming that the die is a fair die, and each number has an equal chance of happening. 
+
+Second, it gives information about the __probability in a particular category__. In our example, there are six different values on the die (1 through 6), and each has an equal chance of being rolled. Therefore, the chance of rolling any one number is 1 out of 6, or 0.167. For example, the probability of rolling a 1 would be 1/6 or 0.167.
+
+Finally, it gives information about the __probability in several categories__. In our example, if we would like to know the probability that a die roll would be less than 4, we would add up the probabilities for all possible die rolls less than 4 (that is, rolls of 1, 2, or 3): 0.167 + 0.167 + 0.167 = 0.5. We would find that the probability of rolling a number less than 4 with a fair six-sided die is 1/2.
+
+##### Binomial Distribution
+
+One common discrete numerical distribution model is the Binomial distribution, which is used to model the number of times a specific event occurs in multiple attempts. For example, how many times would we get heads if we tossed a coin four times? The Bernoulli distribution, which we discussed earlier, tells us that the probability of obtaining heads on a single coin toss (assuming the coin is fair) is 0.50 or 50%. But what if we tossed the coin more than once? How many times should we expect heads? The Binomial distribution gives probabilities for each possible number of heads we could get if we tossed the coin multiple times. The Binomial distribution is characterized by two parameters: p, which is the probability of the event of interest on any given attempt, and n, which is the total number of attempts.
+
+The random variable X gives the number of events (heads, in our example) that occur when a binary outcome (such as obtaining heads on a coin toss) is measured on a number, n, of different independent attempts (such as coin tosses). The possible values of X range from 0 to n: in other words, in n tries, we could obtain anywhere between 0 and n events. The probability of the event (heads, in this case), p, is assumed constant for all attempts.  Under these assumptions, the number of events that occur, X, is distributed as Binomial with parameters n and p, where n is the number of attempts and p is the probability of the event. In symbols, X ~ Binomial(n,p). 
+
+In our example, what would happen if we tossed a fair coin four times? How many heads should we expect? Here, the number of attempts, n, is 4, and the probability of the event (heads), p, is 0.5. We could conceivably obtain anywhere between 0 heads and 4 heads. The probabilities for each of the possible number of heads that could be obtained, 0 through 4, are given in the theoretical distribution plot above. The most likely result, with a probability of 0.375 or 37.5%, is that we will obtain two heads (and two tails) in our four tosses. There is a somewhat lower probability (25%) of obtaining one head, or three heads. There is a very low probability (6.25%) of obtaining no heads, or all four heads.
+
+
+
+
+

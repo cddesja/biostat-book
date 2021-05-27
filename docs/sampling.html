@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Sampling | Biostatistics (DRAFT)</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Sampling | Biostatistics (DRAFT)" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Sampling | Biostatistics (DRAFT)" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Christopher Desjardins, Laura Le, and Ann Brearley" />
+
+
+<meta name="date" content="2021-05-26" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="variable-types.html"/>
+<link rel="next" href="methods.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction to Biostatstics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#cycle-of-research"><i class="fa fa-check"></i><b>1.1</b> Cycle of Research</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#step-1-population-to-sample"><i class="fa fa-check"></i><b>1.1.1</b> Step 1: Population to Sample</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#step-2-sample-to-statistic"><i class="fa fa-check"></i><b>1.1.2</b> Step 2: Sample to Statistic</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#step-3-statistic-to-parameter"><i class="fa fa-check"></i><b>1.1.3</b> Step 3: Statistic to Parameter</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#step-4-parameter-to-population"><i class="fa fa-check"></i><b>1.1.4</b> Step 4: Parameter to Population</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="variable-types.html"><a href="variable-types.html"><i class="fa fa-check"></i><b>2</b> Variable Types</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="variable-types.html"><a href="variable-types.html#scales-of-measurement"><i class="fa fa-check"></i><b>2.1</b> Scales of Measurement</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="variable-types.html"><a href="variable-types.html#categorical-scales"><i class="fa fa-check"></i><b>2.1.1</b> Categorical Scales</a></li>
+<li class="chapter" data-level="2.1.2" data-path="variable-types.html"><a href="variable-types.html#numerical-scales"><i class="fa fa-check"></i><b>2.1.2</b> Numerical Scales</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="variable-types.html"><a href="variable-types.html#summarizing-data"><i class="fa fa-check"></i><b>2.2</b> Summarizing Data</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="variable-types.html"><a href="variable-types.html#categorical-data"><i class="fa fa-check"></i><b>2.2.1</b> Categorical Data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="variable-types.html"><a href="variable-types.html#numerical-data"><i class="fa fa-check"></i><b>2.2.2</b> Numerical Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sampling.html"><a href="sampling.html"><i class="fa fa-check"></i><b>3</b> Sampling</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sampling.html"><a href="sampling.html#what-is-selection-bias"><i class="fa fa-check"></i><b>3.1</b> What is selection bias?</a></li>
+<li class="chapter" data-level="3.2" data-path="sampling.html"><a href="sampling.html#random-sampling"><i class="fa fa-check"></i><b>3.2</b> Random Sampling</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="sampling.html"><a href="sampling.html#simple-random-sampling"><i class="fa fa-check"></i><b>3.2.1</b> Simple Random Sampling</a></li>
+<li class="chapter" data-level="3.2.2" data-path="sampling.html"><a href="sampling.html#stratified-random-sampling"><i class="fa fa-check"></i><b>3.2.2</b> Stratified Random Sampling</a></li>
+<li class="chapter" data-level="3.2.3" data-path="sampling.html"><a href="sampling.html#cluster-random-samping"><i class="fa fa-check"></i><b>3.2.3</b> Cluster Random Samping</a></li>
+<li class="chapter" data-level="3.2.4" data-path="sampling.html"><a href="sampling.html#non-random-sampling"><i class="fa fa-check"></i><b>3.2.4</b> Non-Random Sampling</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="sampling.html"><a href="sampling.html#discrete-distributions"><i class="fa fa-check"></i><b>3.3</b> Discrete Distributions</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="sampling.html"><a href="sampling.html#random-variables"><i class="fa fa-check"></i><b>3.3.1</b> Random Variables</a></li>
+<li class="chapter" data-level="3.3.2" data-path="sampling.html"><a href="sampling.html#distributions"><i class="fa fa-check"></i><b>3.3.2</b> Distributions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Biostatistics (DRAFT)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sampling" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Sampling</h1>
+<p>As we described in the Cycle of Research, <strong>statistical inference</strong> is the process of drawing conclusions about a population on the basis of observations from a sample. Put another way, statistical inference is the process of <strong>generalizing</strong> study results from the study <strong>sample</strong> to the <strong>population of interest</strong>. Drawing correct inferences about the population depends on knowing how representative the sample is of that population. A sample is representative of the population if every person or unit in the population of interest has the same chance of being included in the sample. If the chance of being included in the sample differs from person to person, then we are vulnerable to <strong>selection bias</strong>, which will affect our ability to make accurate inferences about the population.</p>
+<div id="what-is-selection-bias" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> What is selection bias?</h2>
+<p>In general, “bias” refers to systematic error or inaccuracy in a result. The result deviates systematically from the truth. There are a number of kinds of bias that can be introduced into a research study, usually unintentionally, at any stage from design through to publication.</p>
+<p>Selection bias is formally defined as “A systematic tendency to favor the inclusion in a sample of selected subjects with particular characteristics while excluding those with other characteristics” (Pocket Dictionary of Statistics). Selection bias means that some members of a population were more likely to be included in the study than others. For example, if potential study participants were contacted by randomly selecting names from SnapChat, then people who do not have a SnapChat account will be systematically excluded. The resulting study sample is not representative of the population the researchers intended to study. Since the study sample is not representative of the population, the study results cannot be generalized to the population.</p>
+</div>
+<div id="random-sampling" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Random Sampling</h2>
+<p><strong>Random sampling</strong> methods are used in research studies to minimize this type of bias. Random sampling is a sampling technique for which the probability of each individual being selected into the sample is known. Another term used for this kind of sampling is probability sampling. Three random sampling methods are commonly used in medical or public health studies: <strong>simple random sampling</strong>, <strong>stratified random sampling</strong>, and <strong>cluster random sampling</strong>.</p>
+<div id="simple-random-sampling" class="section level3" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Simple Random Sampling</h3>
+<p>A simple random sample (or SRS) is a random sample where each member has the <strong>same</strong> chance of being selected, and members are selected <strong>independently</strong> from each other. In other words, knowing whether other individuals were selected into the sample tells you nothing about whether or not you will be selected into the sample. When simple random sampling is carried out, each potential sample of n individuals from the population is equally likely to be selected.</p>
+<p>For example, in a simple random sample from the population of Minnesota residents, all residents are equally likely to be chosen, regardless of who they are or where they live. In addition, the probability of a given resident being chosen does not increase (or decrease) if their neighbor is chosen.</p>
+<p>There are two important things to note about simple random samples:</p>
+<p>First, taking a simple random sample from a given population doesn’t guarantee that your particular sample will “look like” your population, for the same reason that tossing a fair coin 10 times doesn’t always produce exactly 5 heads and 5 tails.</p>
+<p>Second, for practical reasons, it is rarely possible to obtain a “true” simple random sample from a population. Instead, it is an ideal that studies try to achieve to the closest degree possible, in order to obtain a sample that is representative of the entire population.</p>
+<p>Obtaining a simple random sample (SRS) requires first that all possible members of the population of interest are identified and listed. Once that is accomplished, a random sample of size n can be chosen using a number of possible methods.</p>
+<p>An identification (ID) for each member of the population can written on slips of paper and placed in a hat, and someone can randomly select n slips of paper. This ultra-low-tech method works for small populations, such as children in a school classroom.</p>
+<p>A table of random numbers can be used to select n items from the population list. This method is useful when you do not have access to a computer.</p>
+<p>A computer program (for example, random.org) can be used to randomly select n items from the population list. For example, we could have a numbered list of all 51,000 students at the University of Minnesota (our population of interest). We could use a random number generator to give us 1,000 random numbers, between 1 and 51,000. Then we would select the 1,000 students whose numbers on the list correspond to the randomly chosen numbers. These 1,000 students would form our sample.</p>
+<p>In the health sciences, situations where you can obtain a sample via simple random sampling are quite RARE due to feasibility issues, or sometimes even to desirability issues. Study designs often dictate the nature of sampling.</p>
+</div>
+<div id="stratified-random-sampling" class="section level3" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Stratified Random Sampling</h3>
+<p>In stratified random sampling, the population is divided into subgroups, or “strata,” with similar characteristics, and a simple random sample is selected from each stratum. Common stratification variables include gender, age group, or clinic.</p>
+<p>Typically, the motivation for doing stratified sampling is to ensure that you have “enough” of a particular subgroup to carry out your analyses of interest. For example, if you were interested in looking at differences in breast cancer tumor characteristics between men and women, you’d do stratified sampling to ensure that you had enough men in the sample to make the sex comparison with reasonable precision.</p>
+<p>Stratified random sampling requires that information about the stratification variable or variables is available for all potential participants.</p>
+</div>
+<div id="cluster-random-samping" class="section level3" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Cluster Random Samping</h3>
+<p>In cluster sampling, “interventions” are delivered to groups rather than individuals. The population is divided into clusters and a sample of clusters (random or not) are selected. Cluster sampling is often done in a hierarchical or multistage fashion, with the selected clusters further divided into sub-clusters from which another sample (random or not) is selected. Cluster sampling is often used in epidemiologic studies.</p>
+<p>For example, if a study is interested in the effect of spraying insecticide to prevent malaria, the sampling is done on houses rather than individuals. Everyone in the house (the cluster) experiences the intervention at the same time, but the outcome of interest is measured at the individual level. Because of this, cluster sampling is an example of non-independent sampling.</p>
+<p>Clusters are often defined geographically. For example, you might divide a city into neighborhoods, and the neighborhoods into blocks, and the blocks into houses. You would randomly choose a specified number of neighborhoods, and then randomly choose a specified number of blocks within those neighborhoods, and then randomly choose a specified number of houses on each block. The random selections could be simple random samples, or they could be systematic random samples (for example: select every 6th house in the block).</p>
+<p>Cluster sampling does not require that all members of a population be identified and listed.</p>
+</div>
+<div id="non-random-sampling" class="section level3" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> Non-Random Sampling</h3>
+<p>In non-random sampling, or non-probability sampling, the probability that a given participant is selected is unknown and may be influenced by selection bias.</p>
+<p>In <strong>convenience sampling</strong>, participants who are readily available are enrolled until the desired sample size is reached. That is, researchers just “conveniently” grab participants who are available. Volunteer sampling is a sampling method that relies on participants who choose to respond (for example, online surveys) and are a type of convenience sample.</p>
+<p><strong>Quota sampling</strong> is a non-random version of stratified random sampling. Quota sampling occurs when the sample that is obtained has the same proportions of individuals as the entire population with respect to pre-specified known characteristics or traits. That is, the population is divided into categories with a required quota for each category. Participants are enrolled into the study from each category until the quota for that category is reached.</p>
+<p>In <strong>systematic random sampling</strong>, every kth item is chosen. For example, if you were sampling customers in a store, you might approach every 10th person who walked by, or every 20th person. Systematic random sampling should not be used if there are cyclical patterns in the data. For example, selecting hospital admissions data from every seventh day or every 12th month may not be representative of the overall population of admissions and could introduce bias.</p>
+<p>The problem with non-random samples is that they may be <strong>biased.</strong> Not all members of the population of interest have the same probability of being included in the study, so the study sample is not representative of the population. The participants who are “readily available” may differ in some ways from the population as a whole. For example, if a study of sleep apnea were done by sampling people who had recently been to a clinic for any reason, then people who had not been sick recently, or people who had no access to medical care, or people who were in hospitals, prisons, or nursing homes, or military personnel on active duty, would not be included in the study.</p>
+<p>However, in many studies, we actually use one of these approaches to obtain our sample but then view it (and do inference) as if it were an SRS. Often, this non-random sampling is “close enough” to random sampling that we are OK with it. For example, when recruiting for a clinical trial of a new HIV medication, we don’t make a numbered list of all individuals with HIV and then contact them randomly; instead, we approach people attending HIV clinics and ask them to participate. If we want to infer something about the population, we then have to make the argument that this approach approximates random sampling because, for example, the patients attending the clinic during the recruitment period (and who agree to participate) are representative of and have approximately the same characteristics (such as gender, age, socioeconomic status, etc.) as the overall population of HIV-infected individuals.</p>
+<p>Note that if data were collected on every member of the population of interest, then statistical inference would not be necessary. You do not need to infer from a sample to a population if you already have complete data on the population. Descriptive statistics completely represent the population when you have population data; inferential statistics are unnecessary.</p>
+</div>
+</div>
+<div id="discrete-distributions" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Discrete Distributions</h2>
+<div id="random-variables" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Random Variables</h3>
+<p>A <strong>random variable</strong> is an abstract concept that represents the values that could arise from a random process, before they are observed. A random process could be something like tossing a coin or rolling a die, or it could be randomly sampling participants from a population of interest for a survey or a clinical study. We typically use capital letters to represent random variables.</p>
+<p>For example, the variable smoker, which describes a participant’s smoking status in the Blood Pressure dataset, can be seen as a random variable symbolized by a capital letter <span class="math inline">\(Y\)</span>. The smoker random variable can take on only two possible values: 0 if the participant is a nonsmoker, and 1 if the participant is a smoker.</p>
+<p>Lowercase letters are used to represent the actual observed values. Every person in the Blood Pressure dataset has a measured value for the random variable smoker. The first person in the dataset is a nonsmoker, so their value is 0. We use a lower case letter, <span class="math inline">\(y\)</span> in this case, with a subscript of 1 to indicate that this is the first person in the dataset, followed by the value for that person of 0 since they are a nonsmoker (that is, <span class="math inline">\(y_1 = 0\)</span>). Similarly, person 15 in the Blood Pressure dataset is a smoker, so their value is 1. We note this with a lower case y, then the subscript 15, and set that equal to 1 (that is, <span class="math inline">\(y_15 = 1\)</span>).</p>
+<div id="discrete-random-variables" class="section level4" number="3.3.1.1">
+<h4><span class="header-section-number">3.3.1.1</span> Discrete Random Variables</h4>
+<p>A discrete random variable is a variable that can take on only a finite (or limited) number of possible values. There are two types of discrete random variables: discrete numerical variables, which have a finite set of whole number values, and categorical variables, which have a finite number of possible categories.</p>
+<p>The smoker variable in the Blood Pressure dataset, a categorical variable, is a discrete random variable because it can take on only two possible values: smoker (1) or nonsmoker (0).</p>
+<p>The outcome of a die roll, a discrete numerical variable, is a discrete random variable because we can roll only one of six possible numbers: 1, 2, 3, 4, 5, or 6.</p>
+</div>
+</div>
+<div id="distributions" class="section level3" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Distributions</h3>
+<p>A distribution describes how often different values for a random variable arise from a random process. There are three types of distributions that are discussed in this book.</p>
+<p>A <strong>sample distribution</strong> describes how often each possible value of a variable has occurred in a specific sample. When we graph the sample data for a variable using a barplot or a histogram, we are visualizing the sample distribution.</p>
+<p>A <strong>population distribution</strong> describes how often each possible value of a variable occurs in the population of interest.</p>
+<p>A <strong>sampling distribution</strong> describes how often each possible value of a sample statistic (such as the sample mean) could occur in all possible samples. Sampling distributions will be discused later.</p>
+<div id="categorical-distributions" class="section level4" number="3.3.2.1">
+<h4><span class="header-section-number">3.3.2.1</span> Categorical Distributions</h4>
+<p>Let’s start with distributions for categorical variables.</p>
+<p>Categorical variables can be summarized graphically using barplots, or in tables using the number and/or proportion in each category. Either kind of summary is a sample distribution, but for clarity we will focus on graphical summaries.</p>
+<p><img src="biostat-book_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>The barplot on the left above is a sample distribution for the <em>Overwt</em> variable in the Blood Pressure dataset. Recall that the Blood Pressure dataset contains data on a sample of N=500 adults from the U.S. population. The plot is a sample distribution because it describes how often different values of the <em>Overwt</em> variable occur in this sample. For each possible category of the variable (normal, overweight, or obese), the plot shows the proportion of participants in the sample who fall into that category. This plot could also have been produced as the number of participants in the sample who fell into each category.</p>
+<p>The barplot on the right above is a population distribution for weight in the U.S. adult population as determined by the Centers for Disease Control and Prevention (CDC). It is plotted using the same weight categories as in the Blood Pressure dataset. This plot is a population distribution because it describes how often different values of the weight variable occur in the population. For each possible category of the variable (normal, overweight, or obese), the plot shows the proportion of the U.S. adult population that falls into that category. Population distributions always use proportions or probabilities on the y-axis.</p>
+<p>Note that the overall structure is the same. We have the categories on the x-axis and a measure of quantity on the y-axis.</p>
+<p>We can see that the proportions in each weight category in the sample data (on the left) are similar to but not exactly the same as the true proportions in the population (on the right). We will learn later how to use data from a sample (as shown on the left) to make inferences about the population (as shown on the right). For now, let’s focus on what information the population distribution gives us.</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="variable-types.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["biostat-book.pdf", "biostat-book.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
