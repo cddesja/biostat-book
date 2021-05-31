@@ -370,3 +370,167 @@ It’s critical when finding probabilities for discrete distributions to pay att
 
 There are many other theoretical distributions relevant to specific kinds of discrete data, including the Hypergeometric distribution, the Poisson distribution, and the Negative Binomial distribution. For example, the Poisson distribution is used to model the distribution of what is called “count data” (for example, the number of births each day at a hospital) and is characterized by a single parameter, lambda ($\lambda$), the average rate of the event being counted (for example, the average number of births per day at that hospital). 
 
+### Continuous Distributions
+The key difference between a discrete random variable and a continuous random variable is that a continuous random variable can, at least in theory, have infinite possible values. This is because any given range of numbers (say the range from 0 to 1) can be divided into an arbitrarily large number of pieces: we could divide it into tenths, or hundredths, or thousandths, and so on. 
+
+For example, if we measure systolic blood pressure, we could in principle measure it to the nearest one millimeter of mercury (mm Hg), or to the nearest tenth of a millimeter, or to the nearest hundredth of a millimeter, without limit. 
+
+```{r}
+head(Blood1$SystolicBP)
+```
+
+Of course, in practice, there are no blood pressure cuffs that can measure a person’s blood pressure to a precision of dozens of decimal places. In addition, even if our measurement device can measure blood pressure to a precision of (say) two decimal places, for practical reasons we may choose to report the measured blood pressure only to the nearest whole number, as shown above for the first six observations for the *SystolicBP* variable in the Blood Pressure dataset. Nevertheless, we consider blood pressure to be a continuous random variable. 
+
+Let’s look at continuous distributions.
+
+Continuous variables can be summarized graphically using histograms or boxplots, or in tables using the mean and standard deviation (or median and IQR). Either kind of summary is a sample distribution, but for clarity we will focus on graphical summaries.
+
+```{r}
+ggplot(Blood1, aes(SystolicBP)) +
+  geom_histogram(bins = 10, col = "black", fill = "blue", alpha = .5) +
+  xlab("Systolic Blood Pressure") +
+  ylab("Frequency") +
+  theme_bw() +
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.minor = element_blank())  
+```
+
+The histogram on the left above is the sample distribution for the *SystolicBP* variable in the Blood Pressure dataset. Recall that this sample consists of 500 people drawn from the U.S. population. The plot is a **sample distribution** because it describes how often different values of the *SystolicBP* variable occur in this sample. The y-axis denotes the number of individuals in our sample that take on certain values. Alternatively, you can construct histograms with “frequency” on the y-axis to denote the proportion of individuals.
+
+The plot on the right above shows the population distribution for systolic blood pressure among all U.S. adults. This plot is a population distribution because it describes how often different values of systolic blood pressure occur in the population. The y-axis denotes the proportion of individuals in the population that take on certain values. 
+
+Unlike the population distribution for a discrete variable, the population distribution for a continuous variable is usually represented using a density curve instead of a histogram. This is because a continuous variable has an infinite number of possible values, so the probability at any one particular value (such as at 147.539872846384 mm Hg) is effectively zero. Therefore, probabilities for continuous variables can only be determined for ranges of values, not for single values. 
+
+The area under the density curve represents probability. The total area under the density curve is equal to 1.00 or 100% probability. The area under the curve within a specific range of values represents the probability that the variable has a value in that range. In our example, estimating by eye the area under the curve above 200 mm Hg, it appears that the probability that a randomly chosen U.S. adult has a systolic blood pressure above 200 mm Hg is quite small, roughly (very roughly) 0.05 or 5%.
+
+Note that the overall structure of the sample distribution and the population distribution is the same: we have the possible values on the x-axis and a measure of quantity on the y-axis. The sample histogram for systolic blood pressure has the proportion in each bin on the y-axis. As previously mentioned, it could also be plotted with the count (or frequency) in each bin on the y-axis. The population density curve, on the other hand, always has probability on the y-axis. 
+
+We can see that the proportions for each range of systolic blood pressure values in the sample data (on the left) are similar to but not exactly the same as the true probabilities in the population (on the right). We will learn later in this course how to use data from a sample (as shown on the left) to make inferences about the population (as shown on the right). For now, let’s focus on what information the population distribution gives us. 
+
+A population distribution gives us several different kinds of information.
+
+First, it gives information about overall shape and trends. In our example, the population distribution (above) has a single peak (that is, unimodal) and appears slightly skewed to the right. 
+
+Second, it gives information about the probability for a range of values. In our example, we see that the most common systolic blood pressure value among U.S. adults is where the peak of the curve lies, at approximately 130 mm Hg. We can also see that most U.S. adults have systolic blood pressures between about 90 and 210 mm Hg, and that only a few have values above 210 mm Hg.
+
+Unlike for discrete variables, we cannot find the probability for a single value of a continuous variable, since, as discussed earlier, the probability for any single value of a continuous variable is essentially zero.
+
+Here is an example:
+One measure of hypertension (high blood pressure) is systolic blood pressure over 140 mm Hg. We can use the population distribution to find the proportion of U.S. adults who have high blood pressure by finding the area under the density curve above 140 mm Hg. We find that the proportion of U.S. adults with blood pressure above 140 mm Hg is 0.388 or about 39%. Note that, since the probability of having a systolic blood pressure of exactly 140 is essentially zero, the proportion of U.S. adults with blood pressure at or above 140 mm Hg is also 0.388.
+
+#### Normal Distribution
+One very common theoretical distribution for continuous variables is the Normal distribution. It is also called the Gaussian distribution in honor of Carl Friedrich Gauss who noted this general shape in his work and characterized it, or the “bell curve” because the shape looks like a bell.
+
+A Normal distribution is always unimodal (has only one peak) and symmetric. Due to its symmetry, its mean and median are identical. The majority of values are very close to the peak with fewer values further away from the peak. In principle, a Normal distribution has nonzero probability at any value all the way from negative infinity to positive infinity. In practice, Normal distributions are often used to model variables that can only take on positive values, such as systolic blood pressure or serum cholesterol.
+
+Each Normal distribution is characterized by two parameters: the population mean, μ (pronounced mu), and the population standard deviation, σ (pronounced sigma). The mean defines the center or peak of the distribution and the standard deviation characterizes its width or spread. The random variable X represents the values that a continuous variable could take on (such as systolic blood pressure values). If this continuous variable is normally distributed, then we would say that the variable, X, is distributed as Normal with parameters μ and σ, where μ is the population mean and σ is the population standard deviation. In symbols, we write X $\sim$ Norm($\mu, \sigma$). 
+
+For all Normal distributions, slightly more than two thirds of their values (68.27% to be exact) lie within plus or minus one standard deviation from the mean, 95.45% of the values lie within plus or minus two standard deviations from the mean, and 99.73% of the values lie within plus or minus three standard deviations of the mean. This is sometimes referred to as the “68 – 95 – 99.7 rule” for Normal distributions.
+
+```{r}
+x <- seq(20, 140,1)
+h50 <- dnorm(x, mean = 50, sd = 10)
+h80 <- dnorm(x, mean = 80, sd = 20)
+
+labels <- c("N(50, 10)", "N(80, 20)")
+
+plot(x, h50, type="l", lty=1, xlab="", lwd = 2,
+  ylab="Density", main="Normal Distributions", col = "gold")
+lines(x, h80, col = "maroon", lwd = 2)
+
+legend("topright",
+  labels, lwd=2, lty=c(1, 1),
+  col=c("gold", "maroon"),
+  bty = "n")
+```
+
+The plot above shows two different Normal distributions. The gold curve is a Normal distribution with a mean of 50 and a standard deviation of 10. The red curve is a Normal distribution with a higher mean of 80 and a larger standard deviation of 20, so it is shifted to the right relative to the gold curve and is wider.
+
+Now let’s look at an another example in more detail. Serum cholesterol is an indicator of heart health, and for U.S. women ages 20-34, the population distribution for serum cholesterol looks very similar to a normal distribution. We can model this population distribution by using a Normal distribution with mean cholesterol of 185 mg/dL and standard deviation of 39 mg/dL, as shown in the plot above. 
+
+We can then use this distribution to answer questions about probabilities. For example, what is the probability that a randomly selected U.S. woman in this age range would have a serum cholesterol level above 240 mg/dL? This probability turns out to be 0.079 or slightly under 8%.
+
+Or… what is the probability that a randomly selected U.S. woman in this age range would have a serum cholesterol level below 240 mg/dL? This turns out to be 0.921 or about 92%.
+
+Or… what is the probability that a randomly selected U.S. woman in this age range would have a serum cholesterol level between 200 and 240 mg/dL? This turns out to be 0.271 or about 27%.
+
+So… how do we obtain these Normal probabilities? There are two ways. The first is to use the formula for the Normal distribution, and the second is to use statistical software.
+
+$$
+Pr(X \leq x) = Pr(X < x) = \int_{-\infty}^x \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^2}
+$$
+
+If the random variable X has a Normal distribution with known mean and standard deviation, we can calculate the probability of X being less than any specific value, x, using the Normal distribution equation given above.
+
+This calculation requires knowledge of calculus to do the integration and, like any hand calculation, is prone to error. A better way is to use statistical software. 
+
+We can use any statistical software package to calculate normal probabilities. It will require that we provide the name of the distribution (here, a Normal distribution), the parameters of the distribution (here, the population mean and the population standard deviation), and the specific value of interest.  
+
+Software will typically by default give the probability of being less than the specific value of interest. If we want to calculate the probability of being greater than the specific value of interest, or the probability of being between two specific values, then we have to do a bit more work. 
+
+What if we want to calculate the probability of being above a certain value?
+
+Doctors use serum cholesterol levels to monitor heart health, and when the cholesterol level exceeds 240 mg/dL, doctors often start some sort of treatment or intervention, such as medication. What proportion of young women would need some sort of intervention?  In other words, what is the probability that a randomly selected U.S. woman between the ages of 20 and 34 would have a serum cholesterol level above 240 mg/dL?
+
+Software will give us the probability that a randomly selected woman from this population would have a cholesterol level below 240 mg/dL, which turns out to be 0.921.  Since the probability of all events is 1, the probability of having a cholesterol level above 240 mg/dL is simply 1 – 0.921 or 0.079.
+
+Alternatively, we could be interested in the probability of being between two values.
+
+For example, serum cholesterol levels below 200 mg/dL are considered “healthy”, while serum cholesterol levels between 200 and 240 mg/dL are considered “at risk” – they are not high enough to warrant some sort of medical intervention, but the person’s heart health still needs to be closely monitored. We would like to know the proportion of U.S. women aged 20-34 who have serum cholesterol levels in this “at risk” range of 200-240 mg/dL. How do we calculate this?
+
+Let’s look at what what we need and what we can get from software.
+
+We want to know the proportion of women with cholesterol levels between 200 and 240 mg/dL.
+
+Software can tell us the proportion of women with cholesterol levels at or below a specified value. So software can tell us the proportion at or below 200 mg/dL and the proportion at or below 240 mg/dL. 
+
+
+We find the proportion of women with cholesterol levels between 200 and 240 mg/dL by subtracting the proportion with levels below 200 mg/dL (which is 0.650) from the proportion with levels below 240 mg/dL (which is 0.921), giving 0.921 – 0.650 or 0.271. We can say that 27.1% of U.S. women age 20-34 have serum cholesterol levels between 200 and 240 mg/dL. Equivalently, we could say that there is a 27.1% chance that a randomly selected U.S. woman age 20-34 would have a serum cholesterol level in the “at risk” range of 200 – 240 mg/dL.
+
+We can also use software to turn the calculation around and find the values associated with a given percentage (or proportion) of women in the population.
+
+For example, what if we wanted to know what range of values of serum cholesterol would include 95% of the women in our population of interest?
+
+We can find that range using either software or our knowledge of normal distributions.
+
+If we use software, we start with the fact that we want the middle 95% of values. This means that the remaining 5% of values would be divided evenly above and below this range. So, the lower end of the range would be the cholesterol level which is above the lowest 2.5% of values. This value is called the 0.025 quantile or the 2.5% percentile of this normal distribution. Similarly, the upper end of the range would be the cholesterol level which is below the highest 2.5% of values, or, equivalently, above the lowest 97.5% of values. This value is called the 0.975 quantile or the 97.5% percentile of this normal distribution.
+
+Statistical software can give us any specified quantile of a normal distribution. We must specify the name of the distribution (Normal), the parameters of the distribution (here, the mean of 185 mg/dL and the standard deviation of 39 mg/dL), and the quantiles we are interested in (here the 0.025 and 0.975 quantiles).
+
+In our example, software will tell us that the 0.025 quantile is at 107 mg/dL, and the 0.975 quantile is at 263 mg/dL.
+
+In this particular case, we can also use our knowledge of the normal distribution to find the values directly, by using the “68 – 95 – 99.7 rule” for normal distributions. This rule tells us that 95% of the values will be within two standard deviations from the mean. In our example, the mean cholesterol is 185 mg/dL, and the standard deviation is 39 mg/dL. So the lower end of the middle 95% of the cholesterol values will be two standard deviations below the mean, at 185 – 2*39 = 107 mg/dL. Similarly the upper end of the middle 95% of the values will be two standard deviations above the mean, at 185 + 2*39 = 263 mg/dL.
+
+
+Since all normal distributions are the same except for their mean and standard deviation, it can be convenient to standardize the data and model it using the Standard Normal distribution. 
+
+We can standardize any continuous random variable X by taking each value and subtracting the mean (this tells us how far away from the mean that value is), and then dividing by the standard deviation (this tells us how many standard deviations away from the mean that value is). The resulting standardized random variable is typically called Z and its values are denoted as z or a “z-score”. Positive z-scores indicate that the value is above the mean, while negative z-scores indicate that the value is below the mean. Larger z-scores indicate that the value is further away from the mean than smaller z-scores.
+
+In our serum cholesterol example, if a particular woman has a cholesterol value of 263 mg/dL, then her standardized cholesterol level would be (263 – 185)/39 or a z-score of 2.0. Her cholesterol level is 2 standard deviations above the mean cholesterol level. 
+
+The Standard Normal distribution can be used to model a standardized continuous variable. The Standard Normal distribution has the same shape as any Normal distribution, but it always has a mean of zero and a standard deviation of 1.0. We write that Z is distributed as Normal with mean 0 and standard deviation 1. In symbols, Z ~ Norm(0, 1). 
+
+Standardizing variables can come in handy when we don’t have access to software but need to find a probability. Most statistics textbooks contain tables which give the probability of being below Standard Normal values between -3.49 and 3.49 or between -4 and 4.  There are also websites and even apps that can find the probabilities for a standard normal value. 
+
+Let’s use the Standard Normal distribution to address the question: what is the probability that a U.S. woman aged 20-34 has a serum cholesterol level warranting some sort of medical attention or intervention, that is, a cholesterol level above 240 mg/dL?
+
+We start by finding the z-score for this value, which is 1.41. In other words, 240 mg/dL is 1.41 standard deviations above the mean value.   
+
+We can then use software, a table, or a website to find the probability associated with a z-score of 1.41. Since we need the probability of being above 1.41, we can certainly find the probability of being below 1.41 and subtract that value from 1. But we can also take advantage of the symmetry of the Standard Normal distribution around its mean of 0 and find the probability of being below -1.41, since that is the same as the probability of being above 1.41. Using the standard normal table, that probability is 0.0793.
+
+The Normal distribution is important in statistics for a number of reasons. One reason is that the sample or population distributions for some continuous variables that we encounter in real life look approximately Normal. Another reason is that the sampling distribution for sample means is approximately Normal if the sample size is large enough. (We will explore sampling distributions in the next unit.) A third (although minor) reason is that the Binomial distribution (which we explored in an earlier lecture) becomes approximately Normal if the sample size is large enough, even though it is a distribution for discrete variables. 
+
+The Binomial distribution has a mean and standard deviation that depends on the sample size (or the number of attempts), n, and the probability of the event, p, as shown on the slide above. The mean, np, is the expected number of “successes” or events in n attempts. The standard deviation increases as the number of attempts, n, increases. Therefore, as the sample size increases, the mean of the Binomial distribution increases (so the peak of the distribution shifts to the right) and the standard deviation increases (so the distribution broadens). 
+
+If the sample size, n, is large enough, the Binomial distribution looks nearly Normal, as shown for n=30 and p=0.379 in the plot above. It can therefore be modeled using a Normal distribution using the same mean and standard deviation for that particular Binomial distribution.
+
+How large a sample size is “large enough”? This depends on the probability of the event of interest, p. The sample size needs to be large enough that we’d expect to see at least 10 participants in the sample who have the event (np), and at least 10 participants in the sample who don’t have the event of interest (n(1-p)). 
+
+The fact that the Binomial distribution is approximately Normal for large n used to be helpful in doing statistical calculations, since Normal distribution probabilities were readily available in tables. This is called using the “Normal approximation to the Binomial”. It is becoming less helpful now, since exact Binomial probabilities are easily calculated using statistical software. 
+
+There are many other theoretical distributions relevant to specific kinds of continuous random variables, including the Exponential distribution, the Lognormal distribution, the Beta distribution, and the Gamma distribution. These distributions will not be discussed further in this course.
+
+
+
+
+
