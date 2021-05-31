@@ -223,13 +223,150 @@ Finally, it gives information about the __probability in several categories__. I
 
 ##### Binomial Distribution
 
-One common discrete numerical distribution model is the Binomial distribution, which is used to model the number of times a specific event occurs in multiple attempts. For example, how many times would we get heads if we tossed a coin four times? The Bernoulli distribution, which we discussed earlier, tells us that the probability of obtaining heads on a single coin toss (assuming the coin is fair) is 0.50 or 50%. But what if we tossed the coin more than once? How many times should we expect heads? The Binomial distribution gives probabilities for each possible number of heads we could get if we tossed the coin multiple times. The Binomial distribution is characterized by two parameters: p, which is the probability of the event of interest on any given attempt, and n, which is the total number of attempts.
+One common discrete numerical distribution model is the **Binomial distribution**, which is used to model the number of times a specific event occurs in multiple attempts. For example, how many times would we get heads if we tossed a coin four times? The Bernoulli distribution, which we discussed earlier, tells us that the probability of obtaining heads on a single coin toss (assuming the coin is fair) is 0.50 or 50%. But what if we tossed the coin more than once? How many times should we expect heads? The Binomial distribution gives probabilities for each possible number of heads we could get if we tossed the coin multiple times. The Binomial distribution is characterized by two parameters: p, which is the probability of the event of interest on any given attempt, and n, which is the total number of attempts.
 
 The random variable X gives the number of events (heads, in our example) that occur when a binary outcome (such as obtaining heads on a coin toss) is measured on a number, n, of different independent attempts (such as coin tosses). The possible values of X range from 0 to n: in other words, in n tries, we could obtain anywhere between 0 and n events. The probability of the event (heads, in this case), p, is assumed constant for all attempts.  Under these assumptions, the number of events that occur, X, is distributed as Binomial with parameters n and p, where n is the number of attempts and p is the probability of the event. In symbols, X ~ Binomial(n,p). 
 
 In our example, what would happen if we tossed a fair coin four times? How many heads should we expect? Here, the number of attempts, n, is 4, and the probability of the event (heads), p, is 0.5. We could conceivably obtain anywhere between 0 heads and 4 heads. The probabilities for each of the possible number of heads that could be obtained, 0 through 4, are given in the theoretical distribution plot above. The most likely result, with a probability of 0.375 or 37.5%, is that we will obtain two heads (and two tails) in our four tosses. There is a somewhat lower probability (25%) of obtaining one head, or three heads. There is a very low probability (6.25%) of obtaining no heads, or all four heads.
 
+###### Example
+Now let’s look at an example related to public health. Suppose that the (known) prevalence of obesity in the U.S. adult population is p = 0.379 or 37.9%. If we randomly sample four adults from the U.S. population, what is the probability that exactly two of the adults will be obese? What is the probability that two or fewer (i.e. half or less) of the adults will be obese? How likely is it that all four of the adults will be obese?
 
+These probabilities can be obtained by using a Binomial distribution for the random variable X, which is the number of the selected U.S. adults who are obese. The Binomial distribution with the number of independent attempts (people) set at n=4 and the probability of the event (obesity) set at p = 0.379 is shown in the plot above. The probability of exactly two of the four people being obese (X = 2) is 0.332 or 33.2%, while the probability of two or fewer being obese is 0.844 or 84.4%. The probability of all four being obese is quite low, at 0.021 or 2%.
 
+```{r}
+bin.prob <- data.frame(probs = c(pbinom(0:4, 4, prob = .379)[1], diff(pbinom(0:4, 4, prob = .379))),
+  numbers = c(0:4))
+ggplot(bin.prob, aes(x = numbers, y = probs)) +
+  geom_bar(stat = "identity", width = 1, col = "black", fill = "maroon", alpha = .9) +
+  xlab("Number of Obese Adults") +
+  ylab("Probability") +
+  ggtitle("Binomial(4, 0.379)") +
+  theme_bw() +
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank())
+```
 
+So… how do we obtain these Binomial probabilities? There are two ways. The first is to use the Binomial formula, and the second is to use statistical software.
+
+###### Binomial Probabilities by Formula
+
+$$
+Pr(X = k) = \frac{n!}{(n - k)!k!}p^k(1 - p)^{n - k}
+$$
+
+$$
+\text{where } n! = n * (n - 1) * ... * 2 * 1
+$$
+
+If the random variable X has a Binomial distribution, we can calculate the probability of any number of events, k, given n attempts with probability p, using the Binomial formula given above. For our coin toss example, we would use n = 4, p = 0.5, and then calculate the probabilities one at a time for k = 0 heads, k = 1 head, k = 2 heads, k = 3 heads, and k = 4 heads.
+
+This calculation can get tedious and error prone as the number of attempts n increases. A better way is to use statistical software. 
+
+###### Binomial Probabilities by Software
+Statistical software such as SAS or R allows us to easily calculate Binomial probabilities. The exact syntax will depend on the software used, and will be discussed in the activities, but the information that must be provided to the software is the same for any software. We will need to tell the software the name of the distribution (here, the binomial distribution), the number of attempts or observations (n), the probability of the event of interest (p), and the number of events or “successes” (k) we are interested in. For our coin toss example, we would use the Binomial distribution with n = 4, p = 0.5, and k=the number of heads (“successes”) we wanted the probability for.
+
+Let’s work through a few cases using our public health example. Recall that we assumed that the (known) prevalence of obesity in the U.S. adult population is p=0.379 or 37.9%, and that we have obtained a random sample of four adults from this population.
+
+What is the probability that exactly two of the four adults are obese? 
+
+In this case, the number of attempts or observations is the number of adults in our sample, which is four, so n = 4. 
+
+  The probability of the event of interest (being obese) is p = 0.379.
+
+```{r}
+ggplot(bin.prob, aes(x = numbers, y = probs)) +
+  geom_bar(stat = "identity", width = 1, col = "black", fill = ifelse(bin.prob$numbers == 2, "yellow", "maroon"), alpha = .9) +
+  xlab("Number of Obese Adults") +
+  ylab("Probability") +
+  ggtitle("Binomial(4, 0.379)") +
+  theme_bw() +
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank())
+```
+
+The number of events we are interested in is two, so k = 2. This is indicated by the yellow bar in the plot above.
+
+We can either insert these values n, p and k into the Binomial formula given previously and calculate the probability, or we can insert them into our software of choice (R or SAS) and it will give us the probability. In either case, the probability that exactly two of the four adults in our sample are obese is 0.332 or 33.2%.
+
+What if, instead, we wanted to know the probability that two or fewer of the four adults are obese? 
+
+The number of attempts or observations is still the number of adults in our sample, which is four, so n = 4. 
+
+  The probability of the event of interest (being obese) is still p = 0.379.
+
+```{r}
+ggplot(bin.prob, aes(x = numbers, y = probs)) +
+  geom_bar(stat = "identity", width = 1, col = "black", fill = ifelse(bin.prob$numbers <= 2, "yellow", "maroon"), alpha = .9) +
+  xlab("Number of Obese Adults") +
+  ylab("Probability") +
+  ggtitle("Binomial(4, 0.379)") +
+  theme_bw() +
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank())
+```
+
+Now, however, the number of events we are interested in is two or fewer, so k could be two, or one, or zero. This is indicated by the yellow bars in the plot above.
+
+Again, we could use the Binomial formula given previously, and calculate the probability for k = 0, and then the probability for k = 1, and then the probability for k = 2, and then add the three numbers together.
+
+Alternatively, we could tell our statistical software that we wanted the probability of k or fewer events (using a slightly different command than the one for the probability of exactly k events). 
+
+In either case, the probability that two or fewer of the four adults in our sample would be obese is found to be 0.844 or 84.4%.
+
+Suppose instead we wanted to know the probability that more than two of the four adults are obese (i.e. that k = 3 or k = 4)? This is indicated by the red bars in the plot above. In this case, we would simply subtract the probability of two or fewer being obese (which is 0.844) from the total probability (which is 1.0), to give 0.156 or 15.6%. 
+
+Finally, what if we wanted to know the probability that between 1 and 4 of the four adults are obese? In other words, what is the probability that we will have more than 1 but less than 4 obese adults?
+
+The number of attempts or observations is still the number of adults in our sample, which is four, so n = 4. 
+
+  The probability of the event of interest (being obese) is still p = 0.379.
+
+```{r}
+ggplot(bin.prob, aes(x = numbers, y = probs)) +
+  geom_bar(stat = "identity", width = 1, col = "black", fill = ifelse(bin.prob$numbers %in% 2:3, "yellow", "maroon"), alpha = .9) +
+  xlab("Number of Obese Adults") +
+  ylab("Probability") +
+  ggtitle("Binomial(4, 0.379)") +
+  theme_bw() +
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank())
+```
+
+What is k? Between one and four events means that the number of events (being obese), k, could be two or three. This is indicated by the yellow bars in the plot above. 
+
+We could use the Binomial formula given previously, and calculate the probability for k=2, and then the probability for k=3, and then add the two numbers together.
+
+With software, it gets a bit more complicated here, since most statistical software is set up to calculate the probability of being less or equal to a specified value of k. So in this case, we need to ask the software for the probability of less than or equal to 3 events (i.e. the probability of 3 or 2 or 1 or 0 events), and then ask it for the probability of less than or equal to 1 event (i.e. the probability of 1 or 0 events) and then subtract the two numbers. In this case, the probability of 3 or fewer events (3 or fewer of the four people being obese) is 0.979 or 97.9%. The probability of 1 or fewer events (1 or fewer of the four people being obese) is 0.512 or 51.2%. Therefore, the probability that between 1 and 4 of the four adults being obese is 0.979 – 0.512 which is 0.467 or 46.7%.
+
+In either case, we will get the same result: the probability that between 1 and 4 of the four adults in our sample would be obese is 0.467 or 46.7%.
+
+We must be very careful with words here. The probability that between 1 and 4 of the adults are obese depends on whether you include the 1 and/or the 4.  We could have four possible cases, depending on whether we include 1, include 4, include both, or include neither. The resulting probabilities for the four cases will be different.
+
+```{r}
+ggplot(bin.prob, aes(x = numbers, y = probs)) +
+  geom_bar(stat = "identity", width = 1, col = "black", fill = ifelse(bin.prob$numbers %in% 1:4, "yellow", "maroon"), alpha = .9) +
+  xlab("Number of Obese Adults") +
+  ylab("Probability") +
+  ggtitle("Binomial(4, 0.379)") +
+  theme_bw() +
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank())
+```
+
+For example, the plot above shows the case where we include both 1 and 4 as well as the numbers between 1 and 4, as indicated by the yellow bars. 
+
+As before, we can calculate this probability in two ways.
+
+We could use the Binomial formula given previously, and calculate the probabilities for k=1, and k=2, and k=3 and k=4, and then add the four numbers together.
+
+With software, we need to ask the software for the probability of less than or equal to 4 events (i.e. the probability of 4 or 3 or 2 or 1 or 0 events), and then ask it for the probability of less than or equal to 0 events (i.e. the probability of 0 events) and then subtract the two numbers. In this case, the probability of 4 or fewer events (4 or fewer of the four people being obese) is 1.000 or 100%. The probability of fewer than 1 events (0 of the four people being obese) is 0.149.  Therefore, the probability that at least 1 and at most 4 of the four adults are obese is 1 – 0.149 which is 0.851 or 85.1%.  
+
+Compare this result to our previous slide, where the probability that between 1 and 4 of the four adults are obese was 0.467, which is slightly more than half the probability that between 1 and 4 adults inclusive are obese.
+
+It’s critical when finding probabilities for discrete distributions to pay attention to the words used to describe the values of interest, and determine which values are part of the range of interest.
+
+##### Other Discrete Distribution
+
+There are many other theoretical distributions relevant to specific kinds of discrete data, including the Hypergeometric distribution, the Poisson distribution, and the Negative Binomial distribution. For example, the Poisson distribution is used to model the distribution of what is called “count data” (for example, the number of births each day at a hospital) and is characterized by a single parameter, lambda ($\lambda$), the average rate of the event being counted (for example, the average number of births per day at that hospital). 
 
