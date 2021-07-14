@@ -1,0 +1,115 @@
+Many studies involve comparisons among more than two groups of participants. Examples of this include: 
+Comparing types of women runners (nonrunners, recreational runners, or elite runners) on hormonal changes1,
+Comparing how posture (dominant pose, neutral pose, or submissive pose) affects the perception of pain2, and
+Comparing how smoking during pregnancy (nonsmokers, former smokers, smokers) relates to birth weights of infants3. 
+If the outcome of interest is numerical, as described in these examples, ANOVA can be used to compare the mean outcomes among three or more groups. 
+
+ANOVA is the abbreviated name for the Analysis of Variance method. This method was developed in the 1920’s by R.A. Fisher, one of the founders of modern statistics. In fact, the ANOVA F-test is named after Fisher. 
+
+Resources:
+1Hetland, M. L., Haarbo, J., Christiansen, C., & Larsen, T. (1993). Running induces menstrual disturbances but bone mass is unaffected, except in amenorrheic women. The American journal of medicine, 95(1), 53-60.
+2Bohns, V. K., & Wiltermuth, S. S. (2012). It hurts when I do this (or you do that): Posture and pain tolerance. Journal of Experimental Social Psychology, 48(1), 341-345.
+3Brooke, O. G., Anderson, H. R., Bland, J. M., Peacock, J. L., & Stewart, C. M. (1989). Effects on birth weight of smoking, alcohol, caffeine, socioeconomic factors, and psychosocial stress. Bmj, 298(6676), 795-801.If you were tasked with evaluating which mean outcomes are different among several groups, your first thought might be to use a two-sample t-test, multiple times, each time comparing one group’s mean with another group’s mean (pairwise comparisons). For example, if there were three groups, you would compare group 1 with group 2, group 1 with group 3, and group 2 with group 3. This strategy, however, comes with several problems. 
+
+One problem with this approach is it is time consuming. An increasing number of tests are needed as the number of groups increases. There are: 
+
+3 pairwise comparisons between 3 groups,
+6 pairwise comparisons between 4 groups,
+10 pairwise comparisons between 5 groups, and so on. 
+
+The other problem with multiple t-tests is that the probability of making a Type I error increases as the number of tests increases. Generally speaking, if you calculate many p-values, some are likely to be small just by random chance, when in fact, there is “nothing going on”. So, if the probability of a Type I error, alpha, is set at 0.05 for each test and 10 t-tests are performed, the overall probability of a Type I error for the set of tests is 1 – (0.95)^10 = 0.40 instead of 0.05. That is, if we perform 10 tests (with the null hypothesis being true in all cases), the chance that one or more of these tests will result in an incorrect conclusion of “statistically significant” is 40%. [Eeek!] 
+
+We want to avoid this multiple comparisons issue of an increased probability of rejecting a true null hypothesis (that is, of mistakenly deciding that there is an effect when there isn’t). The solution? ANOVA! Why? Because ANOVA compares all of the groups at once and reports only one p-value. It determines whether any of the group means are significantly different from the other group means. If the significance level is set at 0.05, the probability of a Type I error for the ANOVA F-test is capped at 0.05, regardless of the number of groups being compared. Researchers published a study in 2014 on the impact of concussions from playing collegiate football on hippocampus volume and cognitive outcomes1. The three different groups of interest, 25 students per group, were:
+
+College football players with a history of diagnosed concussions. 
+College football players with no history of diagnosed concussions.
+Non-football-playing college students of similar age and education level (“controls”).
+
+The researchers measured the hippocampus volume in microliters (µL) one time via MRI for all groups. A boxplot and summary statistics for hippocampus volume in each group are presented above.
+
+Based on visual evaluation of the plots, there is some overlap in the distributions of hippocampus volume in the three groups. The highest average hippocampus volume appears to be in the control group and the smallest appears to be in the football players who have had a concussion. All of the distributions appear to be approximately symmetric.
+
+Is there evidence that at least one of the population means is different than the others? Let’s use statistical inference methods to answer this question. 
+
+References: 
+1Singh, R., Meier, T. B., Kuplicki, R., Savitz, J., Mukai, I., Cavanagh, L., Allen, T., Teague, T.K., Nerio, C., Polanski, D. & Bellgowan, P. S. (2014). Relationship of collegiate football experience and concussion with hippocampal volume and cognitive outcomes. JAMA, 311(18), 1883-1888.
+Dataset: Lock, R.H., Lock, P.F., Lock Morgan, K., Lock, E.F., & Lock, D.F. (2013). Statistics: Unlocking the power of data (1st ed.). Hoboken, NJ: John Wiley & Sons, Inc. The research question we will answer for this example is: Is there a difference in average hippocampus volume among football players with a history of concussion, football players without a history of concussion, and non-football-playing healthy controls? Let’s evaluate the assumptions necessary for carrying out ANOVA. Notice that the first three assumptions are similar to those we’ve seen before. 
+
+The samples should be random (or representative) samples from the respective populations, to allow us to generalize the results to those populations; 
+
+The observations within each group should be independent of one another and the observations in one group should be independent of the observations in the other groups. 
+
+The sampling distribution of the sample means for each group should be approximately Normal. Recall that we check this assumption in one of two ways. If the underlying population distributions for each group are approximately Normal (which we can check by plotting the sample distributions, one for each group), then the sampling distribution of the sample means will be approximately Normal. OR, if the underlying population distributions are not Normal but the sample sizes are ”large enough” (and what is “large enough” depends on how heavily skewed the population distributions are), then the sampling distribution of the sample means will still be approximately Normal. If this assumption is not met, then other methods for carrying out inference for comparing three or more means (such as re-randomization tests) should be used instead. 
+
+The variances of the outcomes are approximately equal across all of the groups. This is known as homoscedasticity. A rough rule is to check the standard deviation of the outcome measurement in each of the groups. If the largest standard deviation is no more than two times the smallest standard deviation, than this assumption is considered to be met. 
+
+If these assumptions are not met, then the ANOVA results will not be valid. Let’s check the assumptions for the Hippocampus Volume and Football example. 
+
+Are the participants a random or representative sample of all college football players and non-football-playing college males? Based on the brief description of the dataset, it doesn’t seem that the participants were randomly selected. Could they be considered representative of their respective groups? It seems reasonable to argue that the researchers would likely have chosen the participants to be representative of the groups of interest. 
+
+Are the observations independent of one another? Again, without more information, it is reasonable to assume that the participants in each group are independent of each other and that the participants from one group are independent from participants in the other group. 
+
+Are the conditions met for the sampling distribution of the sample means in each group to be approximately Normally distributed? Because the shapes of the sample distributions for each group do not appear to be severely skewed, the sample sizes of 25 may be ”large enough” to assume the sampling distribution of the sample means in each group is approximately Normal. 
+
+Lastly, are the variances across the groups approximately equal? Looking back at the table, we see that the largest standard deviation (scontrol = 1074) is not more than twice the smallest standard deviation (sFBConcuss = 593.4), so this assumption appears to be met.
+
+References:
+Image: https://www.pinclipart.com/pindetail/owRJbh_file-mw-icon-checkmark-svg-creative-commons-check/Now we define the hypotheses for the ANOVA test. 
+
+The null hypothesis for ANOVA builds on the null hypothesis for a two-sample t-test: The population means for all groups are equal. In notation form, we write this as: the population mean for group 1, µ1, is equal to the population mean for group 2, µ2, is equal to the population mean for group 3, µ3, and so on, all the way up to the population mean for group k, µk, where k is the number of groups being compared.
+
+The alternative hypothesis is that at least one group has a different population mean than the other groups. This doesn’t mean that all of the groups’ population means are different from each other, just that the population mean for at least one group is different from the others. In notation form, we write this as: at least one population mean for group i, µi, is not equal to the population mean for a different group j, µj. 
+
+Notice that the alternative hypothesis does not specify a direction for the difference, and so it only has one form – the two-tailed test. In addition, the alternative hypothesis does not state which two groups have different population means. ANOVA is only designed to test whether there is enough evidence that a difference exists somewhere. The question of “which groups are different?” gets answered after carrying out ANOVA (spoiler alert: by using post-hoc tests).For the Hippocampus Volume and Football example, the null hypothesis is that the population mean hippocampus volume is the same in all three groups. In notation, we can write µFBConcuss equals µFBNoConcuss equals µControl.
+
+The alternative hypothesis for this example is that at least one population mean hippocampus volume is different among the three groups.We evaluate the claims in a similar fashion as presented in previous lectures: 
+We collect evidence (data), 
+We summarize the data using exploratory data analysis (summary statistics, tables, graphs), and 
+We calculate a test statistic to measure the compatibility between the result from the data and the null hypothesis. 
+
+The test statistic when using ANOVA to compare means in three or more groups (given that the assumptions are met) is the F-statistic. The F-statistic is calculated as the ratio of the average variability between groups to the average variability within groups. You might be thinking at this point: ANOVA is used to compare means between three or more groups, so why are we comparing measures of variability? It comes down to wanting a single measure that reflects how far apart the means are for all groups, while taking into account the variability observed within the groups. Let’s examine some plots to better understand the idea behind the F-statistic.The figure above shows boxplots for hypothetical data comparing three groups in three different situations, given by Datasets A, B, and C.
+
+In Dataset A, the group means are fairly close together, but the within-group variability is quite high. In Dataset B, the group means are similar to those in Dataset A, but the within-group variability is much smaller. In Dataset C, the group means are much further apart than in Datasets A and B, but the within-group variability is again quite high, similar to Dataset A.
+
+Now pause and think: in which dataset is there the strongest visual evidence for a difference between the group means, and in which dataset is there the weakest evidence?
+
+Datasets B and C show the strongest evidence for a difference in means between the three groups, whereas Dataset A shows the weakest evidence. For Dataset A, there is quite a bit of overlap between the three sample distributions (as indicated by the boxplots), so the three samples could easily have been taken from the same population. For Dataset B, even though the means are close together (relative to Dataset C), there is very little overlap between the three sample distributions. And finally, for Dataset C, as for Dataset A, there is quite a bit of overlap between the three sample distributions (as indicated by the boxplots), even though the means are much further apart, so the three samples could (again) easily have been taken from the same population. 
+
+As we were assessing the plots, notice what was assessed to determine if the groups means were different. The two pieces of variability that were evaluated were:
+the variability between groups: how far the group means were from each other, AND 
+the variability within groups: how spread out the sample distributions were. 
+This tells us that just knowing the groups means isn’t enough. We can detect small differences between the means if the values within each group are close together (as in Dataset B). In contrast, we CANNOT detect even large differences between the means if the values within each group are widely spread out (as in Dataset C). This is the basic idea of ANOVA. When carrying out ANOVA, a table is calculated that summarizes the different pieces of the total variability. The terminology and notation will differ from software to software and between resources, but the general set up for the rows of the ANOVA table will be the same. The first row summarizes the between group variability, the second row summarizes the within group variability, and the third row summarizes the total variability (if one is provided). The variability is calculated similarly to the sample standard deviation, by adding up squared deviations. That is, we have some sort of deviation, we square that deviation value, and then add up all those squared terms. The term for this type of calculation is sum of squares (abbreviated SS). The sum of squares for between group and within group add up to the sum of squares for the total.
+
+The equations are presented on this slide, but are tedious and error-prone to carry out by hand. We typically rely on software to produce the ANOVA table. However, each row will be described so you have a general understanding of what each cell means.For the between group row, the sum of squares between groups (denoted as SSG) is a measure of how far apart the group means are from each other. The steps for calculating SSG are: for each group, calculate the deviation of that group mean from the overall grand mean (the mean for all data combined), square that deviation, and weight that squared deviation by the sample size in that group. You then add up those weighted squared deviations for all of the groups. If the group means are close to each other, the variability between the groups, SSG, will be small. If the groups means are farther apart from one another, SSG will be larger.
+
+For the within groups row, the sum of squares within groups (denoted as SSE, where E stands for error) is a measure of how much variability there is within each group. This is the variability we can’t explain by the differences between groups and therefore is referred to as “error” or “residual” variability. The steps for calculating SSE are: for each observation, calculate the deviation of that observation from its group mean and square that value. You then add up those squared deviations for all of the observations in all of the groups. If there is a lot of variability (or “noise”) within groups, SSE will be large.
+
+ Now, we want to compare the two pieces of variability: SSG and SSE. These two measures are not directly comparable since SSG measures variability between k means and SSE measures variability using all n observations. Thus, we need to put the two on comparable scales by dividing by their degrees of freedom. The degrees of freedom associated with SSG is k– 1. For SSE, it loses one degree of freedom for each group mean, so if there are k means, we are left with n– k degrees of freedom. [Note that the degrees of freedom for the between group and within group add up to the total degrees of freedom.]
+
+The result of calculating SS/df is called a mean square, which is just a fancy word for variance. We have a mean square for groups (MSG) and a mean square for error (MSE). Comparing these two measures of variability, the between group variability (MSG) to the within group variability (MSE), gives us our F-statistic. This test statistic has a F-distribution with two parameters for the degrees of freedom: k – 1 degrees of freedom for the numerator (MSG) and n – k degrees of freedom for the denominator (MSE). 
+
+Similar to previous test statistics we’ve discussed, this F-statistic measures how far the sample result from the study is from what we would “expect” (given sampling variability) IF the null hypothesis were really true. We would expect the two mean squares, MSG and MSE, to be roughly similar if the null hypothesis (no difference) were really true. Alternatively, if the population means really differed, we would expect MSG to be larger relative to MSE. What does an F-distribution with parameters df1 and df2 look like? 
+
+Since the F-statistic is a ratio of variances, the F-distribution can only take on positive values. (Recall that variances can’t be negative.) Three different F-distributions are shown in the figure above. Notice that the F-distribution is not symmetric, but rather is positively skewed. The shape of the F-distribution varies depending on both the numerator and the denominator degrees of freedom. As the number of groups being compared increases, the F-distribution shifts to the right and becomes more Normal looking.The data from the Hippocampus Volume and Football example were summarized using plots and summary statistics earlier in this presentation. We noticed that the sample means for each group were different and that the control group had a larger average hippocampus volume than the other two groups. But do these results provide evidence that at least one population mean hippocampus volume is different among the groups?
+
+To answer this question, we produce an ANOVA table (via software!). The F-statistic for this example is 31.47, which means that the variation between the three group means is about 31.5 times bigger than we would expect under the null hypothesis, based on the variability within the groups. This test statistic has a F-distribution, with 2 and 72 degrees of freedom.If our null hypothesis were really true and there was no difference between the groups’ population means, then the sampling distribution of the F-statistic would follow a F-distribution with 2 and 72 degrees of freedom, as shown in the plot above. Our F-statistic value of 31.47 lies in the upper (right) tail of this distribution. This value seems fairly unlikely to occur, but how likely or unlikely is it? Let’s quantify this probability. The evaluation piece of the hypothesis framework is the same as that from previous lectures. 
+
+Recall that we quantify how unusual the evidence is compared to what is assumed to be true by computing a p-value. The p-value is the probability that you would obtain a result this “unusual” if the null hypothesis were really true and any observed difference was simply due to sampling variability. To put it another way, it’s the probability of getting our sample result (or one even more extreme) if the null hypothesis were true. In ANOVA, the p-value is how much area is in the upper tail of the F-distribution. The smaller the p-value, the less consistent or compatible the data are with the null hypothesis. 
+
+Once we have the p-value, we make a conclusion about the strength of evidence we have against the claim by comparing the p-value to the significance level, alpha. If the p-value is less than alpha, we reject the null hypothesis and say we have evidence against the null in favor of the alternative hypothesis. Another way of saying this is that the result is “statistically significant”. Alternatively, if the p-value is greater than alpha, then we do not reject the null hypothesis and we say we lack evidence against the null. This result would not be considered statistically significant. In either case, remember to always state the conclusion in the context of the problem. Let’s evaluate the evidence for the Hippocampus Volume and Football example. 
+
+We are interested in the probability of seeing a F-statistic of 31.47 or more “extreme” if the null hypothesis were really true. When doing ANOVA, the p-value is the area in upper tail of the F-distribution. The p-value for this example is 1.5 x 10^-10 (in scientific notation), which is a really, really, really small value. For a significance level set to 0.05, we reject the null hypothesis because the p-value is less than 0.05. Therefore we conclude that we have evidence that at least one of the groups’ population means differs from the rest. 
+
+You may be wondering at this point, which groups are different? We will explore this topic, called post-hoc tests, in the next lecture. Here are a few additional notes about ANOVA. 
+
+First, if we carried out an ANOVA test with only two groups, this would be exactly equivalent to carrying out a two-sample t-test with equal variance assumption. The F-statistic for comparing two means is equal to the square of the two-sample t-test statistic. 
+
+Second, ANOVA can be used both for balanced designs, when the number of observations is the same in each group, and for unbalanced designs, when the number of observations is different in each group. With a balanced design, the test will have somewhat more power and the test statistic will be somewhat more robust to departures from the equal variance assumption, but the test is equally applicable to unbalanced designs.  
+
+Lastly, what should you do if some of the assumptions for ANOVA are not met? 
+
+If the normality assumption is in question, ANOVA has been shown to be quite robust to deviations from the normality assumption and the results will still be valid in most cases, provided that the sample sizes in the groups aren’t too small. Another option might be to transform the outcome variable (for example, using a log transformation) and see if the transformed outcome is closer to Normal.
+
+If the equal variances assumption is in question, ANOVA has also been shown to be pretty robust to deviations from this assumption as well, provided that the sample sizes are roughly equal between the groups. 
+
+Other options include nonparametric techniques, such as simulation-based techniques (such as bootstrapping or re-randomization tests) or rank-based tests (such as the Kruskal-Wallis test), which require fewer assumptions.

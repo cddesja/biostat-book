@@ -1,0 +1,97 @@
+We have so far discussed two hypothesis tests for comparing two categorical variables: Pearson’s Chi-square test and Fisher’s exact test. Both of these tests are appropriate only when the observations are independent of one another. What test should we use if the observations are paired, or dependent on one another, and the outcome is binary? Answer: McNemar’s test! Recall that paired data or observations arise in a number of different situations.
+
+Paired observations arise when measurements are taken on the same participants before and after some intervention or event occurs. The pre- and post- measurements are not independent of each other, since they were obtained on the same person. 
+
+Paired observations also arise when a study is carried out on matched participants, such as twins, siblings, or participants matched as pairs in other ways (by age, gender, and race, for example). The two members of the pair are not independent of one another. They are more like each other than two randomly selected people from a population would be.
+
+Paired observations also arise in medical studies when measurements are conducted on the left and right side of the body. For example, a skin treatment might be tested on the right arm, with the left arm being the control. The two observations are not independent of each other, since they are on the same person.
+
+When the outcome is a binary variable, we can carry out a McNemar’s test. Another way to think about it is that McNemar’s test is appropriate for comparing a binary outcome in paired observations, just as the paired t-test is appropriate for comparing a continuous outcome in paired observations. Another name for this test is McNemar’s Chi-square test because the test statistic has a Chi-square distribution.Let’s start with an example of a paired design. 
+
+Researchers1 were interested in whether a surgical procedure called cholecystectomy (CHE), which is removal of the gall bladder, would affect bowel function. They recruited 51 participants who were about to have CHE surgery, and measured their bowel function as number of stools per day (one or fewer vs. more than one) before the surgery and again one month after surgery. 
+
+Since the before and after measurements were done on the same patients, the data are not independent, and summarizing the data using a 2x2 contingency table like the ones we’ve seen in earlier lectures would not be appropriate. Instead, the data are summarized by pairs as shown above, where each count represents one PAIR of before/after measurements (or one person, in this case). So, for example, 25 of the patients had one or fewer stools per day BOTH before and after the surgery. Another 11 patients had more than one stool per day both before and after surgery. There were 15 patients who had one or fewer stools per day before surgery but more than one stool per day after surgery. No patients in this study went in the other direction.
+
+The researchers wanted to know if the CHE surgery had an effect on stool frequency. We can see that 11 of the 51 patients (22%) had more than one stool per day before CHE surgery (and 40 patients, 78%, did not), while 26 of the 51 patients (51%) had more than one stool per day after the surgery (and 25 patients, 49%, did not). Could this large of a difference in bowl function between before and after surgery be the result of sampling variability or is this evidence of a real difference? Let’s use statistical inference methods to answer this question.
+
+Before we can answer this question, we have to understand some terminology specific to paired binary observations. 
+
+Reference: 
+1Sauter, G. H., Moussavian, A. C., Meyer, G., Steitz, H. O., Parhofer, K. G., & Jüngst, D. (2002). Bowel habits and bile acid malabsorption in the months after cholecystectomy. The American journal of gastroenterology, 97(7), 1732.
+Data: Dawson, B., & Trapp, R.G. (2004). Research questions about one group. In Basic and clinical biostatistics (4th ed., pp. 121). New York, NY: McGraw-Hill.In our paired contingency table, shown above, there are two cells where the measurement of interest did not change. Cell a shows that 25 of the patients had one or fewer stools per day both before and after CHE surgery and cell d shows that 11 of the patients had more than one stool per day both before and after CHE surgery. Cells a and d are called concordant cells (or agreeing cells). They account for the number of patients whose bowel function was not affected by the surgery. These cells provide no information about the difference between pairs so this data is not used in the calculation of the test statistic.The cells of most interest for paired binary data are cells b and c (called discordant cells or disagreeing cells) because they represent pairs that saw a difference or change. In the CHE and Bowl Function study, cell b shows that 15 of the patients went from having one or fewer stools per day before CHE surgery to having more than one stool per day afterwards (i.e., their bowel function got worse) and cell c shows that zero (0) patients went in the other direction, from more than one to one or fewer stools per day after surgery. Generally speaking, they account for the number of patients whose status was affected by the surgery. Discordant cells are the only values used in the calculation of the test statistic.In defining the research question for McNemar’s test, we are interested in whether the two paired binary variables are associated with (or related to) each other. 
+
+For the CHE and Bowel Function study, the research question could be phrased in multiple ways, and all are equivalent to each other. For example,
+ 
+Is CHE surgery associated with bowel function?, or,
+
+What is the effect of CHE surgery on bowel function?, or,
+
+Is the proportion of patients with worse bowel function (> 1 stool per day) different before and after CHE surgery?Before we can carry out any inferential method, we first need to evaluate the assumptions of the method. The assumptions for McNemar’s test are: 
+
+The sample should be a random (or representative) sample from the population, to allow us to generalize the results to that population; and
+
+The observations are paired in some way.
+
+We need to make sure the sample is “large enough” for the underlying theoretical distribution to hold. For the McNemar’s test, we check this condition by summing the counts in the two discordant cells. One rule of thumb is checking whether b + c > 10. If this is true, then the McNemar’s test statistic can be approximated by the Chi-square distribution. Otherwise, if the number of discordant pairs is less than 10, consider using other methods, such as an exact binomial test or continuity correction methods, to carry out the hypothesis test. 
+
+If these assumptions are not met, then the results of the test will not be valid. For the CHE and Bowel Function example, are the assumptions met? 
+
+Are the participants a random or representative sample of all adults who might undergo this surgical procedure? We don’t have enough information to know for certain if the participants were randomly selected from the population, but it seems reasonable to assume that the researchers would likely have chosen the participants to be as representative as possible of all people going in for CHE surgery, at least in that region or country. 
+
+Are the observations paired? Yes, because the same measurement (number of stools per day) was done on each participant both before and after CHE surgery.
+
+Lastly, is the sample size “large enough” to proceed with the McNemar’s test? Yes, the number of discordant pairs is equal to 15, which is greater than 10, so this condition is met to safely use the Chi-square distribution for this situation.
+
+References:
+Image: https://www.pinclipart.com/pindetail/owRJbh_file-mw-icon-checkmark-svg-creative-commons-checkThe next step is to define the hypotheses for the McNemar’s test in terms of the population. We could state the hypotheses for McNemar’s test in two different but completely equivalent ways: as a test of independence or as a test of proportions. 
+
+Let’s write out the two approaches for the CHE and Bowel Function example. 
+
+As a test of independence: 
+The null hypothesis is that the two variables of interest, bowel function (< 1 or > 1) and CHE surgery timing (pre vs. post), are independent of each other.
+
+The alternative hypothesis is that the two variables of interest, bowel function (< 1 or > 1) and CHE surgery timing (pre vs. post), are NOT independent of each other; that is, that there is an association or relationship of some kind between them.
+
+Alternatively, as a test of proportions:
+The null hypothesis is that the proportion of patients who have more than one stool per day is the SAME both before and after CHE surgery. 
+
+The alternative hypothesis is that the proportion of patients who have more than one stool per day is DIFFERENT before and after CHE surgery. 
+
+This test of proportions approach is the one that is more commonly used.We evaluate the claims in the usual way: 
+We collect evidence (data), 
+We summarize the data using exploratory data analysis (a paired contingency table and perhaps marginal or conditional probabilities), and 
+We calculate a test statistic to measure the compatibility between the data and the null hypothesis. 
+
+As previously mentioned, the test statistic for comparing paired binary data (given that the assumptions are met) only uses the information from the discordant cells, cells b and c of the table, because they are the only ones that provide us information about the difference in the pairs. The test statistic is called McNemar’s Chi-square statistic. It quantifies the discrepancy between the two discordant cells. It computes the difference between the counts in cells b and c, squares that value, and then divides by the sum of the counts in those two cells. This test statistic has a Chi-square distribution with 1 degree of freedom (because we can only use McNemar’s on 2x2 paired table). 
+
+There are several things to notice about this test statistic:
+
+If the null hypothesis were true, then cell b and cell c should be approximately the same (i.e., the same number of people got worse as got better), and the test statistic would be equal to zero. However, if the null were not true, then the difference between the two discordant cells would be large. 
+
+It doesn’t matter whether the counts in cell b or in cell c are larger (i.e., whether more people got worse or whether more people got better), since the difference is squared. The only thing that is important is how large the difference between cells b and c is.
+
+Since the McNemar’s Chi-square statistic can only take on positive values in both the numerator and denominator, the Chi-square distribution can only take on positive values (similar to what we saw in a previous lecture on the Chi-square test). Because of this, McNemar’s test is inherently one-sided. For the CHE and Bowl Function example, data were collected and summarized via tables earlier in this presentation. We noticed that the there was a higher proportion of participants that had more than one stool per day after surgery than before. But do these results provide evidence that there is an association between bowl function and CHE surgery? 
+
+To answer this question, we compute a McNemar’s Chi-square test statistic using the counts from the discordant cells, which ends up being a value of 15. This test statistic has a Chi-square distribution with 1 degree of freedom. So how unusual is our McNemar’s test statistic value? If our null hypothesis were really true and there were no association between the two variables, then the sampling distribution of the McNemar’s statistic would have a Chi-square distribution with 1 degree of freedom. The calculated test statistic for the CHE and Bowel Function study is 15.0. Our test statistic lies in the right tail of this distribution. This value seems fairly unlikely to occur, but how likely or unlikely is it? Let’s quantify this probability. With a McNemar’s test statistic of 15.0, and an inherently one-sided test, we are interested in the probability of seeing a test statistic of 15.0 or more “extreme” if the null hypothesis were really true. Therefore, the probability we are looking for is the area in the upper tail of the Chi-square distribution, above the value of 15. The p-value for this example is 0.0001, or < 0.001. For a significance level (alpha) set to 0.05, we reject the null hypothesis because the p-value of 0.0001 is less than 0.05. Therefore we conclude that there is evidence that the proportion of patients who have more than one stool per day is not the same before and after CHE surgery in this population. 
+
+Since we have rejected the null hypothesis, we could go on to say that the proportion of patients who had more than one stool per day increased after CHE surgery, from 11 out of 51 or 22% before surgery, to 26 out of 51 or 51% one month after surgery. The CHE surgery appears to significantly worsen bowel function in this population.Besides testing for an association between paired observations, we can also calculate a confidence interval for the odds ratio of paired data to get an estimate of the true (population) value. Similar to the hypothesis test presented earlier, the only information that contributes to the odds ratio is the discordant cells. Also notice that the procedure looks identical to the one presented in an earlier lecture on odds ratio. 
+
+The first step uses the general formula for a confidence interval: point estimate plus or minus the margin of error. But it is for the natural log of the odds ratio, where the sample odds ratio for paired data is computed as cell b divided by cell c. This is because the sampling distribution for odds ratio does not follow a Normal distribution, no matter what the sample size is. However, if we take the natural log of the sample odds ratio, then the sampling distribution for this transformed measure is approximately Normal. Applying this transformation allows us to use Normal-based methods for calculating the confidence interval. 
+
+So, Step 1 is to calculate the CI for the natural log of the odds ratio, where: 
+
+--The point estimate is the natural log of the sample odds ratio, ln(b/c). 
+
+--The degree of confidence is the appropriate z-value, and 
+
+--The estimated standard error of the natural log of odds ratio is as shown on the slide. 
+
+Then, Step 2 is to back-transform the confidence interval values found for the natural log of OR by taking the antilog: the exponential function. This will produce the lower and upper limits of the confidence interval for odds ratio (on the original scale). 
+
+The confidence interval formula presented on this slide only applies when all of the assumptions are met for comparing paired data on a categorical variable. Now let’s calculate the confidence interval for the odds ratio for the CHE and Bowl Function study. 
+
+The sample odds ratio of having more than one stool per day, after compared to before surgery, is…uh oh! We can’t directly calculate this value because it would b 15 divided by 0, which gives us an undefined value, and we know the odds are different. One recommendation for dealing with tables that have zero counts in cells is to add 0.5 to each cell and then compute the estimates using the adjusted values. This technique is referred to as the Haldane-Anscombe correction. Because we have this situation for our example, let’s apply it to get the odds ratio and its confidence interval. 
+
+The sample odds ratio for this example, then, is 15.5 divided by 0.5, which is 31. Taking the natural log of this value gives us 3.434, and the estimated standard error for the natural log of OR is 1.437. The z-value for a 95% confidence interval is the value in the Standard Normal distribution with 0.975 area lying below that value, so the z-value is 1.96. Putting all of those values together–the point estimate, the z-value, and the standard error–a 95% confidence interval for the ln(OR) is between 0.618 to 6.250. Now we need to exponentiate those limits to get the 95% CI for the odds ratio: e^(0.618) equals 1.855 and e^(6.250) = 518.116. 
+
+We are 95% confident that the odds ratio of having more than one stool per day comparing after to before CHE surgery is between 1.855 and 518.116. Or we could say, a range of plausible values for the true odds ratio of having more than one stool per day comparing after to before surgery is from 1.855 and 518.116. Because the 95% confidence interval does not include 1, then one is not a plausible value and we can conclude that the odds ratio of having more than one stool per day comparing after to before CHE surgery is statistically significant (same conclusion that we came to in the test). There is evidence of a difference in odds of having “worsening” bowl function, with after surgery having between 1.855 to 518.116 times the odds of before surgery.

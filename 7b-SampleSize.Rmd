@@ -1,0 +1,61 @@
+“How many participants do I need for my study?” This is one of the most common questions asked of statisticians. The purpose of this lecture is to help you understand what goes into estimating a sample size for a study. This understanding will be invaluable, regardless of whether you are going to do your own sample size calculations or consult a statistician for assistance. Whether you are designing your study independently or requesting assistance from your friendly neighborhood statistician, you likely will have one key question: “How many participants do I need for my study?” This is a key question because it strongly affects both the budget and the time required for the study and therefore its feasibility. Before getting to the actual sample size calculations, it is necessary to take a step back and address some key background questions about your study. This will ensure that the sample size calculations are appropriate to the situation. These questions include: 
+
+What is the scientific or research question that you are trying to address with your study? It is important to clearly define this question, since the study design, conduct, and analysis all depend upon it. 
+
+2) What population or group of people are you interested in studying?
+
+3) What is the outcome of primary interest? You may be interested in a number of outcomes, but one of them needs to be designated as primary so that it can be used to estimate the needed sample size. It is also helpful to consider how the outcome will be measured and the variability of it.
+
+4) What is the intervention or treatment or exposure of interest? For experimental studies, how exactly will the treatment be administered? For observational studies, how exactly is the exposure defined? Will there be a comparison group or groups? 
+
+5) What study design are you thinking about using? How will the participants for the study be recruited? Will random sampling be involved? Will random assignment be used? How long will the participants be followed? How many of them are likely to drop out or be lost to follow-up?
+
+Each of these questions may lead to additional questions, but this list is a good place to start. If you have requested assistance from your friendly neighborhood statistician in designing your study, here are a couple of things to keep in mind.
+
+First, your statistician will be able to help you best if you involve them from the very beginning. The earlier, the better! Do NOT wait until after you have collected all of the study data to contact your statistician. If you do that, it may be too late to remedy flaws in the study design (such as being underpowered) or the study conduct.
+
+Second, the first meeting will go much more smoothly if you provide your statistician with as much information about your study as possible in advance. If you have a draft grant application, a draft study protocol, or a draft manuscript related to this study, send it to your statistician in advance of the meeting to help them prepare.
+
+Third, even though your primary question may be “what sample size is needed for my study?”, your friendly neighborhood statistician is likely to ask you a lot of probing background questions [as discussed on the previous slide] before they get to answering your questions. They are not doing this to be difficult nor to question your competence as a scientist/physician/professional. They are doing this to be able to give you the best possible advice about the study design and sample size.
+
+References:
+Clock: https://www.storyblocks.com/stock-image/alarm-clock-rwaf4on7u-j6gmgvcf
+Laptop: https://pixabay.com/vectors/laptop-knowledge-information-1723059/
+Brainstorming: https://www.storyblocks.com/stock-image/brainstorming-infographic-metaphor-with-line-icons-project-brainstorming-concept-for-website-and-infographics-vector-line-art-icon-isolated-on-white-background-hxv01inplbj5m958o1Once you (or your friendly neighborhood statistician) are satisfied that your study goals are clear and that your study plan is adequate to achieve those goals, it is time to focus in on the sample size needed for the study. This is where the typical “four questions” come in. 
+
+How much variability is there in the primary outcome measurement? If the measurement is very precise, then it will be easier to see a difference between the groups. If the measurement has a lot of variability and is imprecise, then it will be difficult to see a difference between groups (just as it is difficult to distinguish nearby stars using a fuzzy low-resolution telescope). Other things being equal, the higher the outcome variability is, the larger the necessary sample size will be.
+
+What is the smallest difference between the groups (i.e., the treatment effect size) that would be clinically or scientifically relevant? Other things being equal, the smaller the effect you are looking to find, the larger the necessary sample size will be.
+
+What significance level (alpha) will you use for your study? The standard level is alpha=0.05. Recall, however, that there is a direct trade-off between Type I error (alpha), which is finding an effect or a difference that isn’t real, and Type II error (beta), which is missing a real effect or difference. Reducing alpha from 0.05 to 0.01 essentially “raises the bar” for the study; that is, it requires stronger evidence of an effect or a difference. This makes it less likely that you will falsely conclude that there is a difference between the groups, but at the price of making it more likely that you will miss a real difference. For a given area of research, the optimal tradeoff between alpha and beta may vary from the standard levels. Other things being equal, the lower the significance level is, the larger the necessary sample size will be.
+
+What power do you need for your study? (This question is tied to the previous one, since the power of a study is equal to 1 – beta.) Power is the ability to see a real effect or difference and can be thought of as the sensitivity of the study. The standard power level for research studies used to be 0.80 or 80% power, but it is becoming increasingly common to require 0.90 or 90% power. Other things being equal, the higher the power is, the larger the necessary sample size will be.
+
+All of this information will be used in the calculation to estimate a sample size for your study. 
+
+In reality, the sample size for a study also depends on several additional factors, including the available budget, the available time (particularly if the participants need to be followed over time), and the ability to recruit participants (particularly for rare conditions). If the initial sample size estimate turns out to be completely unrealistic, given the practical constraints on the study, then the above series of questions will need to be revisited. In some cases, it may not be possible to address the scientific question of interest within the existing budget and time constraints. In such cases, it may be better to cancel the planned study, particularly if it involves human subjects. It is unethical to expose people to the risks of a study that does not have enough power to answer the scientific question of interest. So now you’ve answered the “four questions” either independently or in conversation with your statistician collaborator. In the latter case, your statistician will go off and develop a sample size estimate for your study. What do you do if you are working independently? We will discuss in detail only one simple situation, comparing means between two groups, in order to help you understand what factors affect sample size. In reality, sample size calculations are always done using statistical software.
+
+Above is a standard sample size equation for comparing the means of a continuous outcome between two independent groups, such as a treatment group and a control group. This equation assumes the two groups have the same sample size. The sample size, n, that would be needed for the study would depend on four things:
+
+The standard deviations, s1 and s2, of the outcome measurement in each group. This is a measure of the variability of the outcome measurement. The standard deviation goes in the numerator of the equation, which means that an outcome with more variability will require a larger sample size.
+
+The minimum practically (or clinically) important difference, delta (?), between the two group means that we would like to be able to detect. This is sometimes abbreviated as the MCID. It is also sometimes called the “minimum effect size”. This is the difference between the null value of our hypothesis (µ0) and the value we’d like to be able to declare as different. The delta value goes in the denominator of the formula, which means that a smaller effect will require a larger sample size to detect.
+
+The alpha level we choose for our two-sided test, which comes in through the z*? (“z alpha”) term. This is the z-value from the Standard Normal distribution corresponding to an area of ?/2 in each tail. Common values for z*? are 1.645 for alpha=0.10, 1.96 for alpha=0.05, and 2.58 for alpha = 0.01.
+
+The power we require for the study, which comes in through the z*? (“z beta”) term. If we would like our study to have a power of 0.90 or 90%, then we will set ? at 1 – 0.90 or 0.10. We then use the z-value from the Standard Normal distribution corresponding to an area of ? in the upper-tail. Common values for z*? are 0.84 for 80% power, 1.28 for 90% power, and 1.645 for 95% power. Note that z*? becomes larger as the power increases. This term is in the numerator of the formula, so a study with higher power (and larger z*? ) will require a larger sample size.Let’s see how this formula would be used for a study to determine whether the mean mercury level in fish from Lake Superior differs from the mean level in Lake Michigan.
+
+We want to know how many fish, n, we would need to sample (randomly, of course!) from EACH of the lakes to determine if the mean mercury level in the fish differs between the lakes. We will assume, for simplicity, that we will sample the same number of fish from each lake.
+
+The outcome we are interested in is the mercury level in the fish. Let’s suppose that we’ve done some pilot studies and we know that the standard deviation of mercury levels in fish in Lake Superior is roughly 0.4 ppm and in Lake Michigan is roughly 0.5 ppm.
+
+The minimum effect size in this case is how much *difference* between the mean mercury levels in the two lakes we want to be able to detect. Let’s say that we want to be able to tell if the mean levels differ by 0.1 ppm.
+
+Let’s assume as before that we want our study to have 90% power (so z*? = 1.28) and that we will use alpha = 0.05 in our two-sided test (so z*? = 1.96).
+
+Putting all of these values into the equation (and remembering to round UP!) gives a minimum sample size of 431 fish in each group. We will need 862 fish in our study to have a 90% chance of detecting a mean difference as small as 0.1 ppm.
+
+References: 
+Fish: https://www.storyblocks.com/stock-image/trout-fish-jumping-spbzenvm_zj6gmkthtIn practice, sample size calculations are almost never done by hand. Some online sample-size calculators are listed on the course site. These are useful for doing quick ballpark calculations, or for double-checking other software. 
+
+In your future career, you may encounter study design situations that are more complex than those discussed in this unit. Be sure to contact your friendly neighborhood statistician for assistance! Examples of situations that are beyond the scope of this course include: survival outcomes, correlated (non-independent) observations, unequal sample sizes in the groups, non-inferiority or equivalence studies, adaptive clinical trials, etc. Sample size and power calculations for some of these other situations will be covered in the second semester of this course, PubH 6451. For others, more advanced training in clinical trials and/or methods for correlated data would be needed.

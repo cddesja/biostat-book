@@ -1,0 +1,73 @@
+In previous lectures, we provided an introduction on how to describe (via summary statistics) the relationship between two numerical variables. The summary statistics that were presented were the correlation coefficient and the regression coefficients from a simple linear regression model. Just as before, we know that summary statistics will vary from sample to sample, so we are interested in knowing: Could the relationship we observe be the result of sampling variability or is this evidence of a real relationship? Let’s use statistical inference methods to answer this question. 
+
+The same example we used in previous lectures, Mercury Content in Fish and Water Acidity, will be used throughout this lecture.We have talked about a “regression model” several times in this lecture and in a previous one. You may be wondering, what does “model” mean? A model, in a general sense, is a representation of something else. In science, models are created as a simplification and idealized understanding of some physical system. In statistics, a model is an equation or set of equations that describe, represent, or approximate a response variable. This model must specify both the ideal predictions for what we expect will happen and allow for random scatter around the ideal. In crude notation, we could write this out as 
+
+Response = Trend + Random, or 
+
+Data = Signal + Noise. 
+
+For a simple linear regression model, the observed Y value (the “response”) can be modeled by a line (which is the “trend” part) and some scatter of the data points above and below the line (which is the “random” part). The equations presented on the slide have exactly this form, but one describes the simple linear model for a sample and the other for a population.
+
+Similar to previous lectures, we have different notation for the regression coefficients depending on whether we are talking about a sample or a population. If we are talking about a sample, the notation for the regression coefficients uses lower-case Roman letters, b0 and b1, as we saw previously. And if we are talking about a population, the notation uses Greek letters, beta0 and beta1. 
+
+In the population SLR model, we treat the trend as a “fixed” component, meaning that the intercept (beta0) and slope (beta1) each have one single true value for that population. In contrast, the random component, epsilon, takes on a different value for each data point. We call that random part “error”, but that doesn’t mean there is a mistake; it just refers to any random variability. Because error is random, we can make assumptions to the behavior of the randomness. And because these population coefficients are unknown to us, we use the coefficients determined from the sample (b0 and b1) to make an inference about the population coefficients. Let’s see how to do this with our SLR example. Recall that the fitted regression line for the Mercury Content in Fish and Water Acidity example was:
+
+y-hat = 1.53 - 0.152*x
+
+where y-hat is the predicted average mercury content in fish (in ppm) and x is the water acidity.
+
+Y-hat indicates the value predicted by the model and the values for Y-hat for all possible X-values form the regression line. On the other hand, Y indicates the actual, observed value for a given point, which will differ from the model-predicted value (i.e., from the regression line) by some amount, e, where e is the error or residual value for that point. 
+
+Based on the fitted regression equation from this sample, the slope of the line is negative. However, this slope (and the intercept) are only estimates of the population parameters, beta0 and beta1. We know that if we take another sample, these estimates would probably be different. But, as usual, what we want to know is: Could the relationship we observed be the result of sampling variability or is this evidence of a real relationship? Let’s use statistical inference methods to answer this question.The research question we will answer for this example is: Is there a relationship between average mercury content in fish and water acidity in Florida lakes?Let’s define the hypotheses for the simple linear regression. 
+
+There are two coefficients we could test, but we are only really interested in one of them. The test in simple linear regression is most often about the slope, rather than about the intercept, because testing the slope answers the question of whether there is a relationship between the two variables or not. 
+
+Recall that the null hypothesis defines the skeptical perspective or the “nothing is going on” situation. When we are looking to see if two variables are associated, the skeptical perspective is that they aren’t associated at all or they are independent of one another. For simple linear regression, this would occur if the slope equals 0. 
+
+The alternative hypothesis, on the other hand, defines the competing claim, the thing we are interested in finding evidence for. In this case, the alternative hypothesis is that the two variables are indeed associated with or related to each other and therefore, are not independent of one another. We would write the alternative hypothesis for simple linear regression as the slope does not equal 0. Let’s define the hypotheses for the Mercury Content in Fish and Water Acidity example. 
+
+The null hypothesis is the slope between mercury content in fish and water acidity in the population is zero. We could also state it as, the true coefficient for water acidity is zero. In notation, beta1 = 0. 
+
+The alternative hypothesis is the slope between mercury content in fish and water acidity in the population is not zero, or the true coefficient for water acidity is not zero. In notation, beta1 ≠ 0. We evaluate the claims in the usual way: 
+We collect evidence (data), 
+We summarize the data using exploratory data analysis (scatterplot, correlation coefficient, simple linear regression line), and
+We calculate a test statistic as a measure of the compatibility between the result from the data and the null hypothesis.
+We can also calculate a confidence interval that provides a plausible range of values the population parameter can take.
+
+In a previous lecture, we used a t-test statistic for testing the mean of a numerical variable. Regression is very similar. Recall that the general t-statistic formula is the sample estimate minus the null value, all divided by the standard error for that estimate. Written out for simple linear regression, it is the sample slope (beta1) minus 0 (the null value), divided by the standard error of the slope. The equation for the standard error of the regression slope is a little ugly (and time-consuming to carry out by hand), so we will rely on software to compute the standard error for us and leave the explanation for a future statistics course. This test statistic has a t-distribution with n-2 degrees of freedom. [Note: The df = n-2 because we are estimating two parameters (coefficients) in this model: the slope and the intercept.] 
+
+Confidence intervals are an alternative method for summarizing the evidence provided by the data. Recall that the general formula for a confidence interval is the point estimate plus or minus the margin of error. Filling in these details for estimating a population slope:
+
+--The point estimate is the slope estimated from the sample. 
+
+--The margin of error is the degree of confidence, which is calculated from the appropriate t-value times the standard error for the slope. The appropriate degrees of freedom for the t-value is n-2 and the standard error for this situation is the SE for the slope (obtained via software). 
+
+The confidence interval formula presented on this slide only applies when all of the assumptions for simple linear regression are met. (These assumptions will be presented in a future slide.) Remember to check the assumptions first before carrying out any inferential method.  For the Mercury Content in Fish and Water Acidity example, data were collected and summarized using plots and summary statistics (presented in a previous lecture). The simple linear regression output that you might see from your software is given above. The slope from this sample was -0.1523. Would this slope be unusual if the true slope were really zero?
+
+To answer this question, we compute a t-test statistic using the data and the null value. The t-test statistic for this example is -0.1523 minus 0, all divided by 0.0303. Solving this out results in a t-test statistic of -5.024 (which we can see in the output from our software). This test statistic has a t-distribution, where the degrees of freedom are 53 – 2 = 51.
+
+We can also compute a confidence interval for the slope using information in the output. The sample slope is -0.1523 and the standard error for the slope is 0.0303. The t-value for a 95% confidence interval is the value in the t-distribution with 51 degrees of freedom and 0.975 area lying below that value, so the t-value is 2.008. Putting all of those values together–the point estimate, the t-value, and the standard error–a 95% confidence interval for the true slope is -0.213 to -0.091. The last step in our inferential framework is to make a decision about how usual or unusual the evidence is compared to the claim about the population parameter. Recall that we do this by quantifying how unusual the evidence is compared to what is assumed to be true by computing a p-value. Once we have the p-value, we make a conclusion about the strength of evidence we have against the null hypothesis by comparing the p-value to the significance level, alpha. If the p-value is less than alpha, we reject the null hypothesis and say we have evidence against the null in favor of the alternative hypothesis. Let’s evaluate the evidence for the Mercury Content in Fish and Water Acidity example. 
+
+With a t-value of -5.024 and an alternative hypothesis that is two-sided, we are interested in the probability of seeing a t-value of -5.024 or more “extreme” if the null hypothesis were really true. The t-value could be more “extreme”, which means further from zero, in either direction: either further above +5.024 or further below -5.024. Therefore, the probability we are looking for is the area in both tails of the t-distribution, highlighted green in the plot above. To find this, we calculate the area under the t-distribution curve to the right of +5.024 and add to it the area to the left of -5.024, which is the mirror image of the upper portion of the distribution. Alternatively, because the t-distribution is symmetric, we can just calculate the area under the curve to the left of -5.024 and multiply this value by 2. The p-value for this example is 0.00000657 (which we saw in the output from the software).For a significance level (alpha) set to 0.05, we reject the null hypothesis because the p-value is less than 0.05. Therefore we conclude that there is evidence of a non-zero slope between mercury content in fish and water acidity in Florida lakes. 
+
+Since we have rejected the null hypothesis, we could go on to say that the slope appears to be negative from this sample, with a plausible range of values for the slope of -0.213 to -0.091. What are the assumptions when carrying out inference for simple linear regression? The assumptions will be briefly described here while leaving a future lecture to describe them in more depth.
+
+The sample should be a random (or representative) sample from the population of interest, to allow us to generalize the results to that population; 
+
+The data should show a linear trend. If there is a nonlinear trend, a more advanced regression method should be applied;
+
+The observations should be independent of one another. That is, whether one point is above or below the line does not influence whether another point is above or below the line. 
+
+The residuals are nearly Normal in their distribution. 
+
+The variability of the points around the best-fit line is roughly constant. 
+
+If these assumptions are not met, then the SLR results will not be valid. Here are a few additional notes about regression.
+
+Use multiple sources of evidence to get a complete picture of the relationship. Each statistic by itself only provides part of the picture. Consider, for example, the p-value for the slope. It answers the question of whether the slope of the line is different than zero (a horizontal line). We can get a p-value that is really small, but then we may look at the R2  value and realize that the model doesn’t fit the data well at all (that is, the R2 value is very small). In most fields, this kind of effect (one with a significant p-value but a very small R2 value) would be considered completely trivial, even though it is statistically significant. If we only focused on the p-value, it might lead us to misunderstand the findings. 
+
+Simple linear regression is a stepping stone to more interesting and complex regression methods, but it is rarely used in practice as the sole statistical method. A famous statistician, George Box, once said “All models are wrong, but some are useful.” This is a good phrase to consider when doing regression (especially regression beyond SLR). What he meant is that all models are approximations of the real thing. So the question you should ask yourself is not “Is the model true?” (because it never is exactly true), but “Is the model good enough for this particular application?” (paraphrased from Luceño and Paniagua-Quiñones (2009)). 
+
+We presented confidence intervals for estimating the slope in the population, but there are other types of intervals we can compute in regression. These include prediction intervals for a Y value at a particular X value and prediction intervals for a mean Y value at a particular X value. These can be useful when you wish to use a regression model for prediction (such as predicting a person’s future risk of stroke based on their age, gender, blood pressures, and cholesterol levels) and want to estimate the uncertainty in your predictions.
+
+We presented the simplest of all regression techniques, but there are many more types of regression beyond simple linear regression. These include multiple linear regression (which will be introduced in a future lecture), logistic regression, proportional hazards regression, Poisson regression, and nonlinear regression. Many of these will be presented in the second course in this sequence, PubH 6451: Biostatistics II.
