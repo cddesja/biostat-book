@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Sampling Distributions | Biostatistics (DRAFT)</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Sampling Distributions | Biostatistics (DRAFT)" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Sampling Distributions | Biostatistics (DRAFT)" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Christopher Desjardins, Laura Le, and Ann Brearley" />
+
+
+<meta name="date" content="2022-01-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="sampling.html"/>
+<link rel="next" href="confidence-intervals.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction to Biostatstics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#cycle-of-research"><i class="fa fa-check"></i><b>1.1</b> Cycle of Research</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#step-1-population-to-sample"><i class="fa fa-check"></i><b>1.1.1</b> Step 1: Population to Sample</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#step-2-sample-to-statistic"><i class="fa fa-check"></i><b>1.1.2</b> Step 2: Sample to Statistic</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#step-3-statistic-to-parameter"><i class="fa fa-check"></i><b>1.1.3</b> Step 3: Statistic to Parameter</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#step-4-parameter-to-population"><i class="fa fa-check"></i><b>1.1.4</b> Step 4: Parameter to Population</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="variable-types.html"><a href="variable-types.html"><i class="fa fa-check"></i><b>2</b> Variable Types</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="variable-types.html"><a href="variable-types.html#scales-of-measurement"><i class="fa fa-check"></i><b>2.1</b> Scales of Measurement</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="variable-types.html"><a href="variable-types.html#categorical-scales"><i class="fa fa-check"></i><b>2.1.1</b> Categorical Scales</a></li>
+<li class="chapter" data-level="2.1.2" data-path="variable-types.html"><a href="variable-types.html#numerical-scales"><i class="fa fa-check"></i><b>2.1.2</b> Numerical Scales</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="variable-types.html"><a href="variable-types.html#summarizing-data"><i class="fa fa-check"></i><b>2.2</b> Summarizing Data</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="variable-types.html"><a href="variable-types.html#categorical-data"><i class="fa fa-check"></i><b>2.2.1</b> Categorical Data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="variable-types.html"><a href="variable-types.html#numerical-data"><i class="fa fa-check"></i><b>2.2.2</b> Numerical Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sampling.html"><a href="sampling.html"><i class="fa fa-check"></i><b>3</b> Sampling</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sampling.html"><a href="sampling.html#what-is-selection-bias"><i class="fa fa-check"></i><b>3.1</b> What is selection bias?</a></li>
+<li class="chapter" data-level="3.2" data-path="sampling.html"><a href="sampling.html#random-sampling"><i class="fa fa-check"></i><b>3.2</b> Random Sampling</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="sampling.html"><a href="sampling.html#simple-random-sampling"><i class="fa fa-check"></i><b>3.2.1</b> Simple Random Sampling</a></li>
+<li class="chapter" data-level="3.2.2" data-path="sampling.html"><a href="sampling.html#stratified-random-sampling"><i class="fa fa-check"></i><b>3.2.2</b> Stratified Random Sampling</a></li>
+<li class="chapter" data-level="3.2.3" data-path="sampling.html"><a href="sampling.html#cluster-random-samping"><i class="fa fa-check"></i><b>3.2.3</b> Cluster Random Samping</a></li>
+<li class="chapter" data-level="3.2.4" data-path="sampling.html"><a href="sampling.html#non-random-sampling"><i class="fa fa-check"></i><b>3.2.4</b> Non-Random Sampling</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="sampling.html"><a href="sampling.html#discrete-distributions"><i class="fa fa-check"></i><b>3.3</b> Discrete Distributions</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="sampling.html"><a href="sampling.html#random-variables"><i class="fa fa-check"></i><b>3.3.1</b> Random Variables</a></li>
+<li class="chapter" data-level="3.3.2" data-path="sampling.html"><a href="sampling.html#distributions"><i class="fa fa-check"></i><b>3.3.2</b> Distributions</a></li>
+<li class="chapter" data-level="3.3.3" data-path="sampling.html"><a href="sampling.html#continuous-distributions"><i class="fa fa-check"></i><b>3.3.3</b> Continuous Distributions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="sampling-distributions.html"><a href="sampling-distributions.html"><i class="fa fa-check"></i><b>4</b> Sampling Distributions</a></li>
+<li class="chapter" data-level="5" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>5</b> Confidence Intervals</a></li>
+<li class="chapter" data-level="6" data-path="bootstrapping.html"><a href="bootstrapping.html"><i class="fa fa-check"></i><b>6</b> Bootstrapping</a></li>
+<li class="chapter" data-level="7" data-path="sampling-distribution-of-means.html"><a href="sampling-distribution-of-means.html"><i class="fa fa-check"></i><b>7</b> Sampling Distribution of Means</a></li>
+<li class="chapter" data-level="8" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>8</b> Hypothesis Testing</a></li>
+<li class="chapter" data-level="9" data-path="hypotheis-testing-of-means.html"><a href="hypotheis-testing-of-means.html"><i class="fa fa-check"></i><b>9</b> Hypotheis Testing of Means</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Biostatistics (DRAFT)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sampling-distributions" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Sampling Distributions</h1>
+<p>In this chapter, we will introduce the abstract concept of sampling distributions and their importance to statistics. In an earlier lecture, we learned about common theoretical distributions, such as the Binomial distribution and the Normal distribution. We also learned about population parameters that define these distributions, such as <span class="math inline">\(p\)</span>, <span class="math inline">\(\mu\)</span>, and <span class="math inline">\(\sigma\)</span>.</p>
+<p>Theoretical distributions and their parameters are useful when we are trying to understand the probability of observing various outcomes in random samples given a known characteristic of the population.</p>
+<p>For example, suppose for the population of people who suffer from occasional migraine headaches, 60% of them get some relief from taking ibuprofen. 60% is assumed to be a known characteristic (or parameter) of the population. One question we could answer based on this information is, if we have a random sample of 50 people who suffer from occasional migraines, what is the chance that 10 of them will get relief from ibuprofen? We can use the Binomial distribution to answer this question. In this example, we are working from the known population parameter to tell us information about the unknown sample.However, when analyzing data, we are trying to make an inference about the population given the result or estimate from the sample. It essentially is working the opposite way from that described on the previous slide.</p>
+<p>Using the same example as the previous slide, suppose we are interested in investigating how effective ibuprofen is for people who suffer from occasional migraine headaches. To do this, we go out and obtain a sample from the population and get an estimate of the proportion who get relief after taking ibuprofen. We could then use the results from the sample to make an inference about the population parameter of interest, the proportion who get relief. So the unknown characteristic here is the population parameter and the known part is the result from our sample. Theoretical distributions are used during the process of making an inference but as a way to model the behavior, or distribution, of the sample statistic.</p>
+<p>What do we mean by this last sentence? This lecture addresses that question, which is the foundation for statistical inference.Suppose we want to know the proportion of people in the United States who have diabetes. One approach would be to survey everybody in the United States and calculate the proportion of them that have diabetes. Suppose this population proportion is 0.093 or [9.3%][CDC2014].</p>
+<p>But, suppose that we didn’t know the population proportion (it’s a black box) and that it isn’t possible to collect data from everybody. Instead, we have to obtain a representative sample of people from the population, make measurements on them, and then use that information to infer something about the proportion in the entire population. How can we use information from a single sample to say something about the population? We have to understand a key thing about samples: sampling variability.</p>
+<p>What is sampling variability?
+Sampling variability is the term we use to explain what happens when the random sampling process is repeated. It tells us what we intuitively know. If many random samples were collected, the measured quantities, or sample statistics, from those samples will vary from one another. Additionally, the sample statistic we obtain will (most likely) be different from the population quantity, or parameter, of interest.</p>
+<p>We need to be able to understand the behavior of how the sample statistics vary in order to be able to make an inference about the population parameter. This information about how much a statistic varies from sample to sample is key in helping us know how accurate an estimate is. How can we do this? We can simulate what would happen if random samples of the same size were repeatedly taken.Let’s go back to the Diabetes example to examine the variability of the proportion from sample to sample.</p>
+<p>Suppose researchers obtain a random sample of 100 people from the United States. They calculate the proportion in their sample (denoted p-hat) who have diabetes and find that 0.110 or 11% of those in their sample have diabetes. Two other researchers do the exact same thing. In their random samples of 100 people, one finds that 7% have diabetes and the other finds 12% have diabetes. Each of these values are an estimate of the true population proportion.</p>
+<p>Just by chance, these researchers collect samples that have a higher or lower value than the true population value of 0.093, and the sample statistics are each different from one another. This is an example of sampling variability. However, taking only three samples does not give us a very good understanding of the behavior of the sample proportions in repeated sampling. We need to see what happens if we repeat the sampling process many, many more times.</p>
+<p>If the study with random samples of size n = 100 is repeated 1,000 times (that is, collect 1,000 samples), and the calculated sample proportion for each sample is plotted, a dot plot of the sample proportions would look like this. If we repeat our study over and over indefinitely, the collected sample proportions would form the sampling distribution of sample proportions – defined as the distribution of proportions from all possible samples of this size. In general, whenever a distribution is made up of sample statistics (e.g., means, medians, standard deviations), the distribution is called a sampling distribution of that statistic.</p>
+<p>What do we notice about the behavior of the sample proportions over repeated random samples? Recall that when we evaluate distributions of numerical data, we look at the shape, the center, and the spread.</p>
+<p>The shape of the distribution of sample proportions is approximately bell-shaped, with the center being around approximately 0.093 (the population proportion), and the range of values spanning 0.02 to 0.18, with the average deviation away from the mean equaling 0.029. Recall that the average deviation away from the mean is another way of saying standard deviation. When we are describing the sampling distribution, we call the standard deviation of the sample statistics standard error (denoted std. error in the plot).But, what would have happened to the sampling distribution of sample proportions if the samples each had n = 500 instead of n = 100 observations? The dot plot above shows the sampling distribution of that scenario.</p>
+<p>From this dot plot, we see that the shape is still approximately bell-shaped and the center is still at the population proportion of 0.093. However, compared to the sampling distribution of sample proportions from samples of size 100, the sampling distribution of sample proportions for samples of size 500 has a much smaller spread. The sample proportions on the previous slide ranged from 0.02 to 0.18, and in this case the sample proportions range in values from around 0.06 to about 0.14 and have a standard error of 0.013.To drive the point home, let’s examine one more scenario. What do you think would happen if samples each had n = 1,000 observations, instead of n = 500 or n = 100? The dot plot above shows the sampling distribution of that scenario.</p>
+<p>Similar to the last two dot plots, we still see that the shape is approximately bell-shaped (but even more bell-shaped than the previous two) and the center is at the population proportion of 0.093. But now, the spread of the sample proportions is even smaller. The sample proportions range in values from around 0.064 to 0.125 and have a standard error of 0.0093.What general behaviors were noticed as we examined the three sampling distributions of sample proportions?</p>
+<p>The first behavior pertains to shape. As the sample size (n) increased, the sampling distribution of sample proportions looked more bell-shaped. This bell-shaped pattern is observed in the sampling distributions for many statistics (but not all) and will play an important role in the majority of inferential methods we use in this course.</p>
+<p>The second pattern observed is that the center of the sampling distribution was always located near the population parameter that we are trying to estimate. It would be exactly on the population parameter had we sampled an infinite number of times (which is the precise definition of sampling distributions), but because there were only 1,000 samples in each of the dot plots (which was done for demonstration sake), the center was not always quite equal to the population parameter. This idea of the center of the sampling distribution being equal to the population parameter is important because we want to know we are “hitting” our target–the parameter of interest–on average across all possible samples. That is, our statistic is neither overestimating nor underestimating the value it is trying to estimate; but rather, it is hitting the parameter of interest, on average.</p>
+<p>Lastly, as the sample size increased, the width or spread of the sampling distribution decreased. That is, as n increased, the sample statistics tended to be closer to the true population parameter value, thus making the variability of the sample statistics smaller. Besides the shape of the distribution, knowing how the statistics vary from sample to sample (i.e., the spread of the sampling distribution) is what we really care about. We use this information in making an inference from the sample to the population because it tells us how precise an estimate is. Let’s review the different distribution types that have been presented thus far: population distributions, sample distributions, and sampling distributions.</p>
+<p>Recall from a previous lecture that population distribution describes the distribution of a characteristic of that population. It displays the proportion or probability of the values that make up the characteristic. As we learned in this lecture, typically, this distribution is unknown, and information about that distribution (e.g., population parameters; population proportion p) are often what we want to try to estimate. In the Diabetes example, we assumed the population proportion of people in the United States who have diabetes was 0.093.</p>
+<p>However, what we most likely have access to is a sample of data from the population. If we plot the data from our sample, we create a sample distribution, which is a distribution of a characteristic of the sample. It is similar to the population distribution but it most likely will have different proportions of the values than the population. We use the information from the known and observed sample to help us estimate the unknown population value/parameter of interest.</p>
+<p>Unlike population and sample distributions, which are distributions of cases or observations, sampling distributions are distributions of statistics, where each “dot” (a.k.a., sample statistic) is aggregate information from a sample of observations and many, many, many ”dots” (a.k.a., sample statistics) are obtained so we can understand the behavior of the ”dots”. While we can simulate what the sampling distribution will look like (as we have in this lecture), we do not observe this distribution directly in real life. This distribution is an abstraction of what would happen if we could mimic the sampling behavior over and over again. It helps us understand the sampling variability of the statistics so that we can make an inference about the population from the sample.</p>
+<p>While sample distributions are an important part of the data analysis process, sampling distributions are the foundation for statistical inference (as mentioned earlier).The concept of sampling distributions for sample proportions was presented in this lecture. But, any statistic that we calculate from a sample has its own sampling distribution. For example, there is a sampling distribution for sample means (which will be discussed in a future lecture), or for sample relative risks. As we discussed earlier, many statistics have sampling distributions that are bell-shaped, but some statistics have sampling distributions that are not bell-shaped (e.g., sample median, sample standard deviation, sample relative risk, sample odds ratio).</p>
+<p>References:
+[CDC2014]: <a href="https://www.cdc.gov/media/releases/2014/p0610-diabetes-report.html" class="uri">https://www.cdc.gov/media/releases/2014/p0610-diabetes-report.html</a></p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sampling.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="confidence-intervals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["biostat-book.pdf", "biostat-book.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

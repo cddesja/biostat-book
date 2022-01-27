@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Biostatistics (DRAFT)</title>
+  <title>Chapter 8 Hypothesis Testing | Biostatistics (DRAFT)</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Biostatistics (DRAFT)" />
+  <meta property="og:title" content="Chapter 8 Hypothesis Testing | Biostatistics (DRAFT)" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Biostatistics (DRAFT)" />
+  <meta name="twitter:title" content="Chapter 8 Hypothesis Testing | Biostatistics (DRAFT)" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="variable-types.html"/>
+<link rel="prev" href="sampling-distribution-of-means.html"/>
+<link rel="next" href="hypotheis-testing-of-means.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -203,67 +203,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Biostatistics (DRAFT)</h1>
-<p class="author"><em>Christopher Desjardins, Laura Le, and Ann Brearley</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2022-01-27</em></p>
-</div>
-<div id="introduction" class="section level1" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>What is <strong>biostatistics</strong>? How does it fit within the larger field of research? What will you learn from this course? These are the questions that will be addressed in this lecture.</p>
-<p>Let’s begin with the question “What is statistics?”.</p>
-<p>There are many definitions, but they all have similar themes.</p>
-<p>For many people (maybe even you), statistics is seen as a branch of mathematics. However, John Tukey, a famous statistician in the mid-1900’s, stated that “statistics is a science, not a branch of mathematics, but uses mathematical models as essential tools.” Just as engineering, chemistry, and economics use math as a tool but are seen as separate fields from math, so should statistics be distinguished from mathematics.</p>
-<p>Alan Agresti and Christine Franklin have described statistics as “the art and science of learning from data” (this is also the title of their introductory statistics textbook). The goal of statistics is to translate data into understanding of the real world. At the heart of it all is the word data.</p>
-<p>Examples of areas in which statistics is used include business, climate change research, manufacturing quality control, government policy, education, finance, and even sports (have you seen the movie Moneyball?).</p>
-<div id="cycle-of-research" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Cycle of Research</h2>
-<p>Medical or public health research, like all scientific research, begins with a <em>research question</em> about a population of interest. Biostatistical methods are used to help answer this research question. Let’s describe this process using the Cycle of Research diagram shown here.</p>
-<p><img src="biostat-book_files/figure-html/fig.cor-1.png" width="768" /></p>
-<div id="step-1-population-to-sample" class="section level3" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> Step 1: Population to Sample</h3>
-<p>The scientific <em>Cycle of Research</em> begins with a <em>population</em>. A population is the complete set of individuals who share some common characteristics. The population is the group of people we are interested in learning about. The population of interest in a given study may be U.S. adult males, or it may be Finnish preschoolers, or it may be HIV-positive adults in South Africa. Perhaps we are interested, for example, in knowing how tall ten-year-old American boys are. The population in this case would be all ten-year-old boys in the U.S.</p>
-<p>When we want to answer a specific question about a particular population, typically we obtain a sample. A <em>sample</em> is a subset of the population of interest. The sample is the group of people we actually study. This is the group of people from whom data are collected. In our example, we might randomly sample 1,000 ten-year-old boys from the U.S. population to serve as our study’s sample.</p>
-<p>You may wonder, if the goal is to make some conclusions about the population, why not just collect data on the entire population? Samples are often studied instead of entire populations for several reasons.</p>
-<p>One reason is cost. Often it would be too expensive and/or too time-consuming to collect data from an entire population of interest. For example, perhaps we are interested in the blood pressures of residents of Massachusetts. It would be much too expensive to obtain blood pressure measurements from every resident of the state, so we obtain a sample of residents instead. Take a careful look at this figure. Note that the samples have different numbers of people in them, and different mean (or average) diastolic blood pressure values. Also note that none of the mean values for the samples are the same as the mean blood pressure for the population. We will explore these concepts later.</p>
-<p><INSERT FIGURE></p>
-<p>Another reason for using a sample instead of the population is feasibility. Studying the entire population may simply not be possible. For example, it is not possible to determine the effect of a new treatment on an entire population of patients if the treatment is not yet available to the entire population.</p>
-<p>A third reason is accuracy. Measurements from a study’s sample may be more accurate than measurements from a population. More time and effort can be devoted to carrying out the measurements for the smaller number of people in the sample than is feasible for an entire population. We also can’t measure everyone in the population at the same time in the same way. Measurements may change over time (as we have all seen with our weight). If we have to measure a lot of participants, we may need multiple people or instruments to do it, which can also decrease accuracy.</p>
-<p>Finally, it may be unethical to study the entire population. If you’re administering a treatment that might be harmful or withholding a treatment that might be beneficial.</p>
-<p><em>Step 1 in the Cycle of Research</em> is to design a study in order to obtain a suitable sample from the population or populations of interest. There are a number of ways doing this. These will be discussed in more detail later in this book.</p>
-</div>
-<div id="step-2-sample-to-statistic" class="section level3" number="1.1.2">
-<h3><span class="header-section-number">1.1.2</span> Step 2: Sample to Statistic</h3>
-<p>Once we have a sample, <em>Step 2 in the Cycle of Research</em> is to use the sample data to calculate statistics. A <em>statistic</em> is any number calculated from the sample data. The sample mean is a statistic. The sample variance is another statistic. In our example, we might measure the height of each boy in our study’s sample of 1,000 ten-year-old American boys and then calculate the average (or mean) height. That average height is a statistic.</p>
-</div>
-<div id="step-3-statistic-to-parameter" class="section level3" number="1.1.3">
-<h3><span class="header-section-number">1.1.3</span> Step 3: Statistic to Parameter</h3>
-<p>Step 3 in the Cycle of Research is to use sample statistics to estimate population parameters. A <em>parameter</em> is a variable which describes some aspect of the population, but whose true value is unknown. The population mean is a parameter. The population variance is another parameter. In our example, the population parameter of interest is the average height of ALL ten-year-old boys in the U.S. The true value of this parameter is unknown because it is not possible to measure the heights of all ten-year-old American boys at once.</p>
-<p>Sample statistics can be used as estimates of the unknown population parameters. The sample mean is a good estimate of the population mean. The sample variance is a good estimate of the population variance. In our example, the mean height of the 1,000 ten-year-old boys in our study’s sample is an estimate of the true mean height of ALL ten-year-old boys in the United States.</p>
-</div>
-<div id="step-4-parameter-to-population" class="section level3" number="1.1.4">
-<h3><span class="header-section-number">1.1.4</span> Step 4: Parameter to Population</h3>
-<p>Step 4 in the Cycle of Research is to use the population parameter estimates we have obtained to <em>infer</em> something about the population we are interested in. <em>Statistical inference</em> is the process of drawing conclusions about a population on the basis of observations from a sample. In our example, we might want to know if ten-year-old American boys are taller now than they were fifty years ago. We could use the estimated true mean height of all ten-year-old American boys we obtained from our sample average in Step 3 and compare it to the value from fifty years ago. If the values were different, we could ask whether that difference is large enough to be <em>statistically significant</em>.</p>
-<p>Each time a researcher poses a scientific question and the investigation is deemed worthwhile and feasible, the scientific Cycle of Research begins again.</p>
-<p>The goal of this course is to develop your ability to do four things:</p>
-<ol style="list-style-type: decimal">
-<li>To understand the principles behind basic statistical analyses;</li>
-<li>To choose appropriate statistical analyses for a given scientific context;</li>
-<li>To carry out statistical analyses using R or SAS and understand the resulting output; and</li>
-<li>To read and interpret statistical results in the literature of your field of interest.</li>
-</ol>
-<p>The topics for the course will run from descriptive analyses to inferential analyses, such as confidence intervals, hypothesis tests, and linear regression.</p>
+<div id="hypothesis-testing" class="section level1" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Hypothesis Testing</h1>
+<p>Hypothesis testing provides a standardized decision-making process for scientific research. It can be used in many situations: to compare one group’s result to a ‘standard’, to compare two groups to each other, or to compare among many groups. Hypothesis testing is used to compare means, to compare proportions, to compare odds ratios, to compare hazard ratios, and so on.</p>
+<p>In this lecture, we will introduce the logic behind hypothesis testing. In the next lecture, we will formally present a specific hypothesis test, the one sample t-test, which is used to compare one sample mean to a ‘standard’.
+To review, statistical inference is the process of concluding something about the value of an unknown population parameter (such as the true mean or true proportion) based on information from a known sample (such as the sample mean or sample proportion).</p>
+<p>There are two approaches to doing statistical inference. One approach is through estimating the unknown population parameter via confidence intervals using the known result from our sample (which we learned in an earlier lecture). The other approach is through hypothesis testing. So how is hypothesis testing different from using confidence intervals?</p>
+<p>In hypothesis testing, we first assume some claim about the population parameter and then use the result from our sample to gain insight into that statement. When we use confidence intervals, on the other hand, we make no assumption about what the population parameter is. The purpose of constructing confidence intervals is to estimate the population value from the result of our sample, whereas, the purpose of hypothesis testing is to determine whether there is enough evidence (from the result from our sample) to refute the assumed claim about the population value.</p>
+<p>You might be thinking, it seems odd to start with an assumed claim about the population value. Why would we start with that? To understand this, we have to understand the logic of hypothesis testing.
+The logic of hypothesis testing involves three big pieces:
+Hypotheses, which are statements or claims about the population parameter;
+Evidence, which involves summarizing sample data to provide evidence about the claims; and
+Evaluation, which involves making decisions about how usual or unusual the evidence is compared to the claim about the population parameter.</p>
+<p>A commonly used analogy for the logic of hypothesis testing is the US criminal justice system. Let’s use this analogy to better understand the pieces in the framework. A key principle of the US criminal justice system is ‘A defendant is presumed innocent until proven guilty’. In this statement, there are two competing hypotheses about the ‘truth’:</p>
+<p>– The defendant is innocent.
+- The defendant is guilty.</p>
+<p>The first hypothesis (in this case, innocence) is assumed to be true. This assumed claim about the ‘truth’ is also known as the null hypothesis, denoted by <span class="math inline">\(H_0\)</span>, H-sub-zero or H-naught. It is the claim that is to be tested. In general, the null hypothesis describes the default situation (the status quo or the ‘nothing interesting is happening’ situation). It is the thing that we are going to initially assume is true about the population(s). When we are comparing one population to a standard, the null hypothesis is that the value of the parameter of interest in the population is equal to some hypothesized value. When we are comparing two populations (for example, a treatment group and a control group), the null hypothesis is that there isn’t any difference: the parameter has the same value in both populations. (‘Null’ means amounting to nothing, none, absent, insignificant.)</p>
+<p>In contrast, the second hypothesis (in this case, guilt) is an alternative claim, a claim for which we seek significant evidence. The alternative hypothesis describes what we hope to demonstrate about the population(s) using the data. It is closely aligned with the research question. When we are comparing one population to a standard, the alternative hypothesis is that the value of the parameter of interest in the population is different than the hypothesized value. When we are comparing two populations (for example, a treatment group and a control group), the alternative hypothesis is that there IS a difference: the parameter does NOT have the same value in both populations.</p>
+<p>These two statements should be made prior to examining any evidence. It would be considered cheating if we used our evidence to determine the hypotheses. We need to start with some assumed ‘truth’ in order to compare the evidence to the claim. Using knowledge of research design and detective skills, evidence is collected and evaluated against the claims (hypotheses) that have been made. In the US justice system, this might involve interviewing witnesses, gathering physical evidence, analyzing forensic evidence, etc.</p>
+<p>In statistics, our ‘evidence’ is our sample of data, which we may have obtained through a survey, or through a clinical trial, or through some other kind of study. The data are summarized to provide a clearer picture of what evidence we have on hand.</p>
+<p>References:
+Image: <a href="https://www.kisspng.com/png-magnifying-glass-fingerprint-clip-art-kisspng-1155964/The" class="uri">https://www.kisspng.com/png-magnifying-glass-fingerprint-clip-art-kisspng-1155964/The</a> last piece of the framework is to evaluate how usual or unusual the evidence is compared to the claim about the ‘truth’. From this evaluation, one of two situations could occur:
+We find that the evidence is unusual (is not likely to occur) compared to what is assumed to be true.
+We find that the evidence is usual (is likely to occur) compared to what is assumed to be true.</p>
+<p>In the US justice system, if the evidence is not consistent with (or is unusual compared to) the assumed claim of innocence, then we conclude there is evidence against the claim that the defendant is innocent (i.e., against the null hypothesis) and evidence for the claim that the defendant is guilty (i.e., in support of the alternative hypothesis). On the other hand, if the evidence is consistent with (or not unusual compared to) the assumed claim of innocence, then what we conclude is that there is no evidence for the claim that the defendant is guilty.</p>
+<p>CAUTION: We need to be careful with our wording with hypothesis testing. If the evidence is consistent with (or not unusual compared to) the assumed claim of innocence, then we do NOT conclude that there is evidence for the claim that the defendant is innocent (i.e., we do NOT ‘accept the null hypothesis’). Lack of evidence against the null hypothesis is not evidence for the null hypothesis. For example, a defendant may indeed have exceeded the speed limit, but if there were no witnesses and no speed measurements, then there won’t be any evidence of it. Lack of evidence doesn’t necessarily mean the defendant is innocent: it just means there isn’t any evidence of guilt. This is why the US justice system verdict is either ‘guilty’ (if there is sufficient evidence against innocence) or ‘not guilty’ (if there isn’t enough evidence against innocence); the verdict is never ‘innocent’.</p>
+<p>Evidence is used in a similar manner in statistics. We evaluate evidence by calculating the probability of observing the result we obtained given the assumption that the null hypothesis is true. That is, IF we assume the null hypothesis is true, how likely or unlikely would it be to see the result we obtained from our data just by random chance? We compare this value against some threshold to make a conclusion about the population. If the result we obtained from our data is NOT likely to occur if the null hypothesis statement is true, then something else must be going on. In this case, we say we have evidence against the null hypothesis and for the alternative hypothesis. Another common phrase for this is we reject the null hypothesis. On the other hand, if the result we obtained from our data IS likely to occur if the null hypothesis statement is true, then we say we lack evidence against the null hypothesis or for the alternative hypothesis, or we do not reject the null hypothesis.</p>
+<p>These three pieces are the framework for all hypothesis testing and will be used throughout this course.</p>
+<p>References:
+Image: <a href="https://www.pixcove.com/scales-balances-fairness-weighing-considering-justice-tilted-slanted-symbol-sign/" class="uri">https://www.pixcove.com/scales-balances-fairness-weighing-considering-justice-tilted-slanted-symbol-sign/</a></p>
 
-</div>
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="variable-types.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="sampling-distribution-of-means.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="hypotheis-testing-of-means.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

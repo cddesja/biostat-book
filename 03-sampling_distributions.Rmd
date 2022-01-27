@@ -1,5 +1,9 @@
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+```
+
 # Sampling Distributions
-In this lecture, we will introduce the abstract concept of sampling distributions and their importance to statistics. In an earlier lecture, we learned about common theoretical distributions, such as the Binomial distribution and the Normal distribution. We also learned about population parameters that define these distributions, such as p, µ, and ?.
+In this chapter, we will introduce the abstract concept of sampling distributions and their importance to statistics. In an earlier lecture, we learned about common theoretical distributions, such as the Binomial distribution and the Normal distribution. We also learned about population parameters that define these distributions, such as $p$, $\mu$, and $\sigma$.
 
 Theoretical distributions and their parameters are useful when we are trying to understand the probability of observing various outcomes in random samples given a known characteristic of the population. 
 
@@ -7,19 +11,12 @@ For example, suppose for the population of people who suffer from occasional mig
 
 Using the same example as the previous slide, suppose we are interested in investigating how effective ibuprofen is for people who suffer from occasional migraine headaches. To do this, we go out and obtain a sample from the population and get an estimate of the proportion who get relief after taking ibuprofen. We could then use the results from the sample to make an inference about the population parameter of interest, the proportion who get relief. So the unknown characteristic here is the population parameter and the known part is the result from our sample. Theoretical distributions are used during the process of making an inference but as a way to model the behavior, or distribution, of the sample statistic. 
 
-What do we mean by this last sentence? This lecture addresses that question, which is the foundation for statistical inference.Suppose we want to know the proportion of people in the United States who have diabetes. One approach would be to survey everybody in the United States and calculate the proportion of them that have diabetes. Suppose this population proportion is 0.093 or 9.3%1..
+What do we mean by this last sentence? This lecture addresses that question, which is the foundation for statistical inference.Suppose we want to know the proportion of people in the United States who have diabetes. One approach would be to survey everybody in the United States and calculate the proportion of them that have diabetes. Suppose this population proportion is 0.093 or [9.3%][CDC2014].
 
-References:
-1 CDC (2014): https://www.cdc.gov/media/releases/2014/p0610-diabetes-report.html
-Images: 
-Outline of US: https://pixabay.com/en/us-map-outline-us-map-america-1674031/
-People in crowd: https://pixabay.com/en/people-group-crowd-colorful-308531/But, suppose that we didn’t know the population proportion (it’s a black box) and that it isn’t possible to collect data from everybody. Instead, we have to obtain a representative sample of people from the population, make measurements on them, and then use that information to infer something about the proportion in the entire population. How can we use information from a single sample to say something about the population? We have to understand a key thing about samples: sampling variability.
 
-References:
-Images: 
-Outline of US: https://pixabay.com/en/us-map-outline-us-map-america-1674031/
-People in crowd: https://pixabay.com/en/people-group-crowd-colorful-308531/What is sampling variability? 
+But, suppose that we didn’t know the population proportion (it’s a black box) and that it isn’t possible to collect data from everybody. Instead, we have to obtain a representative sample of people from the population, make measurements on them, and then use that information to infer something about the proportion in the entire population. How can we use information from a single sample to say something about the population? We have to understand a key thing about samples: sampling variability.
 
+What is sampling variability? 
 Sampling variability is the term we use to explain what happens when the random sampling process is repeated. It tells us what we intuitively know. If many random samples were collected, the measured quantities, or sample statistics, from those samples will vary from one another. Additionally, the sample statistic we obtain will (most likely) be different from the population quantity, or parameter, of interest. 
 
 We need to be able to understand the behavior of how the sample statistics vary in order to be able to make an inference about the population parameter. This information about how much a statistic varies from sample to sample is key in helping us know how accurate an estimate is. How can we do this? We can simulate what would happen if random samples of the same size were repeatedly taken.Let’s go back to the Diabetes example to examine the variability of the proportion from sample to sample. 
@@ -27,10 +24,6 @@ We need to be able to understand the behavior of how the sample statistics vary 
 Suppose researchers obtain a random sample of 100 people from the United States. They calculate the proportion in their sample (denoted p-hat) who have diabetes and find that 0.110 or 11% of those in their sample have diabetes. Two other researchers do the exact same thing. In their random samples of 100 people, one finds that 7% have diabetes and the other finds 12% have diabetes. Each of these values are an estimate of the true population proportion. 
 
 Just by chance, these researchers collect samples that have a higher or lower value than the true population value of 0.093, and the sample statistics are each different from one another. This is an example of sampling variability. However, taking only three samples does not give us a very good understanding of the behavior of the sample proportions in repeated sampling. We need to see what happens if we repeat the sampling process many, many more times. 
-
-References:
-Images: 
-People in crowd: https://pixabay.com/en/people-group-crowd-colorful-308531/
 
 If the study with random samples of size n = 100 is repeated 1,000 times (that is, collect 1,000 samples), and the calculated sample proportion for each sample is plotted, a dot plot of the sample proportions would look like this. If we repeat our study over and over indefinitely, the collected sample proportions would form the sampling distribution of sample proportions – defined as the distribution of proportions from all possible samples of this size. In general, whenever a distribution is made up of sample statistics (e.g., means, medians, standard deviations), the distribution is called a sampling distribution of that statistic.
 
@@ -55,3 +48,6 @@ However, what we most likely have access to is a sample of data from the populat
 Unlike population and sample distributions, which are distributions of cases or observations, sampling distributions are distributions of statistics, where each “dot” (a.k.a., sample statistic) is aggregate information from a sample of observations and many, many, many ”dots” (a.k.a., sample statistics) are obtained so we can understand the behavior of the ”dots”. While we can simulate what the sampling distribution will look like (as we have in this lecture), we do not observe this distribution directly in real life. This distribution is an abstraction of what would happen if we could mimic the sampling behavior over and over again. It helps us understand the sampling variability of the statistics so that we can make an inference about the population from the sample. 
 
 While sample distributions are an important part of the data analysis process, sampling distributions are the foundation for statistical inference (as mentioned earlier).The concept of sampling distributions for sample proportions was presented in this lecture. But, any statistic that we calculate from a sample has its own sampling distribution. For example, there is a sampling distribution for sample means (which will be discussed in a future lecture), or for sample relative risks. As we discussed earlier, many statistics have sampling distributions that are bell-shaped, but some statistics have sampling distributions that are not bell-shaped (e.g., sample median, sample standard deviation, sample relative risk, sample odds ratio). 
+
+References:
+[CDC2014]: https://www.cdc.gov/media/releases/2014/p0610-diabetes-report.html

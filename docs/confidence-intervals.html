@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Confidence Intervals | Biostatistics (DRAFT)</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Confidence Intervals | Biostatistics (DRAFT)" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Confidence Intervals | Biostatistics (DRAFT)" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Christopher Desjardins, Laura Le, and Ann Brearley" />
+
+
+<meta name="date" content="2022-01-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="sampling-distributions.html"/>
+<link rel="next" href="bootstrapping.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction to Biostatstics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#cycle-of-research"><i class="fa fa-check"></i><b>1.1</b> Cycle of Research</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#step-1-population-to-sample"><i class="fa fa-check"></i><b>1.1.1</b> Step 1: Population to Sample</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#step-2-sample-to-statistic"><i class="fa fa-check"></i><b>1.1.2</b> Step 2: Sample to Statistic</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#step-3-statistic-to-parameter"><i class="fa fa-check"></i><b>1.1.3</b> Step 3: Statistic to Parameter</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#step-4-parameter-to-population"><i class="fa fa-check"></i><b>1.1.4</b> Step 4: Parameter to Population</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="variable-types.html"><a href="variable-types.html"><i class="fa fa-check"></i><b>2</b> Variable Types</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="variable-types.html"><a href="variable-types.html#scales-of-measurement"><i class="fa fa-check"></i><b>2.1</b> Scales of Measurement</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="variable-types.html"><a href="variable-types.html#categorical-scales"><i class="fa fa-check"></i><b>2.1.1</b> Categorical Scales</a></li>
+<li class="chapter" data-level="2.1.2" data-path="variable-types.html"><a href="variable-types.html#numerical-scales"><i class="fa fa-check"></i><b>2.1.2</b> Numerical Scales</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="variable-types.html"><a href="variable-types.html#summarizing-data"><i class="fa fa-check"></i><b>2.2</b> Summarizing Data</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="variable-types.html"><a href="variable-types.html#categorical-data"><i class="fa fa-check"></i><b>2.2.1</b> Categorical Data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="variable-types.html"><a href="variable-types.html#numerical-data"><i class="fa fa-check"></i><b>2.2.2</b> Numerical Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sampling.html"><a href="sampling.html"><i class="fa fa-check"></i><b>3</b> Sampling</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sampling.html"><a href="sampling.html#what-is-selection-bias"><i class="fa fa-check"></i><b>3.1</b> What is selection bias?</a></li>
+<li class="chapter" data-level="3.2" data-path="sampling.html"><a href="sampling.html#random-sampling"><i class="fa fa-check"></i><b>3.2</b> Random Sampling</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="sampling.html"><a href="sampling.html#simple-random-sampling"><i class="fa fa-check"></i><b>3.2.1</b> Simple Random Sampling</a></li>
+<li class="chapter" data-level="3.2.2" data-path="sampling.html"><a href="sampling.html#stratified-random-sampling"><i class="fa fa-check"></i><b>3.2.2</b> Stratified Random Sampling</a></li>
+<li class="chapter" data-level="3.2.3" data-path="sampling.html"><a href="sampling.html#cluster-random-samping"><i class="fa fa-check"></i><b>3.2.3</b> Cluster Random Samping</a></li>
+<li class="chapter" data-level="3.2.4" data-path="sampling.html"><a href="sampling.html#non-random-sampling"><i class="fa fa-check"></i><b>3.2.4</b> Non-Random Sampling</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="sampling.html"><a href="sampling.html#discrete-distributions"><i class="fa fa-check"></i><b>3.3</b> Discrete Distributions</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="sampling.html"><a href="sampling.html#random-variables"><i class="fa fa-check"></i><b>3.3.1</b> Random Variables</a></li>
+<li class="chapter" data-level="3.3.2" data-path="sampling.html"><a href="sampling.html#distributions"><i class="fa fa-check"></i><b>3.3.2</b> Distributions</a></li>
+<li class="chapter" data-level="3.3.3" data-path="sampling.html"><a href="sampling.html#continuous-distributions"><i class="fa fa-check"></i><b>3.3.3</b> Continuous Distributions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="sampling-distributions.html"><a href="sampling-distributions.html"><i class="fa fa-check"></i><b>4</b> Sampling Distributions</a></li>
+<li class="chapter" data-level="5" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>5</b> Confidence Intervals</a></li>
+<li class="chapter" data-level="6" data-path="bootstrapping.html"><a href="bootstrapping.html"><i class="fa fa-check"></i><b>6</b> Bootstrapping</a></li>
+<li class="chapter" data-level="7" data-path="sampling-distribution-of-means.html"><a href="sampling-distribution-of-means.html"><i class="fa fa-check"></i><b>7</b> Sampling Distribution of Means</a></li>
+<li class="chapter" data-level="8" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>8</b> Hypothesis Testing</a></li>
+<li class="chapter" data-level="9" data-path="hypotheis-testing-of-means.html"><a href="hypotheis-testing-of-means.html"><i class="fa fa-check"></i><b>9</b> Hypotheis Testing of Means</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Biostatistics (DRAFT)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="confidence-intervals" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Confidence Intervals</h1>
+<p>A sample proportion is a “point estimate” of a population proportion. In contrast, a confidence interval for a proportion is an “interval estimate” of a population proportion that reflects the precision of the estimate. A confidence interval gives a plausible range for a population proportion based on observed data. Confidence intervals can also be used to make inferences about a population proportion. This lecture will introduce the concept of confidence intervals, focusing on confidence intervals for a proportion.</p>
+<p>We learned earlier that theoretical distributions and their parameters are useful when we are trying to understand the probability of observing various outcomes in random samples given a known characteristic of the population. For example, if we know the true prevalence of diabetes in the population, we can use the Binomial distribution to say things about random samples from that population. This is an example of the upper arrow in the figure above.</p>
+<p>However, when analyzing data, we have a single sample in hand that we want to use to say something about the population it came from. For example, if we calculate the proportion of people with diabetes in a sample, what does this tell us about the proportion with diabetes in the entire population? This would be an example of the lower arrow in the figure above: using information about the sample to find out about the population.</p>
+<p>How do we do this? The key, as we will see, is to use sampling distributions! Suppose we are interested in understanding the prevalence of diagnosed diabetes in younger adults aged 20 - 44 years old in the United States. How would we obtain an estimate of this number? How confident are we that we have indeed estimated accurately the percent of people in this age group with diabetes in the United States?</p>
+<p>Let’s assume that we have on hand a representative sample of 500 Americans between 20 and 44. Now suppose we ask each one “Have you been diagnosed with diabetes”, and 53 of them say “Yes”. If we divide 53 by 500 we obtain the sample proportion, the proportion of younger adults in our sample who have diabetes, in this case 10.6%.</p>
+<p>The sample proportion, which we refer to as p-hat, is an <em>estimate</em> of the true proportion, p, of diabetic younger adults in the entire US population. It may be somewhat lower than the true <strong>population proportion</strong>, or it may be somewhat higher. But how much higher or lower is plausible given our sample? Getting an estimate of 10.6% from a sample of 500 seems pretty unlikely if the true population proportion is, say, 50%. But is this estimate consistent with a true population proportion of, say, 14%? We can use confidence intervals to tell us.</p>
+<p>A <strong>confidence interval</strong> is an <em>interval estimate</em> that tells us about the precision of the estimate. Loosely, we can think of it as a range of true population parameter values that are plausible given the observed data.</p>
+<p>Without worrying for now about how we calculated it, a 95% confidence interval for the true population proportion from our diabetes study is 7.9% to 13.3%. This interval is telling us that true population proportions between 7.9% and 13.3% are relatively plausible given our observed sample proportion of 10.6%.</p>
+<p>There are a few ways of writing out the confidence interval, including “lower CI value” to “upper CI value” (e.g., 7.9% to 13.3%), or placing parentheses around the two CI values and separating them with a comma (e.g., (7.9%, 13.3%)). Confidence intervals for a proportion can denoted either as proportions or as percents.</p>
+<p>So what does the 95% mean? Informally, it quantifies how confident we are that the true population proportion falls in the given range. We?ll give a more formal definition shortly.</p>
+<p>So how did we calculate this confidence interval from the data?Determining a confidence interval requires us to invert or “flip” our thinking, to go from “known” sample to “unknown” population (instead of “known” population to “unknown” sample as we did when we explored sampling distributions).</p>
+<p>Let’s think about the sampling distribution of sample proportions again. The dot plot above shows the values of the sample proportion, p-hat, calculated for each of 1,000 samples, each with size n=500, from a population that has a known population proportion, p, of 0.093 or 9.3%. Previously, we saw that the sampling distribution for p-hat (the sample proportion) is approximately Normal (a.k.a. bell-shaped) with a mean equal to the true population proportion of 0.093 and a standard error (i.e., standard deviation of the sampling distribution) equal to 0.013, which mathematically works out to be the square root of <span class="math inline">\(\frac{p(1-p)}{n}\)</span>.</p>
+<p>It is important to recall that the standard error (denoted as SE) is just the “fancy” name denoting a special case of the standard deviation (denoted as SD). The standard error is the standard deviation when applied to a sampling distribution for a statistic. But it?s still a standard deviation (period). Using the term “standard error” just alerts us that it describes a sampling distribution and not the population or the sample observations (our data), which would both be described with the term “standard deviation”.</p>
+<p>Since the sample size, n, is big here, the observed sample proportions are pretty close to being a Normal distribution. We can see that this is the case by observing the Normal curve that is laid over the dots in the plot and noting how similar they are. This Normal curve has the same mean and standard deviation (a.k.a. standard error) as the sampling distribution; that is, it has a mean of 0.093 and a standard deviation of 0.013. So, using this Normal approximation, what can we say about the likely values of p-hat? Using the 68-95-99.7 rule of Normal distributions, roughly 68% of the sample proportions will fall within one standard deviation (a.k.a. one standard error) of the mean of 0.093, and about 95% of them will fall within two standard deviations (a.k.a. two standard errors) of the mean of 0.093. Building on the “within 1 or 2 SE from the mean” idea, let’s see what the cutoff values for these sample proportions would be.</p>
+<p>The dot plot on the previous slide has been removed from the plot and all that remains is the Normal curve with same mean of 0.093, the true population proportion, and the same standard error of 0.013. This is depicted in the top curve on the slide.</p>
+<p>If we wanted the middle 68% of the sample proportions, we would take p, the mean of the sampling distribution for sample proportions, plus or minus 1 * SE. So the middle 68% of the sample proportions are between 0.080 and 0.106. Similarly, the middle approximately 95% of the sample proportions are between 0.067 and 0.119, which is p plus or minus 2 * SE.</p>
+<p>In fact, we can use the properties of Normal distributions to tell us how many standard errors above and below 0.093 we have to go to contain any arbitrary percentage of the data. For example, it turns out that a range of plus or minus 1.64 standard errors from the mean contains approximately 90% of the data, so in our case, about 90% of the sample proportions should fall between 0.072 and 0.114.</p>
+<p>Recall that we can standardize data by calculating ?z-scores? that tell us how many standard deviations the observation is from the mean. If the data are statistics, such as sample proportions, then the z-score tells us how many standard errors away from the mean the sample proportion is. The same sampling distribution for the sample proportion is shown in the lower curve on the slide, in standardized form with the z-score on the horizontal axis.</p>
+<p>Note that the product of the value of the z-score and the standard error is known as the margin of error. Using what we know about where values of p-hat are likely to fall given the true value of p, we can ?flip? our thinking and say something about where p might lie based on the observed value of p-hat. That is, we have just seen that 95% of the sample proportions will lie within ~2SE of the true proportion. Flipping this around tells us that for any given sample proportion, there is a 95% chance that the true proportion will lie within ~2SE of it (and a 5% chance that the true proportion will be further than ~2SE from it).</p>
+<p>This leads us to the formula for the confidence interval of a proportion: p-hat +/- its margin of error. The margin of error consists of two parts: the z-value, which is determined by the degree of confidence we want, and the standard error of p-hat.</p>
+<p>Notice that we?ve dressed up the z-value term a little by adding the subscript 1 ? alpha/2. This subscript indicates the appropriate z-value corresponding to a specified level of confidence. For instance, for a 95% confidence interval, alpha equals 1 ? 0.95 or 0.05. Therefore, 1 ? alpha/2 equals 0.975 which tells us that our z-value should be the number that exceeds 97.5% of the observations in a Standard Normal distribution. It turns out that this number is about 1.96.</p>
+<p>Next we move on to the second component, the standard error of the sample proportion, p-hat. It turns out that the formula for this standard error involves the true population parameter, p. However, this is a problem since p is unknown! What do we do? We simply replace p with its estimate, p-hat. This results in an estimated standard error rather than the true standard error, which uses p.
+For our example, the sample proportion of young adults with diagnosed diabetes was 53/500 = 0.106, so p-hat = 0.106 and the estimated SE(p-hat) = 0.014 (Notice that the estimated SE of p-hat is slightly different than the true SE of p-hat on slide 5.) For a 95% confidence interval, alpha = 0.05 and the z-value is 1.96. This gives a margin of error of 1.96*(0.014) = 0.027. Our 95% confidence interval for the true population proportion of young adults who have diabetes is therefore 0.106 +/- 0.027, which gives (0.079, 0.133).</p>
+<p>Now, how do we interpret this range? We can say things like:
+?I am 95% confident that the interval between 0.079 and 0.133 contains the true proportion of US young adults with diabetes.?
+Or
+?A plausible range of values for the true proportion of US young adults with diabetes is 0.079 to 0.133.?</p>
+<p>But these interpretations are somewhat ambiguous. What does ?95% confident? mean? How do we define ?plausible??</p>
+<p>Next, we will define precisely what we mean by a 95% (or any %) confidence interval.This plot shows our sample proportion, 0.106 (black dot) and the true population proportion, 0.093 (solid red vertical line). We see that our sample proportion, while not the same as the population proportion, is close.</p>
+<p>In this case, the 95% confidence interval (or CI) constructed from our one sample contains the true population proportion. How often will this be the case?Let’s say we were able to obtain 50 different samples of size n=500 from the same population. From each sample, we calculate a confidence interval for the true population proportion. The plot above shows 95% confidence intervals for 50 hypothetical random samples taken from our US young adult population where the true proportion of diabetes is 0.093 or 9.3%. We see that the sample proportions, p-hat, vary a bit from sample to sample as indicated by the dots in the center of each interval. For 47 of the samples, the calculated 95% confidence interval contains the true population proportion of 0.093. But for three of the samples, the calculated confidence interval misses the true population proportion (as indicated by the red horizontal lines in the plot above). And, lo and behold, 47 out of 50 is 94%, which is very close to the 95% confidence level we used to calculate the confidence intervals.</p>
+<p>This isn?t a coincidence. If we repeated the study and obtained 1,000 samples of size n=500, instead of 50 samples, we would get 1,000 slightly different point estimates and 1,000 slightly different confidence intervals, due to sampling variability. Those calculated confidence intervals would contain the true population proportion of 0.093 in about 950 (or 95%) of the samples, but would miss the true value in about 50 (or 5%) of the samples.</p>
+<p>This plot tells us how to precisely define a 95% confidence interval: A 95% confidence interval is an interval such that, when estimated on repeated samples, approximately 95% of those estimated intervals will contain the true population parameter and approximately 5% will miss it. 90% confidence intervals will “hit” 90% of the time and “miss” 10% of the time; 99% confidence intervals will hit 99% of the time and miss 1% of the time, and so on.What if we wanted to be more than 95% confident? If we wished to be 99% confident, then our confidence interval would need to be wider, so that 99% of the time it would “catch” the true population value and only 1% of the time it would “miss” it. A confidence interval is kind of like a butterfly net: a wider net has a better chance of catching the butterfly. In our imaginary study, a 99% confidence interval for the true proportion of US young adults with diabetes is 0.071 to 0.141.</p>
+<p>What if we wished to be less than 95% confident? If we wished to be 90% confident, then our confidence interval would need to be narrower, so that it only “catches” the true population value 90% of the time. An interval with a lower level of confidence will produce a confidence interval that is narrower than one with a higher level of confidence.</p>
+<p>Recall that the z-value in the confidence interval calculation is determined by the desired confidence level. The z-values for three common confidence levels are:</p>
+<ul>
+<li>1.645 for a 90% confidence level,</li>
+<li>1.96 for a 95% confidence level, and</li>
+<li>2.575 for a 99% confidence level.</li>
+</ul>
+<p>Increasing the confidence level is a double-edged sword. On one hand, we can feel more confident that our interval will contain the truth. But on the other hand, our interval will be wider, so it gives us less information about where the true value lies. Conversely, decreasing the confidence level makes it more likely that we will “miss” the truth, but in exchange our intervals will be narrower.</p>
+<p>So, where does all this leave us when we are staring at one confidence interval calculated from the one sample we have on hand? Since we don?t know the true population parameter, we don’t know whether this particular interval has “hit” or “missed” the true value. But, since we know that confidence intervals will “hit” the true value a relatively high percentage of the time (a percentage of the time that we determine by fixing the confidence level), we take a sort of “leap of faith” and view the interval as a plausible range for the true population parameter. We have mentioned several times the idea of “flipping” our thinking when it comes to confidence intervals. To recap, the “flipping” part comes when instead of thinking about the variation among the proportions from many samples when we “know” the population proportion, we are thinking about estimating an “unknown” population proportion from a single sample. Let’s connect the concept of the sampling distribution for a proportion (when it is approximately Normal) to the concept of confidence intervals.</p>
+<p>The same image of multiple confidence intervals estimated from multiple samples is presented as from a previous slide. But this time, the sampling distribution for a proportion with mean 0.093 and standard error of 0.013 is overlaid on top of the confidence intervals. The dark blue vertical lines at 0.068 and 0.118 (that is, at ~2SE below and above the mean) denote the middle 95% of the sample proportions in the sampling distribution. That is, 95% of the sample proportions fall within ~2 standard errors of the mean, the population proportion, but 5% of the sample proportions are outside of this region. So while most of the sample proportions are “near” the population proportion, just by chance we might get a sample proportion that is “far away” from the population proportion.</p>
+<p>Notice that the 47 sample proportions (blue dots) that are within the middle 95% of the sampling distribution have a confidence interval that contains the population proportion. In contrast, the 3 sample proportions (red dots) that are not within this region have a confidence interval that doesn’t contain the population proportion.</p>
+<p>To put it all together now, based on the sampling distribution of sample proportions, we know that for 95% of the sample proportions (the ones in the middle of the sampling distribution) the true population proportion is going to be within ~2SE of that sample proportion, and for the other 5% of the sample proportions (the ones in the tails), the true population proportion is going to be further than ~2SE from that sample proportion. So if we put an interval of +/- ~2SE around”any”observed sample proportion, then 95% of the time, this interval will contain the true population proportion.A confidence interval method is a “recipe” for calculating a confidence interval based on observed data. And just as in cooking, there are different recipes for making the same dish, and each recipe has its own strengths and weaknesses.</p>
+<p>The Wald method is the one we have just described. It generally works fairly well, but becomes less accurate when the sample size is small.</p>
+<p>The modified Wald method involves a small tweak to the standard confidence interval formula that improves its behavior in small samples. For more information on this method, see the following website: <a href="https://www.graphpad.com/support/faq/the-modified-wald-method-for-computing-the-confidence-interval-of-a-proportion/" class="uri">https://www.graphpad.com/support/faq/the-modified-wald-method-for-computing-the-confidence-interval-of-a-proportion/</a>.</p>
+<p>Because they are calculated by adding and subtracting the margin of error from the sample proportion, both the Wald and modified Wald methods generate symmetric confidence intervals. This can be a problem if the sample size is very small or the estimated proportion is close to 0 or 1, because then the confidence interval may include values below zero or above 1, which are impossible values for a population proportion. An alternative confidence interval recipe that avoids this problem is the Clopper-Pearson Exact Binomial method. The word “exact” refers to the fact that this method does not rely on the Normal distribution approximation; instead, it uses the fact that the sampling distribution of the sample proportion is a re-scaled version of the Binomial distribution. Confidence intervals estimated using the Clopper-Pearson method may not be symmetric, but will never contain values outside the range of 0 to 1. Like most exact methods, Clopper-Pearson confidence intervals usually require a computer to calculate; they cannot be easily hand-calculated like Wald confidence intervals. See the following website if you are interested in the formula: <a href="https://ncss-wpengine.netdna-ssl.com/wp-content/themes/ncss/pdf/Procedures/PASS/Confidence_Intervals_for_One_Proportion.pdf" class="uri">https://ncss-wpengine.netdna-ssl.com/wp-content/themes/ncss/pdf/Procedures/PASS/Confidence_Intervals_for_One_Proportion.pdf</a>.</p>
+<p>No matter which recipe is used, as the size of the sample increases, the confidence interval gets narrower, which means that the estimate is more precise. Recall that the process of using a sample proportion to estimate a population proportion is an example of statistical inference. Statistical inference for a proportion relies on several assumptions.</p>
+<p>We assume that the sample is a random (or representative) sample from the population of interest. In this way, we are able to generalize the results from this sample to the population it came from. This assumption would be violated, for example, if a sample was obtained in a way that under-represented people of color. The prevalence of diabetes is higher in people of color than in whites, so the results from a non-representative sample would not be generalizable to the U.S. young adult population as a whole.</p>
+<p>We assume that the observations are independent. This assumption would be violated, for example, if siblings were included in the sample. Siblings may share genetic and environmental risk factors for diabetes and so might be more similar to each other than two people chosen at random would be.</p>
+<p>If we are using the Wald method, we assume that the sample is “large enough” for the sampling distribution of sample proportions to be approximately Normal. For proportions, “large enough” requires at least 5 events (or “successes”) and at least 5 non-events (or “failures”). In our example, this assumption would be met if our sample contained at least 5 people with diabetes and at least 5 people without diabetes. If the sample size is too small, consider using other methods, such as the exact binomial method, to compute confidence intervals.</p>
+<p>If these assumptions are violated, the confidence intervals we calculate may give us faulty information about the true population proportion. For instance, intervals might be too narrow, suggesting a more precise estimate than we actually have, or they might be centered at the wrong place, and hence more likely to “miss” the true population proportion.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sampling-distributions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bootstrapping.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["biostat-book.pdf", "biostat-book.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

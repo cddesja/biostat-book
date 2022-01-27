@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Sampling Distribution of Means | Biostatistics (DRAFT)</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Sampling Distribution of Means | Biostatistics (DRAFT)" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Sampling Distribution of Means | Biostatistics (DRAFT)" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Christopher Desjardins, Laura Le, and Ann Brearley" />
+
+
+<meta name="date" content="2022-01-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="bootstrapping.html"/>
+<link rel="next" href="hypothesis-testing.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction to Biostatstics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#cycle-of-research"><i class="fa fa-check"></i><b>1.1</b> Cycle of Research</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#step-1-population-to-sample"><i class="fa fa-check"></i><b>1.1.1</b> Step 1: Population to Sample</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#step-2-sample-to-statistic"><i class="fa fa-check"></i><b>1.1.2</b> Step 2: Sample to Statistic</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#step-3-statistic-to-parameter"><i class="fa fa-check"></i><b>1.1.3</b> Step 3: Statistic to Parameter</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#step-4-parameter-to-population"><i class="fa fa-check"></i><b>1.1.4</b> Step 4: Parameter to Population</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="variable-types.html"><a href="variable-types.html"><i class="fa fa-check"></i><b>2</b> Variable Types</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="variable-types.html"><a href="variable-types.html#scales-of-measurement"><i class="fa fa-check"></i><b>2.1</b> Scales of Measurement</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="variable-types.html"><a href="variable-types.html#categorical-scales"><i class="fa fa-check"></i><b>2.1.1</b> Categorical Scales</a></li>
+<li class="chapter" data-level="2.1.2" data-path="variable-types.html"><a href="variable-types.html#numerical-scales"><i class="fa fa-check"></i><b>2.1.2</b> Numerical Scales</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="variable-types.html"><a href="variable-types.html#summarizing-data"><i class="fa fa-check"></i><b>2.2</b> Summarizing Data</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="variable-types.html"><a href="variable-types.html#categorical-data"><i class="fa fa-check"></i><b>2.2.1</b> Categorical Data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="variable-types.html"><a href="variable-types.html#numerical-data"><i class="fa fa-check"></i><b>2.2.2</b> Numerical Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sampling.html"><a href="sampling.html"><i class="fa fa-check"></i><b>3</b> Sampling</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sampling.html"><a href="sampling.html#what-is-selection-bias"><i class="fa fa-check"></i><b>3.1</b> What is selection bias?</a></li>
+<li class="chapter" data-level="3.2" data-path="sampling.html"><a href="sampling.html#random-sampling"><i class="fa fa-check"></i><b>3.2</b> Random Sampling</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="sampling.html"><a href="sampling.html#simple-random-sampling"><i class="fa fa-check"></i><b>3.2.1</b> Simple Random Sampling</a></li>
+<li class="chapter" data-level="3.2.2" data-path="sampling.html"><a href="sampling.html#stratified-random-sampling"><i class="fa fa-check"></i><b>3.2.2</b> Stratified Random Sampling</a></li>
+<li class="chapter" data-level="3.2.3" data-path="sampling.html"><a href="sampling.html#cluster-random-samping"><i class="fa fa-check"></i><b>3.2.3</b> Cluster Random Samping</a></li>
+<li class="chapter" data-level="3.2.4" data-path="sampling.html"><a href="sampling.html#non-random-sampling"><i class="fa fa-check"></i><b>3.2.4</b> Non-Random Sampling</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="sampling.html"><a href="sampling.html#discrete-distributions"><i class="fa fa-check"></i><b>3.3</b> Discrete Distributions</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="sampling.html"><a href="sampling.html#random-variables"><i class="fa fa-check"></i><b>3.3.1</b> Random Variables</a></li>
+<li class="chapter" data-level="3.3.2" data-path="sampling.html"><a href="sampling.html#distributions"><i class="fa fa-check"></i><b>3.3.2</b> Distributions</a></li>
+<li class="chapter" data-level="3.3.3" data-path="sampling.html"><a href="sampling.html#continuous-distributions"><i class="fa fa-check"></i><b>3.3.3</b> Continuous Distributions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="sampling-distributions.html"><a href="sampling-distributions.html"><i class="fa fa-check"></i><b>4</b> Sampling Distributions</a></li>
+<li class="chapter" data-level="5" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>5</b> Confidence Intervals</a></li>
+<li class="chapter" data-level="6" data-path="bootstrapping.html"><a href="bootstrapping.html"><i class="fa fa-check"></i><b>6</b> Bootstrapping</a></li>
+<li class="chapter" data-level="7" data-path="sampling-distribution-of-means.html"><a href="sampling-distribution-of-means.html"><i class="fa fa-check"></i><b>7</b> Sampling Distribution of Means</a></li>
+<li class="chapter" data-level="8" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>8</b> Hypothesis Testing</a></li>
+<li class="chapter" data-level="9" data-path="hypotheis-testing-of-means.html"><a href="hypotheis-testing-of-means.html"><i class="fa fa-check"></i><b>9</b> Hypotheis Testing of Means</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Biostatistics (DRAFT)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sampling-distribution-of-means" class="section level1" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Sampling Distribution of Means</h1>
+<p>Earlier we described the behavior of sampling distributions for a sample proportion, in order to understand how we can use a sample proportion to make inferences about a population proportion. In this lecture, we will describe the behavior of sampling distributions for a sample mean, in order to understand how we can use a sample mean to make inferences about a population mean. Sampling distributions for sample means behave similarly to those for sample proportions, but there are some important differences.Suppose we want to know the average body mass index (BMI) of US adults whose age is between 30 and 60 years old. Suppose that BMI measurements could somehow be collected from all US adults between those age ranges. This plot shows results that might be obtained from such a census*. A plot that shows the measurement results for an entire population is known as a population distribution. The BMI measurements in this census fall between 14 and 57 kg/m2. Half of the adults have BMI values less than the median BMI of 25.13 kg/m2, and the mean BMI was 25.58 kg/m2. The shape of the population distribution of BMI values in US adults appears to be more or less Normal but skewed to the right (or positively skewed), with a long right tail of very high BMI values.</p>
+<p>References:
+*These BMI measurements were obtained from 5209 people as part of the Framingham Heart Study (<a href="http://www.framinghamheartstudy.org" class="uri">http://www.framinghamheartstudy.org</a>). This population may not be exactly like the entire US population in all respects.It is not usually possible or feasible to obtain measurements on the entire population of interest. Rather, we usually obtain a sample of observations.</p>
+<p>Suppose we conduct a study to investigate the average BMI of US adults, aged 30-60: we obtain a single sample, a simple random (and therefore representative) sample of n=100 adults from the population shown on the previous slide. A dot plot for the 100 BMI values in our sample is shown here, with one dot for each person in the sample. A plot that shows all of the measurement results from a sample is called a sample distribution. The mean BMI in our sample is 25.47 kg/m2, which is slightly lower than the true population mean of 25.58 kg/m2.</p>
+<p>What would the sample means look like if we repeated the sampling process a few more times?</p>
+<p>Suppose we obtain three more random samples of 100 adults from the same population. The sample distributions of BMI values for these three samples are shown here. Each of the sample distributions has a somewhat different shape, a somewhat different mean, and a somewhat different standard deviation, as we would expect due to sampling variability.</p>
+<p>However, collecting only three samples does not give us a very complete understanding of the behavior of the sample means in repeated sampling. Let’s see what happens if we repeat the sampling process many, many more times.
+If we repeat the sampling process 1,000 times, collecting samples of size n=100 each time, and we calculate the mean BMI from each sample, a dot plot of all 1,000 sample means would look like this. Recall that true sampling distributions consist of the sample statistics from all possible samples. This distribution of only 1,000 sample means is an approximation of the true sampling distribution for samples of size n=100. We are using this approximate sampling distribution to help us better understand the concept of sampling distributions.</p>
+<p>What shape does this sampling distribution have? The shape appears very close to Normal (bell-shaped). Surprisingly, even though the underlying population of BMI values in US adults is right-skewed, the sampling distribution of sample means from repeated samples of size n=100 appears to be very close to symmetric.</p>
+<p>Where is the center of this sampling distribution? The mean of this sampling distribution (25.59 kg/m2) is very close to the true population mean of 25.58 kg/m2. This discrepancy is because we only took 1,000 samples and not an infinite number of samples. If we were able to take an infinite number of samples, the mean of the sampling distribution would exactly equal the true population mean.</p>
+<p>What about this sampling distribution’s spread? The sample means range from about 24 to 27 kg/m2. The standard deviation (or standard error) of this sampling distribution is 0.42 kg/m2. What would happen if we repeated the sampling process, but this time we used a much larger sample size of n=500 instead? A dot plot of all 1,000 sample means would look like this. How has increasing the sample size from n=100 on the previous slide to n=500 on this slide affected the sampling distribution?</p>
+<p>The shape of this sampling distribution has not changed a lot. It is still very close to Normal: bell-shaped, unimodal and symmetric.</p>
+<p>The center of this sampling distribution, given by the mean of 25.58 kg/m2 , which equals the true population mean of 25.58 kg/m2.</p>
+<p>The biggest difference is in the sampling distribution’s spread. Before, with a sample size of n=100, the sample means ranged from about 24 to 27 and the standard error of the sampling distribution was 0.42 kg/m2.
+Now, with a sample size of n=500, the sample means range from about 25 to 26 and the SE is 0.19 kg/m2. With a larger sample size, the sampling distribution is narrower. With a larger sample, the sample means from the various samples are all much more closely clustered around the true population mean.</p>
+<p>Note that the number of samples is identical in both cases; it is only the sample size that differs. Increasing the number of samples that we take does not narrow the sampling distribution, although it does give us a clearer picture of its shape. It is only increasing the size of each sample taken which will narrow the sampling distribution.What would happen if the sample size were very small? Suppose we repeated the sampling process, but this time we used a very small sample size of n=20 instead? A dot plot of all 1,000 sample means would look like this. How has decreasing the sample size from n=100 on a previous slide to n=20 on this slide affected the sampling distribution?</p>
+<p>The shape of this sampling distribution has changed a bit. Unlike in previous slides, it has a slight right skew, but it’s fairly close to Normal: bell-shaped, unimodal and symmetric.</p>
+<p>The center of this sampling distribution, given by the mean of 25.61 kg/m2, is again very close to the true population mean of 25.58 kg/m2.</p>
+<p>The biggest difference is in the sampling distribution’s spread (notice the limits on the x-axis changed from 24 to 27.5 in the two previous slides to 22.5 to 29.5 on this slide). Before, with a sample size of n=100, the sample means ranged from about 24 to 27 and the standard error of the sampling distribution was 0.42 kg/m2.
+Now, with a sample size of n=20, the sample means range from about 22.5 to 29.5 and the SE is 0.95 kg/m2. With a SMALLER sample size, the sampling distribution is WIDER. With a SMALLER sample, the sample means from the various samples are MORE WIDELY SPREAD AROUND the true population mean.
+What general behaviors have we noticed as we examined the sampling distributions both for sample proportions and for sample means?</p>
+<p>The first behavior we observe pertains to shape. As the sample size (n) increases, the sampling distribution both for sample proportions and for sample means looks more bell-shaped, unimodal and symmetric? that is, more Normal in the statistical sense.</p>
+<p>The second pattern we observe is that the center of the sampling distribution is always located very close to the true population parameter, even for relatively small samples.</p>
+<p>Lastly, we notice that as the sample size increases, the width or spread of the sampling distribution decreases. That is, as the sample size, n, increases, the sample statistics tend to be closer to the true population parameter value, thus making the variability of the sample statistics smaller. What we have observed in these sampling distributions is actually a fundamental theorem in statistics, the Central Limit Theorem (frequently abbreviated as CLT).</p>
+<p>The Central Limit Theorem tells us two things. First, the Central Limit Theorem states that if we choose a large enough sample size, n, then the sampling distribution of the sample means will be approximately Normal (unimodal, symmetric and bell-shaped) EVEN IF the underlying population is not Normal at all (for example, multimodal or severely skewed).</p>
+<p>If the population distribution itself is Normal, then the sampling distribution of the sample means will be Normal for any sample size, even a sample size of n=1. The next logical question is ‘how large of a sample is ’large enough’ for the CLT to hold for the distribution of sample means’?</p>
+<p>That depends on the shape of the population distribution.</p>
+<p>If the shape of the population distribution is completely Normal (that is, if the measurement of interest is truly Normally distributed in the population), then a minimum of a sample size of 1 is needed in order for the distribution of sample means to be approximately Normal. In other words, if the population is truly Normal, then the sampling distribution will be Normal, for ANY size of sample.</p>
+<p>If the shape of the population distribution is not Normal but is approximately symmetric, then one rule of thumb is that a minimum sample size of about 15 is needed in order for the sampling distribution of sample means to be roughly Normal.</p>
+<p>If the shape of the population distribution is not Normal and not symmetric, but instead is skewed, then one rule of thumb is that a minimum sample size of about 30 is needed in order for the sampling distribution of sample means to be roughly Normal. Keep in mind, though, that the less Normal or the less symmetric the population distribution is, the larger the sample size that will be needed to ensure that the sampling distribution of sample means will be roughly Normal.The second thing the Central Limit Theorem tells us is that the sampling distribution of sample means will be centered at the true population mean, <span class="math inline">\(\mu\)</span> (mu), and will have a standard error, SE (sometimes called the standard error of the mean, SEM), equal to the population standard deviation, <span class="math inline">\(\sigma\)</span> (sigma), divided by the square root of the sample size, n. </p>
+<p>This applies to the true sampling distribution, which is for all possible samples of size n. As previously mentioned, our example sampling distribution contained only 1,000 samples of size n=100, not all possible samples, so it is a good but not quite perfect approximation of the true sampling distribution. Its sample mean is nearly but not quite equal to the true population mean and its sample standard error is nearly but not quite equal to the population standard deviation divided by the square root of n. In our BMI example, the mean of our approximate sampling distribution after obtaining 1,000 samples of size n=100 (25.59 kg/m2) is very close to the true population mean of 25.58 kg/m2. The true population standard deviation is 4.24 kg/m2 and the sample size is 100, so the standard error, SE, of the sampling distribution should be 0.424 kg/m2, which is quite close to the value we saw in our approximate sampling distribution plot (0.42 kg/m2).</p>
+<p>An important thing to notice: the SE calculation shows us that as the sample size increases, the standard error decreases, and the sample means will get closer and closer to the population mean. This is consistent with what we observed earlier when we compared the sampling distributions for samples of size n=20, n=100 and n=500.</p>
+<p>Note that we do not use the Central Limit Theorem to get a better approximation of the population parameter of interest by using lots of samples. In most cases, it isn’t practical or even possible to re-sample from the same population thousands of times. In most cases, we only ever get one sample and we need to make our inferences about the population based on that one single sample. What we DO use the Central Limit Theorem for is to tell us how close our sample statistic is likely to be to the true population parameter, i.e. how well the sample statistic estimates the true population value.
+The Central Limit Theorem also applies to sample proportions. In this case, the CLT states that if we choose a large enough sample size, the sampling distribution of sample proportions from random samples of size n will be approximately Normal (unimodal, symmetric, and bell-shaped) and will be centered around the true population proportion, p, with a standard error equal to the square root of p*(1-p)/n.</p>
+<p>Totally optional, but if you are curious: The CLT only applies to means, but it happens to also work for proportions because a proportion is in fact a mean of a Bernoulli distribution of 1’s (e.g. diabetic) and 0’s (e.g. not diabetic). A Bernoulli distribution isn’t even remotely close to Normal in shape (see the earlier lecture on sampling distributions for a sample proportion), but the sampling distribution of sample proportions is nevertheless, per the CLT, approximately Normally distributed.</p>
+<p>Again, how large is ‘large enough’?</p>
+<p>Recall that we find the proportion for an event or category of interest. In our example from an earlier lecture, the ‘event’ we were interested in was the proportion of young adults with diagnosed diabetes. One common rule of thumb is that the sampling distribution of sample proportions will be approximately Normal if the number of events or ‘successes’ (n * p) and the number of non-events or ‘failures’ (n * (1-p)) are both at least 10. In our example, this assumption would be met if our sample contained at least 10 people with diabetes and at least 10 people without diabetes.</p>
+<p>If p, the population proportion, is unknown, then we use the sample proportion, p-hat, to estimate it. As we did earlier for proportions, let’s review the different distribution types that have been presented thus far for means: population distributions, sample distributions, and sampling distributions.</p>
+<p>The population distribution for our BMI example is shown in the upper left here. This describes the distribution of BMI values in the entire population of US adults. Typically, this distribution is unknown, and information about that distribution (e.g., population parameters such as the mean, mu (<span class="math inline">\(\mu\)</span>)) are often what we want to try to estimate.</p>
+<p>However, what we most likely have access to is a single sample of data from the population. If we plot the data from our one sample, we create a sample distribution, which is a distribution of a characteristic in the sample. The sample distribution of BMI values for our one sample of size n=100 from US adults is shown in the upper right here. We can use the information from the known and observed sample to help us estimate the unknown population value/parameter of interest.</p>
+<p>Unlike population and sample distributions, which are distributions of cases or observations, sampling distributions are distributions of statistics, where each ‘dot’ (a.k.a., sample statistic) is aggregate information from a sample of observations and many, many, many ‘dots’ (a.k.a., sample statistics) are obtained so we can understand the behavior of the ‘dots’. The approximate sampling distribution for mean BMI values for samples of size n=100 is shown in the lower center here. While we can simulate what the sampling distribution will look like (as we have in this lecture), we do not observe this distribution directly in real life. This distribution is an abstraction of what would happen if we could repeat the sampling behavior over and over again. It helps us understand the sampling variability of the statistic so that we can make an inference about the population from the sample.</p>
+<p>While sample distributions are an important part of the data analysis process, sampling distributions are the foundation for statistical inference.We have now explored the behavior of the sampling distributions for sample proportions and for sample means. Both are approximately Normal under certain conditions, as given by the Central Limit Theorem. One key difference is that when we are considering proportions (e.g. the proportion of young adults with diabetes), there are only two parameters needed to describe the behavior of the sampling distribution: the population proportion, p, and the sample size, n. In contrast, when we are considering means (e.g., the mean BMI in US adults), there are three parameters needed to describe the behavior of the sampling distribution: the population mean, mu, the population standard deviation, sigma, and the sample size, n.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="bootstrapping.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="hypothesis-testing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["biostat-book.pdf", "biostat-book.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+# Bootstrapping 
+
+In this chapter, we will explore a technique known as bootstrapping, which can be used to obtain confidence intervals for parameters (such as medians) for which the statistic does not have a sampling distribution that is Normally distributed. Bootstrapping uses the sample itself as a "stand-in" for the population, and repeatedly samples from the sample to create an approximate sampling distribution for the statistic of interest. This approximate sampling distribution can then be used to estimate a confidence interval for the population parameter. In earlier lectures, we explored the behavior of the sampling distributions for sample proportions and for sample means. However, any statistic that we calculate from a sample will have a sampling distribution. For example, there is a sampling distribution for sample medians, and a sampling distribution for sample relative risks. The sampling distribution for a statistic simply describes how that particular statistic (such as the median or the relative risk) varies from sample to sample. As a general rule, the sampling distributions of other statistics besides means and proportions are usually NOT Normal and the Central Limit Theorem does NOT apply to them. Some of the other statistics have known parametric sampling distributions (e.g., sample slope), but others have sampling distributions that aren't known.
+
+But we can still create confidence intervals for the population parameter even if we do not know anything about the sampling distribution for the sample statistic. Let's explore how to get a confidence interval for other statistics, focusing on the median as the "other" statistic in this lecture.
+Let's start by thinking about a sample.
+
+We have seen that, if we take a random (representative) sample from a population, the summary statistic from that sample will be a good estimate of the population parameter. If our sample is "large enough", the shape and variability of the sample will also be similar to the population. 
+
+Let's look at an example. 
+
+On the left, we see the population distribution for systolic blood pressure (SBP) in US adults*. On the right, we see a dotplot of the SBP from the Blood Pressure dataset, which contains a sample of 500 people. While the sample distribution isn't exactly the same as the population distribution, the shape, center, and variability are similar: we see a few people with SBP below 100 mmHg, a peak around 140 mmHg, and then a more gradual decrease until about 200 mmHg, with a few above 200 mmHg.
+
+Suppose that we didn't have information about the population and we only had information from the 500 individuals in the Blood Pressure dataset. The median SBP in this sample is 140.5 mmHg. This is a point estimate of the population median SBP. If we wanted to better estimate the population median SBP, how can we obtain a confidence interval for this value?
+
+Reference: 
+*These SBP measurements were obtained from 5209 people as part of the Framingham Heart Study (http://www.framinghamheartstudy.org). This population may not be exactly like the entire US population in all respects.
+Add citation for the data for the sample, if different.
+Confidence intervals for a mean or a proportion are based on the assumption that the sampling distribution for the statistic (mean or proportion) is Normally or approximately Normally distributed. For other statistics, such as the median, we cannot make that assumption. If we could only take a very large number of samples repeatedly from the population of interest, calculate the statistic of interest for each sample (e.g., sample median), and obtain the sampling distribution for the statistic, we could understand the sampling variability behavior of the statistics. 
+
+Unfortunately, in most cases we don't have complete data from the population of interest. (If we did, we wouldn't need to do statistical inference.) But we do know that a single sample can be a good approximation of the population under certain circumstances: if it is representative of the population, if the observations are independent and measured accurately, and if the sample size is "large enough". 
+
+If our sample is a good approximation of the population, we should be able to take a very large number of samples from our sample (a.k.a. our "approximate" population) to approximate the sampling distribution!
+
+Bradley Efron introduced what is called "the bootstrap" in 1979, when he formalized the idea of using repeated sampling from the sample itself to approximate the sampling distribution1. The idea behind the bootstrap is simple: we use the sample to approximate the unknown population, and then sample repeatedly from it to obtain an approximate sampling distribution for our statistic. 
+
+Our bootstrap or approximate sampling distribution will probably not have exactly the same center as the true sampling distribution (or the population), since it will be centered at the sample value. It will also probably not have exactly the same variability as the true sampling distribution, but it will be close, provided the original sample is large enough. "Large enough" for bootstrap confidence intervals means sample sizes larger than about n=50. For smaller samples, the bootstrap distribution may underestimate the true variability, leading to confidence intervals that are too narrow and "miss" the true value more often than they should.
+
+References:
+1 A very accessible (to non-statisticians) description of the bootstrap can be found in Bradley Efron and Robert Tibshirani (1991) "Statistical Data Analysis in the Computer Age", Science 253(5018), pp390-395.
+
+A somewhat more statistical description of the bootstrap can be found in Brad Efron and Rob Tibshirani (1986) "Bootstrap Methods for Standard Errors, Confidence Intervals, and Other Measures of Statistical Accuracy", Statistical Science 1(1), pp 54-77.
+
+
+
+So how exactly is this done? (Note that this is carried out by computer software, not by hand!)
+
+First the computer takes a sample of size n from the original sample (Note: n is the same sample size as the original sample). This new sample is called a "bootstrap sample". We sample with replacement, which means that once we have randomly chosen an observation, we put it back in the dataset so that it could be chosen again. This means that in a given bootstrap sample, some observations in the sample will be represented more than once and others may not be present at all. This will result in the bootstrap samples differing slightly from each other, in ways that reflect the variability in the original sample. (If we sampled without replacement, there would be only one way to get a bootstrap sample of size n from an original sample of size n, which wouldn't give us any information about variability.)
+
+We then calculate the statistic of interest (in our example, the median) for the bootstrap sample.
+
+The computer repeats the process of taking a bootstrap sample and calculating the statistic of interest thousands or tens of thousands of times. (This takes next to no time with modern computing power.) This gives us a "bootstrap distribution" or approximate sampling distribution for the statistic of interest. 
+
+There are a number of ways of obtaining a confidence interval from the bootstrap distribution. A common one is to use the percentiles of the distribution directly. Using this approach, a 95% confidence interval for the median would span the middle 95% of the bootstrapped medians, from the 2.5% value to the 97.5% value. 
+
+Note: Bootstrapping is an example of a nonparametric statistical method. Nonparametric methods rely only on the sample to make inference about the population. They do not require that we know the distribution (and parameters for that distribution) of the population or of the true sampling distribution. 
+Let's look at an example.
+
+As we said a few slides ago, the median SBP level in our Blood Pressure dataset is 140.5 mmHg. This is a point estimate of the median SBP level in the population of all US adults. How can we determine how precise our estimate is? How can we obtain an interval estimate, a confidence interval, for the true population median SBP level?
+
+Using bootstrapping, we sample with replacement repeatedly from our one original sample of size n=500. Three of those bootstrap samples are presented at the top of the slide. As you can see, each of the bootstrap samples have a slightly different distribution and a different median. We are mimicking the process of repeated sampling from the stand-in or "approximate" population (a.k.a. our sample) to build up the sampling distribution of the median. 
+
+If we obtain 10,000 bootstrap samples of size n= 500 and obtain the median for each sample, we end up with the plot shown at the bottom of the slide. This bootstrap distribution of the sample median has a center (mean) at 140.3 and standard error of 1.35.To find a 95% confidence interval, we have the computer put the 10,000 sample medians in order from smallest to largest, and find the lower and upper values of the middle 95% of the median SBP values. This corresponds to the 2.5th percentile, or 251 values above the minimum value, and the 97.5th percentile, which is 251 values below the maximum value. We obtain a 95% confidence interval for the population median SBP of 138 to 142 mmHg. We interpret this confidence interval the same way as we did for estimating the population proportion and the population mean. 
+
+While the bootstrap technique was designed to obtain confidence intervals when the form of the sampling distribution of the sample statistic is unknown, the bootstrap can be used to find confidence intervals for any parameter, including means and proportions. Let's see what happens if we calculate a bootstrap confidence interval for the mean SBP in our example. The sample mean from the Blood Pressure example is 144.95 mmHg. 
+
+When we calculate the mean instead of the median for each of our 10,000 bootstrap samples, we obtain the bootstrap distribution for the sample mean shown here. This time, the bootstrap distribution looks quite Normally distributed. This is what we would expect, since we know from the Central Limit Theorem that the sampling distribution for a sample mean is Normal. The bootstrap distribution mirrors the sampling distribution in shape and spread, but is centered on the sample mean instead of the population mean.
+
+If we order the 10,000 sample means and find the 2.5th percentile and the 97.5th percentile, we obtain a bootstrapped 95% confidence interval for the population mean SBP of 142.56 to 147.44 mmHg. 
+
+How does this result compare with a 95% confidence interval calculated the usual way, using the Central Limit Theorem? The sample size is 500, the sample mean is 144.95 mmHg, and the sample standard deviation is 27.99 mmHg. Our degrees of freedom are 499, which results in a t-value of 1.965. Putting these values into the formula, a 95% CI is xbar +/- t*SE = 144.95 +/- (1.965)*(27.99/sqrt(500)) = 144.95 +/- 2.46 . We end up with a 95% confidence interval that ranges from 142.49 to 147.41 mmHg, which is nearly identical to the bootstrap CI above.
+
+We see that when we use the bootstrap method to calculate a confidence interval for the mean, the resulting interval is almost identical to the interval based on the Central Limit Theorem, which is reassuring!
